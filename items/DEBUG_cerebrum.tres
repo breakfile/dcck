@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://b4agtsgdkg8lv"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_f3i01"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_6eqsv"]
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="3_5n8hm"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="3_egf17"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="4_kurxv"]
+[ext_resource type="Script" uid="uid://d28itw6b4d04v" path="res://scripts/DEBUG_godmode.gd" id="5_btavr"]
+[ext_resource type="Script" uid="uid://dflihmgk14twg" path="res://scripts/DEBUG_clear_free_memory.gd" id="6_6eqsv"]
+[ext_resource type="Script" uid="uid://dg14ibklqsk03" path="res://scripts/DEBUG_reset_scene.gd" id="7_egf17"]
+[ext_resource type="Script" uid="uid://dm8yxggbwqnq1" path="res://scripts/DEBUG_reset_items.gd" id="8_kurxv"]
+[ext_resource type="Script" uid="uid://ngan5tbee2o8" path="res://scripts/DEBUG_give_key.gd" id="9_btavr"]
+[ext_resource type="Script" uid="uid://bcdun82xmqpqq" path="res://scripts/DEBUG_fill_6gum_skill.gd" id="10_rfhap"]
+
+[sub_resource type="Resource" id="Resource_rfhap"]
+script = ExtResource("9_btavr")
+name = "GiveKey"
+desc = "add key to items"
+metadata/_custom_type_script = "uid://ngan5tbee2o8"
+
+[sub_resource type="Resource" id="Resource_st2qs"]
+script = ExtResource("3_egf17")
+name = "Heal30"
+desc = "heal 30hp"
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"
+
+[sub_resource type="Resource" id="Resource_x6ng1"]
+script = ExtResource("4_kurxv")
+name = "PhysHurt"
+desc = "physical attack"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"
+
+[sub_resource type="Resource" id="Resource_ngg2a"]
+script = ExtResource("5_btavr")
+name = "GodMode"
+desc = "recieve max statistics and void all attacks"
+metadata/_custom_type_script = "uid://d28itw6b4d04v"
+
+[sub_resource type="Resource" id="Resource_egf17"]
+script = ExtResource("6_6eqsv")
+name = "ClearMemory"
+desc = "clear destroy_ permanently() memory"
+metadata/_custom_type_script = "uid://dflihmgk14twg"
+
+[sub_resource type="Resource" id="Resource_kurxv"]
+script = ExtResource("7_egf17")
+name = "ReloadScene"
+desc = "reload active scene from default spawn"
+metadata/_custom_type_script = "uid://dg14ibklqsk03"
+
+[sub_resource type="Resource" id="Resource_btavr"]
+script = ExtResource("8_kurxv")
+name = "ResetItems"
+desc = "reset items"
+metadata/_custom_type_script = "uid://dm8yxggbwqnq1"
+
+[sub_resource type="Resource" id="Resource_5n8hm"]
+script = ExtResource("10_rfhap")
+name = "FillExpItems"
+desc = "fill items with 6 gum"
+metadata/_custom_type_script = "uid://bcdun82xmqpqq"
+
+[sub_resource type="Resource" id="Resource_5bjev"]
+script = ExtResource("2_6eqsv")
+name = "TestCost"
+desc = "cost tester
+28MP cost"
+cost = 28
+metadata/_custom_type_script = "uid://d1tef7eifc0ow"
+
+[resource]
+script = ExtResource("1_f3i01")
+slot = 1
+skills = Array[ExtResource("2_6eqsv")]([SubResource("Resource_rfhap"), SubResource("Resource_st2qs"), SubResource("Resource_x6ng1"), SubResource("Resource_ngg2a"), SubResource("Resource_egf17"), SubResource("Resource_kurxv"), SubResource("Resource_btavr"), SubResource("Resource_5n8hm"), SubResource("Resource_5bjev")])
+name = "Dbg. Cerebrum"
+aura_name = "THE CEREBRUM OF DEBUGGING"
+desc = "[center]DEBUG[/center]
+A brain part with knowledge of how this game works internally. Belonged to a guy named Harry"
+one_line_desc = "Debug"
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

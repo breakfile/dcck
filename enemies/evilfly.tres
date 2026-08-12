@@ -1,0 +1,18 @@
+[gd_resource type="Resource" format=3 uid="uid://ck37f2t1y874t"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_mb03l"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_hpigs"]
+[ext_resource type="Resource" uid="uid://caeuhqyb36fjy" path="res://skills/stinger.tres" id="3_1n24g"]
+[ext_resource type="Script" uid="uid://dooy5uv6wamf" path="res://scripts/enemy/evilfly.gd" id="3_hpigs"]
+[ext_resource type="Texture2D" uid="uid://b83eneimesgh0" path="res://sprites/evilfly.png" id="4_hpigs"]
+
+[resource]
+script = ExtResource("3_hpigs")
+name = "Evil Fly"
+level = 4
+exp_drop = 3
+description = "Annoying as ever.
+Even though it stings you with poison, the BUSTER's in the Cathedral can help..."
+texture = ExtResource("4_hpigs")
+additional_skills = Array[ExtResource("1_mb03l")]([ExtResource("2_hpigs"), ExtResource("3_1n24g")])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

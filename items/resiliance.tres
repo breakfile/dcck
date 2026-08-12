@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://cea2qal28ntkj"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_bpnv3"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_wlxvj"]
+
+[resource]
+script = ExtResource("1_bpnv3")
+slot = 1
+name = "Resiliance"
+one_line_desc = "How are you seeing this"
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

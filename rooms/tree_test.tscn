@@ -1,0 +1,66 @@
+[gd_scene format=4 uid="uid://b1eubo4m5fxpp"]
+
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="1_48dwy"]
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_n6cb1"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="2_kj7j6"]
+[ext_resource type="PackedScene" uid="uid://db3hgtg1xy4f" path="res://prefabs/tree.tscn" id="3_kj7j6"]
+[ext_resource type="PackedScene" uid="uid://du3jyoaeci8yf" path="res://prefabs/key.tscn" id="4_fxhyi"]
+[ext_resource type="Texture2D" uid="uid://grspercwwh51" path="res://sprites/sign.png" id="5_65c37"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="6_boynk"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="7_n6cb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65c37"]
+size = Vector2(16, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boynk"]
+size = Vector2(16, 8)
+
+[node name="TreeTest" type="Node2D" unique_id=395976021]
+script = ExtResource("1_n6cb1")
+title = "K.N.N.P."
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=844001938]
+tile_map_data = PackedByteArray("AAD8//r/AAAAAAAAAAD8//v/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9//r/AAACAAAAAAD9//v/AAAAAAAAAAD9//z/AAABAAAAAAD9//3/AAABAAAAAAD9//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD9/wIAAAAAAAAAAAD+//r/AAACAAAAAAD+//v/AAAAAAAAAAD+//z/AAABAAAAAAD+//3/AAABAAAAAAD+//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAAAAAAAAAD///r/AAACAAAAAAD///v/AAAAAAAAAAD///z/AAABAAAAAAD///3/AAABAAAAAAD///7/AAABAAAAAAD/////AAADAAAAAAD//wAAAAADAAAAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAAAAPr/AAACAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAABAAAAAAAAAP3/AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAADAAAAAAAAAAAAAAADAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAPr/AAACAAAAAAABAPv/AAAAAAAAAAABAPz/AAABAAAAAAABAP3/AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAABAAIAAAAAAAAAAAACAPr/AAACAAAAAAACAPv/AAAAAAAAAAACAPz/AAABAAAAAAACAP3/AAABAAAAAAACAP7/AAABAAAAAAACAP//AAABAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAIAAAAAAAAAAAADAPr/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAD8//n/AAAAAAAAAAD9//n/AAAAAAAAAAD+//n/AAAAAAAAAAD///n/AAAAAAAAAAAAAPn/AAAAAAAAAAABAPn/AAAAAAAAAAACAPn/AAAAAAAAAAADAPn/AAAAAAAAAAD//wMAAAAEAAEAACAAAAMAAAAEAAEAACA=")
+tile_set = ExtResource("1_48dwy")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1693497129]
+tile_map_data = PackedByteArray("AAD9//3/AQAAAAAAAAD+//3/AQAAAAAAAAD///3/AQAAAAAAAAAAAP3/AQAAAAAAAAABAP3/AQAAAAAAAAACAP3/AQAAAAAAAAA=")
+tile_set = ExtResource("1_48dwy")
+
+[node name="Y" type="Node2D" parent="." unique_id=1782018429]
+y_sort_enabled = true
+
+[node name="Tree" parent="Y" unique_id=680460377 instance=ExtResource("3_kj7j6")]
+
+[node name="Player" parent="Y" unique_id=1244825177 instance=ExtResource("2_kj7j6")]
+position = Vector2(0, 27)
+
+[node name="Key" parent="Y" unique_id=1799302673 instance=ExtResource("4_fxhyi")]
+position = Vector2(-6, -35)
+
+[node name="Sign" type="Sprite2D" parent="Y" unique_id=1878963043]
+position = Vector2(0, 12)
+texture = ExtResource("5_65c37")
+offset = Vector2(0, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Y/Sign" unique_id=85029410]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y/Sign/StaticBody2D" unique_id=94436295]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_65c37")
+
+[node name="InteractionLauncher" type="Area2D" parent="Y/Sign" unique_id=791682358]
+script = ExtResource("6_boynk")
+label = "Read Sign"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="DialogueInteraction" type="Node" parent="Y/Sign/InteractionLauncher" unique_id=1416718496]
+script = ExtResource("7_n6cb1")
+dialogues = Array[String](["[center][color=yellow]Kilmister National Nature Preserve[/color][/center]
+\"Sometimes, life's greatest gifts are behind what you can see.\""])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Y/Sign/InteractionLauncher" unique_id=1030519299]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_boynk")

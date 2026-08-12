@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="KeySandwichItem" format=3 uid="uid://cp0gpl10e2jk"]
+
+[ext_resource type="Script" uid="uid://dioyt2flxjrxj" path="res://scripts/key_sandwich_item.gd" id="1_tjxd5"]
+
+[resource]
+script = ExtResource("1_tjxd5")
+chewed_form_path = "uid://c5hkns6p5x1o3"
+name = "ChewedSandwich"
+desc = "A \"sandwich\" with a key in it...?
+On the top of the sandwich, \"[color=yellow]FEED ME TO KAGU[/color]\" is written in sharpee."
+one_line_desc = "How are you seeing this"
+cannot_toss = true
+metadata/_custom_type_script = "uid://dioyt2flxjrxj"

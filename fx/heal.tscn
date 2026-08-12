@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bfr4wl8y1lw8e"]
+
+[ext_resource type="Texture2D" uid="uid://v7uh0g6gjfc8" path="res://fx/poison.png" id="1_csjrm"]
+[ext_resource type="Texture2D" uid="uid://dul6eakf15tfm" path="res://fx/heal.png" id="2_l4lr5"]
+[ext_resource type="AudioStream" uid="uid://cm15udeym0vjn" path="res://fx/heal.wav" id="3_1xn8r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebfk7"]
+atlas = ExtResource("1_csjrm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xn8r"]
+atlas = ExtResource("2_l4lr5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4y3k"]
+atlas = ExtResource("2_l4lr5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xusw"]
+atlas = ExtResource("2_l4lr5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2rjl"]
+atlas = ExtResource("2_l4lr5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bdwx"]
+atlas = ExtResource("2_l4lr5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p6kg"]
+atlas = ExtResource("2_l4lr5")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u3oyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebfk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xn8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4y3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xusw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2rjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bdwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p6kg")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 15.0
+}]
+
+[node name="Slash" type="AnimatedSprite2D" unique_id=485819796]
+sprite_frames = SubResource("SpriteFrames_u3oyc")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame = 6
+frame_progress = 1.0
+
+[node name="Heal" type="AudioStreamPlayer" parent="." unique_id=437927847]
+stream = ExtResource("3_1xn8r")
+autoplay = true

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://cm6o0x7w700d4"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_af135"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_mxhfw"]
+
+[resource]
+script = ExtResource("1_af135")
+attack_increase = 14
+defense_increase = 6
+name = "Steel Sword"
+desc = "[center]WEAPON[/center]
+A shiny sword made of fine steel. Because of it's length, you feel it protects you more"
+one_line_desc = "Equip"
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" format=3 uid="uid://dncc4cqd3llh"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_virh3"]
+[ext_resource type="Resource" uid="uid://4h0ioqcds2uh" path="res://skills/accidental_touch.tres" id="2_868tu"]
+[ext_resource type="Script" uid="uid://cwy0ddnjg4ntq" path="res://scripts/enemy/obod.gd" id="3_868tu"]
+[ext_resource type="Texture2D" uid="uid://cbymsaacuje2o" path="res://sprites/obod.png" id="3_virh3"]
+
+[resource]
+script = ExtResource("3_868tu")
+name = "Orange Bug of Death"
+exp_drop = -10
+description = "An entirely pacifist creature."
+texture = ExtResource("3_virh3")
+fire_multiplier = 0.001
+ice_multiplier = 0.001
+physical_multiplier = 0.001
+max_hp = 1000000
+max_mp = 1000000
+attack = 1000000
+defense = 1000000
+additional_skills = Array[ExtResource("1_virh3")]([ExtResource("2_868tu")])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

@@ -1,0 +1,163 @@
+[gd_scene format=4 uid="uid://crneut3jwjihh"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_naggt"]
+[ext_resource type="PackedScene" uid="uid://b3ru2dtud3mob" path="res://prefabs/fast_room_entry.tscn" id="2_f5cwb"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="3_38m87"]
+[ext_resource type="Script" uid="uid://cy04gq26o2le" path="res://scripts/memento_mori.gd" id="3_tt5du"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="4_38m87"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="4_ar31b"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="4_ppy7j"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="5_n3djy"]
+[ext_resource type="Texture2D" uid="uid://drq75ajj2alq4" path="res://sprites/BusSpriteForGame.png" id="6_ar31b"]
+[ext_resource type="Script" uid="uid://63054aqh7xvs" path="res://scripts/set_property_interaction.gd" id="6_el2k4"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="7_el2k4"]
+[ext_resource type="PackedScene" uid="uid://boxug6iu0eeh3" path="res://prefabs/save_station.tscn" id="7_q8ncr"]
+[ext_resource type="AudioStream" uid="uid://hu2ll1vbnx2v" path="res://music/my_own/harry_chaos.wav" id="8_2hh37"]
+[ext_resource type="Script" uid="uid://2hpphnwsd2wn" path="res://scripts/delete_node_interaction.gd" id="8_jj1gd"]
+[ext_resource type="PackedScene" uid="uid://d152ob5yu458j" path="res://prefabs/fast_room_exit.tscn" id="9_jy42r"]
+[ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="9_vh5l0"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="10_pbaxj"]
+[ext_resource type="Resource" uid="uid://sn3jsp6wd5a6" path="res://enemies/bus.tres" id="11_c6pxh"]
+[ext_resource type="AudioStream" uid="uid://bph5f3c2go36q" path="res://music/my_own/harry_neutralboss.ogg" id="12_bo805"]
+[ext_resource type="Texture2D" uid="uid://o440pc7avf2f" path="res://sprites/indooroopilly_bus_station.png" id="13_pbaxj"]
+[ext_resource type="Script" uid="uid://dj2omdb5gtjt5" path="res://scripts/set_global_song.gd" id="14_bo805"]
+[ext_resource type="Script" uid="uid://22ysojfimc1s" path="res://scripts/wait_for_timer_interaction.gd" id="14_gndwu"]
+[ext_resource type="AudioStream" uid="uid://4koksubo5qyv" path="res://music/my_own/lawtiny.ogg" id="15_gndwu"]
+[ext_resource type="Script" uid="uid://ormn6pkwn5wr" path="res://scripts/linear_tween_interaction.gd" id="17_x2ku1"]
+[ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="18_eckdn"]
+[ext_resource type="Resource" uid="uid://b84snrx0pasfu" path="res://items/cold_cerebrum.tres" id="19_mpguk"]
+[ext_resource type="Script" uid="uid://jd404i6s2dir" path="res://scripts/play_sound_interaction.gd" id="20_ntwar"]
+[ext_resource type="AudioStream" uid="uid://qur60d810yn6" path="res://sfx/resist.wav" id="21_vxnq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppy7j"]
+size = Vector2(170, 71)
+
+[node name="8F" type="Node2D" unique_id=1844965095]
+script = ExtResource("1_naggt")
+title = "Bus Finale"
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=648624324]
+tile_map_data = PackedByteArray("AAD//wEAAAABAAAAAAD//wAAAAALAAAAAGD/////AAABAAAAAAAAAP//AAABAAAAAAAAAP7/AAALAAAAAGAAAAAAAAALAAAAAGAAAAEAAAABAAAAAAD+/wEAAAABAAAAAAD+/wAAAAABAAAAAAD+////AAABAAAAAAABAP//AAABAAAAAAD///7/AAALAAAAAGD+//7/AAABAAAAAAABAAEAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAACAP//AAABAAAAAAABAP7/AAABAAAAAAACAAEAAAABAAAAAAACAP7/AAALAAAAAAD9/wEAAAABAAAAAAD9/wAAAAABAAAAAAD9////AAABAAAAAAD9//7/AAABAAAAAAD///3/AAABAAAAAAD///z/AAALAAAAAGD///v/AAABAAAAAAAAAPz/AAALAAAAAGAAAP3/AAABAAAAAAAAAPv/AAABAAAAAAAAAPr/AAALAAAAAGD///r/AAALAAAAAGABAPr/AAABAAAAAAABAPv/AAABAAAAAAABAPz/AAABAAAAAAABAP3/AAABAAAAAAACAP3/AAALAAAAAAACAPz/AAABAAAAAAACAPv/AAABAAAAAAACAPr/AAABAAAAAAD+//r/AAABAAAAAAD9//r/AAABAAAAAAD9//v/AAABAAAAAAD9//z/AAABAAAAAAD+//z/AAABAAAAAAD+//3/AAABAAAAAAD+//v/AAABAAAAAAD9//3/AAABAAAAAAD9//n/AAABAAAAAAD+//n/AAABAAAAAAD///n/AAABAAAAAAAAAPn/AAABAAAAAAABAPn/AAABAAAAAAACAPn/AAABAAAAAAD//wIAAAABAAAAAQAAAAIAAAABAAAAAQABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAADAAEAAAABAAEAAAADAAAAAAABAAEAAAADAP//AAABAAEAAAADAP7/AAABAAAAAAADAP3/AAABAAAAAAADAPz/AAABAAEAAAADAPv/AAABAAEAAAADAPr/AAABAAEAAAADAPn/AAABAAEAAAADAPj/AAABAAEAAAACAPj/AAABAAAAAAABAPj/AAABAAAAAAAAAPj/AAABAAAAAAD///j/AAABAAAAAAD+//j/AAABAAAAAAD9//j/AAABAAAAAAD8//j/AAABAAEAAAD8//n/AAABAAEAAAD8//r/AAABAAEAAAD8//v/AAABAAEAAAD8//z/AAABAAEAAAD8//3/AAABAAEAAAD8//7/AAABAAEAAAD8////AAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD8/wIAAAABAAEAAAD9/wIAAAABAAEAAAD+/wIAAAABAAEAAAACAPf/AAABAAAAAAABAPf/AAABAAAAAAAAAPf/AAABAAAAAAD///f/AAABAAAAAAD+//f/AAABAAAAAAD+//b/AAABAAAAAAD9//f/AAABAAAAAAD9//b/AAABAAAAAAD///b/AAABAAAAAAAAAPb/AAABAAAAAAAAAPX/AAABAAAAAAABAPb/AAABAAAAAAABAPX/AAABAAAAAAACAPb/AAABAAAAAAACAPX/AAABAAAAAAD///X/AAABAAAAAAD+//X/AAABAAAAAAD9//X/AAABAAAAAAD9//T/AAABAAAAAAD+//T/AAABAAAAAAD+//P/AAABAAAAAAAAAPT/AAABAAAAAAD///T/AAABAAAAAAD///P/AAABAAAAAAD9//P/AAABAAAAAAAAAPP/AAABAAAAAAABAPP/AAABAAAAAAABAPT/AAABAAAAAAACAPP/AAABAAAAAAACAPT/AAABAAAAAAABAPL/AAABAAAAAAAAAPL/AAABAAAAAAD///L/AAABAAAAAAD+//L/AAABAAAAAAD9//L/AAABAAAAAAACAPL/AAABAAAAAAACAPH/AAABAAAAAAABAPH/AAABAAAAAAAAAPH/AAABAAAAAAD///H/AAABAAAAAAD+//H/AAABAAAAAAD9//H/AAABAAAAAAD7//D/AAAAAAEAAAD8//D/AAAAAAEAAAD9//D/AAAAAAEAAAD+//D/AAAAAAEAAAD///D/AAAAAAEAAAAAAPD/AAAAAAEAAAABAPD/AAAAAAEAAAACAPD/AAAAAAEAAAADAPD/AAAAAAEAAAAEAPD/AAAAAAEAAAAEAO//AAAAAAEAAAADAO//AAAAAAEAAAACAO//AAAAAAEAAAABAO//AAAAAAEAAAAAAO//AAAAAAEAAAD//+//AAAAAAEAAAD+/+//AAAAAAEAAAD9/+//AAAAAAEAAAD8/+//AAAAAAEAAAD8/+7/AAAAAAEAAAD7/+7/AAAAAAEAAAD7/+//AAAAAAEAAAD9/+7/AAAAAAEAAAD+/+7/AAAAAAEAAAD//+7/AAAAAAEAAAAAAO7/AAAAAAEAAAABAO7/AAAAAAEAAAACAO7/AAAAAAEAAAADAO7/AAAAAAEAAAAEAO7/AAAAAAEAAAADAO3/AAAAAAEAAAAEAO3/AAAAAAEAAAACAO3/AAAAAAEAAAABAO3/AAAAAAEAAAAAAO3/AAAAAAEAAAD//+3/AAAAAAEAAAD+/+3/AAAAAAEAAAD9/+3/AAAAAAEAAAD8/+3/AAAAAAEAAAD7/+3/AAAAAAEAAAD9/+z/AAABAAAAAAD9/+v/AAABAAAAAAD+/+v/AAABAAAAAAD//+r/AAABAAAAAAAAAOr/AAABAAAAAAABAOv/AAABAAAAAAAAAOv/AAABAAAAAAD//+v/AAABAAAAAAAAAOn/AAABAAAAAAD//+n/AAABAAAAAAD+/+n/AAABAAAAAAD9/+n/AAABAAAAAAD9/+r/AAABAAAAAAD+/+r/AAABAAAAAAD+/+z/AAABAAAAAAD//+z/AAABAAAAAAAAAOz/AAABAAAAAAABAOr/AAABAAAAAAACAOr/AAABAAAAAAACAOv/AAABAAAAAAACAOz/AAABAAAAAAABAOn/AAABAAAAAAABAOz/AAABAAAAAAACAOn/AAABAAAAAAD6//D/AAAAAAEAAAD6/+3/AAAAAAEAAAD6/+7/AAAAAAEAAAD6/+//AAAAAAEAAAD5/+//AAAAAAEAAAD5/+7/AAAAAAEAAAD5/+3/AAAAAAEAAAD4/+7/AAAAAAEAAAD4/+//AAAAAAEAAAD4//D/AAAAAAEAAAD5//D/AAAAAAEAAAD4/+3/AAAAAAEAAAD3/+3/AAAAAAEAAAD3/+7/AAAAAAEAAAD3/+//AAAAAAEAAAD3//D/AAAAAAEAAAAFAO3/AAAAAAEAAAAGAO3/AAAAAAEAAAAGAO7/AAAAAAEAAAAGAO//AAAAAAEAAAAGAPD/AAAAAAEAAAAHAO//AAAAAAEAAAAHAO7/AAAAAAEAAAAHAO3/AAAAAAEAAAAIAO//AAAAAAEAAAAIAO7/AAAAAAEAAAAIAO3/AAAAAAEAAAAIAPD/AAAAAAEAAAAHAPD/AAAAAAEAAAAFAPD/AAAAAAEAAAAFAO//AAAAAAEAAAAFAO7/AAAAAAEAAAD2/+3/AAAEAAEAAGD2/+7/AAAEAAEAAGD2/+//AAAEAAEAAGD2//D/AAAEAAEAAGAJAO3/AAAEAAEAAFAJAO7/AAAEAAEAAFAJAO//AAAEAAEAAFAJAPD/AAAEAAEAAFD8//f/AAABAAEAAAD8//b/AAABAAEAAAD8//X/AAABAAEAAAD8//T/AAABAAEAAAD8//P/AAABAAEAAAD8//L/AAABAAEAAAD8//H/AAABAAEAAAADAPL/AAABAAEAAAADAPP/AAABAAEAAAADAPT/AAABAAEAAAADAPX/AAABAAEAAAADAPb/AAABAAEAAAADAPf/AAABAAEAAAADAPH/AAABAAEAAAAEAPH/AAABAAEAAAAFAPH/AAABAAEAAAAGAPH/AAABAAEAAAAHAPH/AAABAAEAAAAIAPH/AAABAAEAAAAJAPH/AAABAAEAAAD7//H/AAABAAEAAAD6//H/AAABAAEAAAD5//H/AAABAAEAAAD4//H/AAABAAEAAAD3//H/AAABAAEAAAD2//H/AAABAAEAAAD2/+z/AAABAAEAAAD3/+z/AAABAAEAAAD4/+z/AAABAAEAAAD5/+z/AAABAAEAAAD6/+z/AAABAAEAAAD7/+z/AAABAAEAAAD8/+z/AAABAAEAAAD8/+v/AAABAAEAAAD8/+r/AAABAAEAAAD8/+n/AAABAAEAAAADAOn/AAABAAEAAAADAOr/AAABAAEAAAADAOv/AAABAAEAAAADAOz/AAABAAEAAAAEAOz/AAABAAEAAAAFAOz/AAABAAEAAAAGAOz/AAABAAEAAAAHAOz/AAABAAEAAAAIAOz/AAABAAEAAAAJAOz/AAABAAEAAAAEAP3/AAABAAAAAAAFAP3/AAABAAAAAAAGAP3/AAABAAAAAAAGAP7/AAABAAAAAAAFAP7/AAABAAAAAAAEAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAAHAP3/AAABAAAAAAAIAP3/AAABAAAAAAAJAP3/AAABAAAAAAAKAP3/AAABAAAAAAAKAP7/AAABAAAAAAALAP7/AAABAAAAAAALAP3/AAABAAAAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAAKAPz/AAABAAEAAAALAPz/AAABAAEAAAAMAPz/AAABAAEAAAAMAP3/AAABAAEAAAAMAP7/AAABAAEAAAAMAP//AAABAAEAAAALAP//AAABAAEAAAAKAP//AAABAAEAAAAJAP//AAABAAEAAAAIAP//AAABAAEAAAAHAP//AAABAAEAAAAGAP//AAABAAEAAAAFAP//AAABAAEAAAAEAP//AAABAAEAAAD//+j/AAABAAAAAQAAAOj/AAABAAAAAQD+/+j/AAABAAEAAAD9/+j/AAABAAEAAAD8/+j/AAABAAEAAAABAOj/AAABAAEAAAACAOj/AAABAAEAAAADAOj/AAABAAEAAAA=")
+tile_set = ExtResource("4_ar31b")
+
+[node name="MementoMori" type="Node2D" parent="." unique_id=1287149922]
+script = ExtResource("3_tt5du")
+metadata/_custom_type_script = "uid://cy04gq26o2le"
+
+[node name="BusSpriteForGame" type="Sprite2D" parent="MementoMori" unique_id=66345527]
+position = Vector2(-7, -282)
+texture = ExtResource("6_ar31b")
+
+[node name="InteractionLauncher" type="Area2D" parent="MementoMori/BusSpriteForGame" unique_id=1877780235 node_paths=PackedStringArray("root")]
+script = ExtResource("4_ppy7j")
+label = "Cutscene"
+root = NodePath("../..")
+require_input = false
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=832907274]
+position = Vector2(12, 25.5)
+shape = SubResource("RectangleShape2D_ppy7j")
+
+[node name="SetPropertyInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=934495243 node_paths=PackedStringArray("node")]
+script = ExtResource("6_el2k4")
+node = NodePath("../CollisionShape2D")
+property = "disabled"
+result = true
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="DialogueInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=1885000340]
+script = ExtResource("5_n3djy")
+dialogues = Array[String](["Your strength is... outstanding.", "You stand before me with a shine in your eye unlike any other I have seen...", "So... bright...", "...", "I want it.", "I want the shine... of a true trainspotter...", "GRANT ME THE SHINE OF A TRUE TRAINSPOTTER!", "GIVE ME THE CEREBRUM OF WARMTH! THE TRAINSPOTTER'S CEREBRUM!!!!"])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="DeleteNodeInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=1906130649 node_paths=PackedStringArray("node")]
+script = ExtResource("8_jj1gd")
+node = NodePath("../../../HarryChaos")
+metadata/_custom_type_script = "uid://2hpphnwsd2wn"
+
+[node name="StartBattleInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=1951942510]
+script = ExtResource("9_vh5l0")
+enemy_list = Array[ExtResource("10_pbaxj")]([ExtResource("11_c6pxh")])
+song = ExtResource("12_bo805")
+can_escape = false
+background = ExtResource("13_pbaxj")
+autoscroll = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="WaitForTimerInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=1192320477]
+script = ExtResource("14_gndwu")
+wait_time = 0.5
+metadata/_custom_type_script = "uid://22ysojfimc1s"
+
+[node name="SetGlobalSongInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=1830905543]
+script = ExtResource("14_bo805")
+stream = ExtResource("15_gndwu")
+metadata/_custom_type_script = "uid://dj2omdb5gtjt5"
+
+[node name="DialogueInteraction2" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=1982222475]
+script = ExtResource("5_n3djy")
+dialogues = Array[String](["Congratulations... you just took everything from me."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="SetPropertyInteraction2" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=108108907 node_paths=PackedStringArray("node")]
+script = ExtResource("17_x2ku1")
+node = NodePath("../..")
+property = "modulate"
+new_value = Color(0, 0, 0, 0)
+time = 1.0
+metadata/_custom_type_script = "uid://ormn6pkwn5wr"
+
+[node name="ItemInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=784881099]
+script = ExtResource("18_eckdn")
+item = ExtResource("19_mpguk")
+metadata/_custom_type_script = "uid://cbc5odn8ededf"
+
+[node name="PlaySoundInteraction3" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=106333343]
+script = ExtResource("20_ntwar")
+sound = ExtResource("21_vxnq1")
+metadata/_custom_type_script = "uid://jd404i6s2dir"
+
+[node name="WaitForTimerInteraction2" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=974504816]
+script = ExtResource("14_gndwu")
+wait_time = 2.0
+metadata/_custom_type_script = "uid://22ysojfimc1s"
+
+[node name="DialogueInteraction5" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=423357153]
+script = ExtResource("5_n3djy")
+dialogues = Array[String](["> Declan had a vague, inexplicable vision of a silhouette man holding an owl.", "> The owl opened it's mouth, and the words:", "\"[color=red][shake]Two hours until our meeting.[/shake][/color]\" came out.", "> Declan face sagged.", "> \"[color=red][shake]Why the long face, Declan? Do you regret our deal?[/shake][/color]\" the owl spoke."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="DeleteRootInteraction" type="Node" parent="MementoMori/BusSpriteForGame/InteractionLauncher" unique_id=622426464]
+script = ExtResource("7_el2k4")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="HarryChaos" type="AudioStreamPlayer2D" parent="MementoMori" unique_id=1164004300]
+position = Vector2(0, -273)
+stream = ExtResource("8_2hh37")
+autoplay = true
+max_distance = 250.0
+panning_strength = 5.0
+
+[node name="SaveStation" parent="." unique_id=966866564 instance=ExtResource("7_q8ncr")]
+position = Vector2(159, -67)
+
+[node name="Player" parent="." unique_id=1244825177 instance=ExtResource("3_38m87")]
+
+[node name="FastRoomEntry" parent="." unique_id=1091932744 instance=ExtResource("2_f5cwb")]
+position = Vector2(0, 29)
+
+[node name="ChangeLevelInteraction" type="Node" parent="FastRoomEntry" unique_id=672833833]
+script = ExtResource("4_38m87")
+room = "uid://m4s7pfp3dsis"
+sign = 1
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="FastRoomExit" parent="." unique_id=1384557552 instance=ExtResource("9_jy42r")]
+position = Vector2(0, -365)
+
+[node name="ChangeLevelInteraction" type="Node" parent="FastRoomExit" unique_id=664853921]
+script = ExtResource("4_38m87")
+room = "res://rooms/9F.tscn"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"

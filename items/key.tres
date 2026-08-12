@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bhm3m3rhiawpn"]
+
+[ext_resource type="Script" uid="uid://bhuq2ttw35nlx" path="res://scripts/item.gd" id="1_uqc2c"]
+
+[resource]
+script = ExtResource("1_uqc2c")
+name = "Cathedral Key"
+desc = "[center]CRUCIAL[/center]
+A key complete with Kilmister insignia for opening doors with Kilmister-insignia-key shaped holes"
+one_line_desc = "Useless"
+cannot_toss = true
+metadata/_custom_type_script = "uid://bhuq2ttw35nlx"

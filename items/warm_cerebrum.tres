@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://g8bl1qew7rv6"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_launo"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_4j2no"]
+[ext_resource type="Resource" uid="uid://wa20mcnpfqct" path="res://skills/fire1.tres" id="3_c58ky"]
+[ext_resource type="Resource" uid="uid://ctsgnetgk53ty" path="res://skills/fire2.tres" id="4_wd5qd"]
+[ext_resource type="Resource" uid="uid://cimpavaye43wj" path="res://skills/fire3.tres" id="5_2egv0"]
+[ext_resource type="Resource" uid="uid://31k2aia8trcl" path="res://skills/fireheal.tres" id="6_1mfcl"]
+[ext_resource type="Resource" uid="uid://b63kvsfpop6c1" path="res://skills/firepoison.tres" id="7_wd5qd"]
+
+[resource]
+script = ExtResource("1_launo")
+slot = 1
+skills = Array[ExtResource("2_4j2no")]([ExtResource("3_c58ky"), ExtResource("4_wd5qd"), ExtResource("5_2egv0"), ExtResource("6_1mfcl"), ExtResource("7_wd5qd")])
+change_fire_mult = true
+change_ice_mult = true
+fire_mult = 0.0
+ice_mult = 2.0
+name = "Warm Cerebrum"
+aura_name = "THE CEREBRUM OF WARMTH"
+desc = "[center]PROTECTOR[/center]
+A brain part with knowledge of Fire skills."
+one_line_desc = "Equip"
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

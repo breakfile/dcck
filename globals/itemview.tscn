@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://t42vcs0qxfhx"]
+
+[ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="1_j4jgc"]
+[ext_resource type="Script" uid="uid://bboyg8c7bggha" path="res://scripts/DEBUG_itemview.gd" id="2_gmta8"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2080563002]
+layer = 12119
+
+[node name="Label" type="Label" parent="." unique_id=1571059036]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_j4jgc")
+script = ExtResource("2_gmta8")

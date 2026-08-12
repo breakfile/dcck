@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://jdgbx0dy8n1d"]
+
+[ext_resource type="Script" uid="uid://cl352724ulh56" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="2_con2f"]
+[ext_resource type="AudioStream" uid="uid://opukgemfbq0b" path="res://sfx/deny.wav" id="2_mhnvy"]
+[ext_resource type="AudioStream" uid="uid://dwg3goferf7e2" path="res://sfx/move.wav" id="3_mhnvy"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1530280168 node_paths=PackedStringArray("menu", "menu_first", "stats", "stats_first")]
+visible = false
+script = ExtResource("1_vjb58")
+deny_sfx = ExtResource("2_mhnvy")
+move_sfx = ExtResource("3_mhnvy")
+menu = NodePath("Menu")
+menu_first = NodePath("Menu/PanelContainer/VBoxContainer/Item")
+stats = NodePath("Stats")
+stats_first = NodePath("Stats/PanelContainer/TabContainer")
+
+[node name="Menu" type="Control" parent="." unique_id=817561677]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_con2f")
+
+[node name="PanelContainer" type="PanelContainer" parent="Menu" unique_id=1766809991]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 136.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/PanelContainer" unique_id=1527999707]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/PanelContainer/VBoxContainer" unique_id=1111586886]
+layout_mode = 2
+text = "Command"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/PanelContainer/VBoxContainer" unique_id=2078459519]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Item" type="Button" parent="Menu/PanelContainer/VBoxContainer" unique_id=1540526552]
+layout_mode = 2
+mouse_filter = 2
+action_mode = 0
+text = "Item"
+alignment = 0
+
+[node name="Stats" type="Button" parent="Menu/PanelContainer/VBoxContainer" unique_id=1543185007]
+layout_mode = 2
+mouse_filter = 2
+action_mode = 0
+text = "State"
+alignment = 0
+
+[node name="Equip" type="Button" parent="Menu/PanelContainer/VBoxContainer" unique_id=1382474803]
+layout_mode = 2
+mouse_filter = 2
+action_mode = 0
+text = "Person"
+alignment = 0
+
+[node name="Skill" type="Button" parent="Menu/PanelContainer/VBoxContainer" unique_id=292862920]
+layout_mode = 2
+mouse_filter = 2
+action_mode = 0
+text = "Skill"
+alignment = 0
+
+[node name="Stats" type="Control" parent="." unique_id=1699222258]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_con2f")
+
+[node name="PanelContainer" type="PanelContainer" parent="Stats" unique_id=963174097]
+layout_mode = 1
+offset_left = 96.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 236.0
+
+[node name="TabContainer" type="TabContainer" parent="Stats/PanelContainer" unique_id=1389112015]
+layout_mode = 2
+mouse_behavior_recursive = 1
+tab_alignment = 1
+
+[connection signal="pressed" from="Menu/PanelContainer/VBoxContainer/Item" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="Menu/PanelContainer/VBoxContainer/Stats" to="." method="_on_stats_pressed"]
+[connection signal="pressed" from="Menu/PanelContainer/VBoxContainer/Equip" to="." method="_on_equipment_pressed"]
+[connection signal="pressed" from="Menu/PanelContainer/VBoxContainer/Skill" to="." method="_on_heart_pressed"]

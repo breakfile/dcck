@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="HealSkill" format=3 uid="uid://c6wbwice2w53k"]
+
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="1_jmcfa"]
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="1_pus33"]
+
+[resource]
+script = ExtResource("1_jmcfa")
+heal_amount = 16
+name = "Ice Blocks"
+desc = "Recover some HP"
+one_line_desc = "Recover some HP"
+cost = 15
+effect = ExtResource("1_pus33")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"

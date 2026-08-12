@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DamageSkill" format=3 uid="uid://u1hwq81nf2oq"]
+
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="1_2xt1i"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="1_40aom"]
+
+[resource]
+script = ExtResource("1_40aom")
+attack_type = 1
+name = "Cooler"
+desc = "Ice
+1 * Attack"
+one_line_desc = "Atk x 1"
+cost = 10
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"

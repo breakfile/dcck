@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://5ah8h2ovba4d"]
+
+[ext_resource type="PackedScene" uid="uid://by0o5i03xx86b" path="res://prefabs/chaser.tscn" id="1_lpe6e"]
+[ext_resource type="PackedScene" uid="uid://cg2n8kg6c6qgh" path="res://prefabs/goo.tscn" id="2_ukjt3"]
+
+[node name="Chaser" unique_id=840268782 node_paths=PackedStringArray("goo") instance=ExtResource("1_lpe6e")]
+goo = NodePath("Goo")
+
+[node name="Goo" parent="." index="3" unique_id=1578334052 node_paths=PackedStringArray("root", "routes") instance=ExtResource("2_ukjt3")]
+root = NodePath("..")
+routes = [NodePath("..")]

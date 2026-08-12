@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DamageSkill" format=3 uid="uid://4h0ioqcds2uh"]
+
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="1_dstaq"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="2_m4ryv"]
+
+[resource]
+script = ExtResource("2_m4ryv")
+multiplier = 3000000000000.0
+name = "an accidental touch from quivering"
+desc = "What a stupid skill name"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"

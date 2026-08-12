@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://by0o5i03xx86b"]
+
+[ext_resource type="Script" uid="uid://c475wha77t6dq" path="res://scripts/chasing_interaction_launcher.gd" id="1_oacae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_genj2"]
+size = Vector2(16, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_genj2"]
+radius = 64.0
+
+[node name="Chaser" type="CharacterBody2D" unique_id=840268782]
+script = ExtResource("1_oacae")
+metadata/_custom_type_script = "uid://c475wha77t6dq"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=440653977]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125409536]
+shape = SubResource("RectangleShape2D_genj2")
+
+[node name="DetectionRange" type="Area2D" parent="." unique_id=850093399]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange" unique_id=2129261337]
+shape = SubResource("CircleShape2D_genj2")

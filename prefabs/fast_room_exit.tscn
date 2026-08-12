@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d152ob5yu458j"]
+
+[ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="1_eo1x6"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="2_iou6i"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="3_50ssd"]
+
+[node name="FastRoomExit" type="Marker2D" unique_id=1091932744]
+script = ExtResource("1_eo1x6")
+sign = 1
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=558179258 node_paths=PackedStringArray("routes")]
+script = ExtResource("2_iou6i")
+label = "Go"
+routes = [NodePath("..")]
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=22347109]
+position = Vector2(0, -3)
+shape = ExtResource("3_50ssd")

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dioy1py7iiqnp"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_cetbq"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_brvb4"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="3_w4lmn"]
+[ext_resource type="Texture2D" uid="uid://b6l0n2mra1b00" path="res://sprites/mercutio.png" id="4_brvb4"]
+[ext_resource type="Resource" uid="uid://b84snrx0pasfu" path="res://items/cold_cerebrum.tres" id="5_w4lmn"]
+
+[resource]
+script = ExtResource("3_w4lmn")
+name = "Mercutio"
+level = 9
+exp_drop = 5
+description = "He looks like Tybalt... but you'll find they actually don't like each other."
+texture = ExtResource("4_brvb4")
+weapon = ExtResource("5_w4lmn")
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

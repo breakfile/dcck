@@ -1,0 +1,357 @@
+[gd_scene format=3 uid="uid://bgv0eojgtij4y"]
+
+[ext_resource type="Script" uid="uid://dj5t5yrn34wcr" path="res://stupid_menu/menu_manager.gd" id="1_fmkm1"]
+[ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="2_i3mql"]
+[ext_resource type="Script" uid="uid://v0xlscrgelww" path="res://stupid_menu/stack_menu.gd" id="3_owqol"]
+[ext_resource type="Texture2D" uid="uid://dcq2infll7mg4" path="res://sprites/declan_f_standstill.png" id="4_erogk"]
+[ext_resource type="FontFile" uid="uid://cvo5t5q71ydfl" path="res://fonts/Px437_ATI_SmallW_6x8.ttf" id="4_focfr"]
+[ext_resource type="Script" uid="uid://bp22xolobujt4" path="res://scripts/playerinfo.gd" id="5_focfr"]
+[ext_resource type="FontFile" uid="uid://bu7iginv0v6p5" path="res://fonts/Mystery Font.ttf" id="6_404xq"]
+[ext_resource type="FontFile" uid="uid://cgxxiuox52fnq" path="res://fonts/Rude.ttf" id="7_e6c8u"]
+[ext_resource type="Texture2D" uid="uid://dw6jpaeilosi8" path="res://sprites/nocharacter.png" id="8_0fmto"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm8m2"]
+bg_color = Color(0.3137255, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ylsy"]
+bg_color = Color(0, 1, 0.50980395, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0ejx"]
+bg_color = Color(1, 1, 0, 1)
+
+[node name="MenuManager" type="CanvasLayer" unique_id=1438281783]
+layer = 2
+script = ExtResource("1_fmkm1")
+
+[node name="Command" type="PanelContainer" parent="." unique_id=432728941 node_paths=PackedStringArray("default_control")]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 116.0
+offset_bottom = 80.0
+theme = ExtResource("2_i3mql")
+script = ExtResource("3_owqol")
+default_control = NodePath("VBoxContainer/GridContainer/ITEM")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Command" unique_id=824404470]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Command/VBoxContainer" unique_id=1733223471]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 2
+
+[node name="ITEM" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=630352256]
+layout_mode = 2
+action_mode = 0
+text = "Items"
+alignment = 0
+
+[node name="SKILL" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=733409235]
+layout_mode = 2
+action_mode = 0
+text = "Skill"
+alignment = 0
+
+[node name="STATS" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=2030703917]
+layout_mode = 2
+action_mode = 0
+text = "Stats"
+alignment = 0
+
+[node name="EQUIP" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=1318985237]
+layout_mode = 2
+action_mode = 0
+text = "Equip"
+alignment = 0
+
+[node name="TITLE" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=47606889]
+layout_mode = 2
+action_mode = 0
+text = "Title"
+alignment = 0
+
+[node name="EXIT" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=1416993670]
+layout_mode = 2
+action_mode = 0
+text = "Quit"
+alignment = 0
+
+[node name="Items" type="PanelContainer" parent="." unique_id=798391107]
+visible = false
+custom_minimum_size = Vector2(298, 72)
+offset_left = 94.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 80.0
+theme = ExtResource("2_i3mql")
+script = ExtResource("3_owqol")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Items" unique_id=1297730736]
+layout_mode = 2
+follow_focus = true
+
+[node name="GridContainer" type="GridContainer" parent="Items/ScrollContainer" unique_id=328831393]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="Label" type="Label" parent="Items" unique_id=705684099]
+layout_mode = 2
+text = "---"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1229778003]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control" unique_id=386896832]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 200.0
+offset_right = 392.0
+offset_bottom = 292.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+theme = ExtResource("2_i3mql")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer2" unique_id=577618276]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_focfr")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+
+[node name="Player0" type="Sprite2D" parent="Control" unique_id=1543065541]
+visible = false
+position = Vector2(214, 228)
+texture = ExtResource("4_erogk")
+script = ExtResource("5_focfr")
+
+[node name="Name" type="Label" parent="Control/Player0" unique_id=1936337856]
+offset_left = 12.0
+offset_top = -10.0
+offset_right = 92.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("6_404xq")
+theme_override_font_sizes/font_size = 8
+text = "Player"
+
+[node name="Hp" type="ProgressBar" parent="Control/Player0" unique_id=807294271]
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 71.0
+offset_bottom = 5.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1ylsy")
+show_percentage = false
+
+[node name="Mp" type="ProgressBar" parent="Control/Player0" unique_id=206309003]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 71.0
+offset_bottom = 14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f0ejx")
+show_percentage = false
+
+[node name="HPslash" type="Label" parent="Control/Player0" unique_id=1093536801]
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 54.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="MPslash" type="Label" parent="Control/Player0" unique_id=584588207]
+offset_left = 12.0
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="Player1" type="Sprite2D" parent="Control" unique_id=1275615184]
+visible = false
+position = Vector2(306, 228)
+texture = ExtResource("8_0fmto")
+script = ExtResource("5_focfr")
+number = 1
+
+[node name="Name" type="Label" parent="Control/Player1" unique_id=269045982]
+offset_left = 12.0
+offset_top = -10.0
+offset_right = 92.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("6_404xq")
+theme_override_font_sizes/font_size = 8
+text = "Player"
+
+[node name="Hp" type="ProgressBar" parent="Control/Player1" unique_id=829202222]
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 71.0
+offset_bottom = 5.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1ylsy")
+show_percentage = false
+
+[node name="Mp" type="ProgressBar" parent="Control/Player1" unique_id=648388430]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 71.0
+offset_bottom = 14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f0ejx")
+show_percentage = false
+
+[node name="HPslash" type="Label" parent="Control/Player1" unique_id=619216442]
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 54.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="MPslash" type="Label" parent="Control/Player1" unique_id=176323047]
+offset_left = 12.0
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="Player2" type="Sprite2D" parent="Control" unique_id=2124247003]
+visible = false
+position = Vector2(214, 264)
+texture = ExtResource("8_0fmto")
+script = ExtResource("5_focfr")
+number = 2
+
+[node name="Name" type="Label" parent="Control/Player2" unique_id=964059791]
+offset_left = 12.0
+offset_top = -10.0
+offset_right = 92.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("6_404xq")
+theme_override_font_sizes/font_size = 8
+text = "Player"
+
+[node name="Hp" type="ProgressBar" parent="Control/Player2" unique_id=2099618116]
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 71.0
+offset_bottom = 5.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1ylsy")
+show_percentage = false
+
+[node name="Mp" type="ProgressBar" parent="Control/Player2" unique_id=663711518]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 71.0
+offset_bottom = 14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f0ejx")
+show_percentage = false
+
+[node name="HPslash" type="Label" parent="Control/Player2" unique_id=1543380980]
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 54.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="MPslash" type="Label" parent="Control/Player2" unique_id=903401241]
+offset_left = 12.0
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="Player3" type="Sprite2D" parent="Control" unique_id=1065248305]
+visible = false
+position = Vector2(306, 264)
+texture = ExtResource("8_0fmto")
+script = ExtResource("5_focfr")
+number = 3
+
+[node name="Name" type="Label" parent="Control/Player3" unique_id=1503659882]
+offset_left = 12.0
+offset_top = -10.0
+offset_right = 92.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("6_404xq")
+theme_override_font_sizes/font_size = 8
+text = "Player"
+
+[node name="Hp" type="ProgressBar" parent="Control/Player3" unique_id=2144904994]
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 71.0
+offset_bottom = 5.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1ylsy")
+show_percentage = false
+
+[node name="Mp" type="ProgressBar" parent="Control/Player3" unique_id=1059506700]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 71.0
+offset_bottom = 14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vm8m2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f0ejx")
+show_percentage = false
+
+[node name="HPslash" type="Label" parent="Control/Player3" unique_id=252162233]
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 54.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="MPslash" type="Label" parent="Control/Player3" unique_id=1153294282]
+offset_left = 12.0
+offset_right = 54.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("7_e6c8u")
+text = "AB CDE/FGH"
+
+[node name="ItemSettings" type="PanelContainer" parent="." unique_id=1854774012 node_paths=PackedStringArray("default_control")]
+visible = false
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 152.0
+offset_bottom = 88.0
+theme = ExtResource("2_i3mql")
+script = ExtResource("3_owqol")
+default_control = NodePath("VBoxContainer/Button")
+metadata/_custom_type_script = "uid://v0xlscrgelww"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemSettings" unique_id=399673793]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ItemSettings/VBoxContainer" unique_id=1092054153]
+modulate = Color(0.5019608, 0.5019608, 0.5019608, 1)
+layout_mode = 2
+text = "NOITEM"
+
+[node name="Button" type="Button" parent="ItemSettings/VBoxContainer" unique_id=1270691966]
+layout_mode = 2
+action_mode = 0
+text = "Use"
+alignment = 0
+
+[node name="Button2" type="Button" parent="ItemSettings/VBoxContainer" unique_id=278149933]
+layout_mode = 2
+action_mode = 0
+text = "Toss"
+alignment = 0
+
+[connection signal="pressed" from="Command/VBoxContainer/GridContainer/ITEM" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="Command/VBoxContainer/GridContainer/TITLE" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="Command/VBoxContainer/GridContainer/EXIT" to="." method="_on_exit_pressed"]
+[connection signal="push" from="Items" to="." method="_on_items_push"]

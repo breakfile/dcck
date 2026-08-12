@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://caa4h14eqhxch"]
+
+[ext_resource type="Script" uid="uid://bhuq2ttw35nlx" path="res://scripts/item.gd" id="1_ykygt"]
+
+[resource]
+script = ExtResource("1_ykygt")
+name = "Piece of String"
+desc = "[center]RESOURCE[/center]
+A lone piece of string.
+Doesn't do anything, but can be used to make things."
+one_line_desc = "Not useful in battle"
+metadata/_custom_type_script = "uid://bhuq2ttw35nlx"

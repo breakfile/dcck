@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://1w3m08oqn4uq"]
+
+[ext_resource type="Texture2D" uid="uid://v7uh0g6gjfc8" path="res://fx/poison.png" id="1_siweq"]
+[ext_resource type="AudioStream" uid="uid://demu22boomqqv" path="res://fx/poison.wav" id="2_llghn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llghn"]
+atlas = ExtResource("1_siweq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48c6h"]
+atlas = ExtResource("1_siweq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s7dc"]
+atlas = ExtResource("1_siweq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2pb6"]
+atlas = ExtResource("1_siweq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtdm5"]
+atlas = ExtResource("1_siweq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebfk7"]
+atlas = ExtResource("1_siweq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u3oyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llghn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48c6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s7dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2pb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtdm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebfk7")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[node name="Slash" type="AnimatedSprite2D" unique_id=485819796]
+sprite_frames = SubResource("SpriteFrames_u3oyc")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame = 5
+frame_progress = 1.0
+
+[node name="Poison" type="AudioStreamPlayer" parent="." unique_id=919898880]
+stream = ExtResource("2_llghn")
+autoplay = true

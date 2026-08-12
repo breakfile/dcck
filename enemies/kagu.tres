@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cx064dj3opx05"]
+
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="1_lwniq"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_pw7kd"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_2on05"]
+
+[resource]
+script = ExtResource("1_lwniq")
+name = "Kagu"
+description = "KAGU, Mysterious"
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

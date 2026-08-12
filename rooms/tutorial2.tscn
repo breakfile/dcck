@@ -1,0 +1,94 @@
+[gd_scene format=4 uid="uid://dmycgxn0cj2pe"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_8nsh3"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="2_6cqvi"]
+[ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="3_im60x"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="4_b3me7"]
+[ext_resource type="PackedScene" uid="uid://bycsqp7ecto7r" path="res://prefabs/lock.tscn" id="5_ak7lf"]
+[ext_resource type="Texture2D" uid="uid://grspercwwh51" path="res://sprites/sign.png" id="6_6i88q"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="6_m4tvl"]
+[ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="7_330t5"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="7_m4tvl"]
+[ext_resource type="Resource" uid="uid://bhm3m3rhiawpn" path="res://items/key.tres" id="8_hfoa3"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="8_yvya1"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="12_q0q4j"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="13_4u382"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvya1"]
+size = Vector2(16, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_330t5"]
+
+[node name="Tutorial2" type="Node2D" unique_id=507593530]
+script = ExtResource("1_8nsh3")
+title = "-3F"
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1993674213]
+tile_map_data = PackedByteArray("AAD//wMAAAAEAAEAACAAAAMAAAAEAAEAACD//wIAAAAAAAEAAAD//wEAAAAAAAEAAAD//wAAAAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP3/AAAAAAEAAAD///7/AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAD///3/AAAAAAEAAAAAAPz/AAACAAEAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD7//7/AAAAAAAAAAD7//3/AAAAAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP3/AAAAAAAAAAD7//z/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAACAAAAAAADAPv/AAACAAAAAAAEAPv/AAAAAAAAAAD+//v/AAAAAAAAAAD9//v/AAACAAAAAAD8//v/AAACAAAAAAD7//v/AAAAAAAAAAAEAPr/AAAAAAAAAAADAPr/AAAAAAAAAAACAPr/AAAAAAAAAAABAPr/AAAAAAAAAAD+//r/AAAAAAAAAAD9//r/AAAAAAAAAAD8//r/AAAAAAAAAAD7//r/AAAAAAAAAAD8//3/AAABAAAAAAD8//7/AAABAAAAAAD8////AAABAAAAAAD8/wAAAAABAAAAAAD8/wEAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD+//7/AAAAAAEAAAD9//7/AAAAAAEAAAD9//3/AAABAAAAAAD9////AAAAAAEAAAD9/wAAAAAAAAEAAAD+//3/AAABAAAAAAABAP3/AAABAAAAAAABAP7/AAAAAAEAAAABAP//AAAAAAEAAAABAAAAAAAAAAEAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAACAAAAAAAAAAEAAAADAAAAAAABAAAAAAADAP//AAABAAAAAAADAP7/AAABAAAAAAACAP7/AAAAAAEAAAACAP//AAAAAAEAAAADAP3/AAABAAAAAAACAP3/AAABAAAAAAADAAEAAAABAAAAAAD///z/AAACAAEAAAD///v/AAAEAAEAAAAAAPv/AAAEAAEAAAA=")
+tile_set = ExtResource("2_6cqvi")
+
+[node name="YSort" type="Node2D" parent="." unique_id=1512142858]
+y_sort_enabled = true
+
+[node name="Lock" parent="YSort" unique_id=2032744661 instance=ExtResource("5_ak7lf")]
+position = Vector2(0, -48)
+
+[node name="Sign" type="Node2D" parent="YSort" unique_id=1087586351]
+position = Vector2(0, -11)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Sign" unique_id=118456409]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Sign/StaticBody2D" unique_id=1884372542]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_yvya1")
+
+[node name="Sign" type="Sprite2D" parent="YSort/Sign" unique_id=2002180511]
+position = Vector2(0, -7)
+texture = ExtResource("6_6i88q")
+
+[node name="InteractionLauncher" type="Area2D" parent="YSort/Sign" unique_id=541898965 node_paths=PackedStringArray("root")]
+script = ExtResource("7_m4tvl")
+label = "Sign Post"
+root = NodePath(".")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Sign/InteractionLauncher" unique_id=1832483141]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_330t5")
+
+[node name="DialogueInteraction" type="Node" parent="YSort/Sign/InteractionLauncher" unique_id=2018900320]
+script = ExtResource("6_m4tvl")
+dialogues = Array[String](["> \"You worked out how to read signs!", "> When a red marker ([img]res://sprites/alert.png[/img]) appears above Declan, press [ENTER] or [SPACE] to interact with the object.", "> Have a key, and lets see if you can get out of this room.\""])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="ItemInteraction" type="Node" parent="YSort/Sign/InteractionLauncher" unique_id=71457195]
+script = ExtResource("7_330t5")
+item = ExtResource("8_hfoa3")
+metadata/_custom_type_script = "uid://cbc5odn8ededf"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Sign/InteractionLauncher" unique_id=1600699877]
+script = ExtResource("8_yvya1")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Player" parent="YSort" unique_id=1244825177 instance=ExtResource("4_b3me7")]
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=918442164]
+position = Vector2(0, 40)
+script = ExtResource("3_im60x")
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=1035006691]
+position = Vector2(0, -64)
+script = ExtResource("7_m4tvl")
+label = "Go"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=184423288]
+shape = ExtResource("12_q0q4j")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher" unique_id=1483537407]
+script = ExtResource("13_4u382")
+room = "uid://c6n0rbiw0k3bx"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"

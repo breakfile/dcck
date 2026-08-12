@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealSkill" format=3 uid="uid://dtdv3rydu3ql4"]
+
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="1_ytq2h"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="2_1cwlg"]
+
+[resource]
+script = ExtResource("2_1cwlg")
+heal_amount = 35
+name = "Backup Engine"
+cost = 10
+effect = ExtResource("1_ytq2h")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"

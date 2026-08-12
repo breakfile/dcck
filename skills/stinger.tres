@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AilmentSkill" format=3 uid="uid://caeuhqyb36fjy"]
+
+[ext_resource type="PackedScene" uid="uid://1w3m08oqn4uq" path="res://fx/poison.tscn" id="1_65l2c"]
+[ext_resource type="Script" uid="uid://d3j5ggxjsvima" path="res://ailment_skill.gd" id="1_m1gqg"]
+
+[resource]
+script = ExtResource("1_m1gqg")
+ailment = 2
+one_in_x_chance = 4
+name = "Stinger"
+effect = ExtResource("1_65l2c")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://d3j5ggxjsvima"

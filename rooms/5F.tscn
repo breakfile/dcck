@@ -1,0 +1,149 @@
+[gd_scene format=4 uid="uid://6dn5lssfeclv"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_twvwa"]
+[ext_resource type="AudioStream" uid="uid://co5udjl5ufxtr" path="res://music/smt1_cathedral.ogg" id="2_y5ge7"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="3_me46v"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="4_n7grw"]
+[ext_resource type="PackedScene" uid="uid://bycsqp7ecto7r" path="res://prefabs/lock.tscn" id="5_4a45f"]
+[ext_resource type="PackedScene" uid="uid://by0o5i03xx86b" path="res://prefabs/chaser.tscn" id="6_ksaui"]
+[ext_resource type="PackedScene" uid="uid://cg2n8kg6c6qgh" path="res://prefabs/goo.tscn" id="7_700ii"]
+[ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="8_avhvf"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="9_8iwa5"]
+[ext_resource type="Script" uid="uid://cy04gq26o2le" path="res://scripts/memento_mori.gd" id="11_me46v"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="11_odet7"]
+[ext_resource type="PackedScene" uid="uid://du3jyoaeci8yf" path="res://prefabs/key.tscn" id="12_423ed"]
+[ext_resource type="PackedScene" uid="uid://g3v0t2d6vh0t" path="res://prefabs/6gum.tscn" id="13_vhpwb"]
+[ext_resource type="Resource" uid="uid://ck37f2t1y874t" path="res://enemies/evilfly.tres" id="13_y5ge7"]
+[ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="14_m4s54"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="15_85ew8"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="16_xclmi"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="17_xqhrg"]
+[ext_resource type="PackedScene" uid="uid://d1iw53mdnx61m" path="res://prefabs/lettuce_sandwich.tscn" id="18_0gepq"]
+
+[node name="5F" type="Node2D" unique_id=1276948625]
+script = ExtResource("1_twvwa")
+title = "5F"
+music = ExtResource("2_y5ge7")
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1377258113]
+tile_map_data = PackedByteArray("AAD//wIAAAAAAAEAAAD//wMAAAAEAAEAACAAAAIAAAAAAAEAAAAAAAMAAAAEAAEAACABAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAABAPz/AAAAAAAAAAABAPv/AAAAAAAAAAABAPr/AAAAAAAAAAABAPn/AAAAAAAAAAABAPj/AAAAAAAAAAABAPf/AAAAAAAAAAABAPb/AAAAAAAAAAABAPX/AAAAAAAAAAABAPT/AAAAAAAAAAABAPP/AAAAAAAAAAABAPL/AAAAAAEAAAABAPH/AAAAAAEAAAABAPD/AAAAAAAAAAABAO//AAAAAAAAAAABAO7/AAAAAAAAAAABAO3/AAAAAAAAAAABAOz/AAAAAAAAAAD+/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD+//z/AAAAAAAAAAD+//v/AAAAAAAAAAD+//r/AAAAAAAAAAD+//n/AAAAAAAAAAD+//j/AAAAAAAAAAD+//f/AAAAAAAAAAD+//b/AAAAAAAAAAD+//X/AAAAAAAAAAD+//T/AAAAAAAAAAD+//P/AAAAAAAAAAD+//D/AAAAAAAAAAD+/+//AAAAAAAAAAD+/+7/AAAAAAAAAAD+/+3/AAAAAAAAAAD+/+z/AAAAAAAAAAD//+z/AAACAAEAAAD//+3/AAAAAAEAAAD//+7/AAAAAAEAAAD//+//AAAAAAEAAAD///D/AAAAAAEAAAD///H/AAAAAAEAAAD///L/AAAAAAEAAAD///P/AAAAAAEAAAD///T/AAAAAAEAAAD///X/AAAAAAEAAAD///b/AAAAAAEAAAD///f/AAAAAAEAAAD///j/AAAAAAEAAAD///n/AAAAAAEAAAD///r/AAAAAAEAAAD///v/AAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAAAAOz/AAACAAEAAAAAAO3/AAAAAAEAAAAAAO7/AAAAAAEAAAAAAO//AAAAAAEAAAAAAPD/AAAAAAEAAAAAAPH/AAAAAAEAAAAAAPL/AAAAAAEAAAAAAPP/AAAAAAEAAAAAAPT/AAAAAAEAAAAAAPX/AAAAAAEAAAAAAPb/AAAAAAEAAAAAAPf/AAAAAAEAAAAAAPj/AAAAAAEAAAAAAPn/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPv/AAAAAAEAAAAAAPz/AAAAAAEAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAD//+v/AAAEAAEAAAAAAOv/AAAEAAEAAAACAPH/AAAAAAEAAAADAPH/AAAAAAEAAAAEAPH/AAAAAAEAAAACAPL/AAAAAAEAAAADAPL/AAAAAAEAAAAEAPL/AAAAAAEAAAAFAPL/AAAAAAEAAAAGAPL/AAAAAAEAAAAGAPH/AAAAAAEAAAAHAPH/AAAAAAEAAAAFAPH/AAAAAAEAAAAIAPH/AAAAAAEAAAAJAPH/AAAAAAEAAAAHAPL/AAAAAAEAAAAIAPL/AAAAAAEAAAAJAPL/AAAAAAEAAAAKAPL/AAAAAAEAAAAKAPH/AAAAAAEAAAALAPH/AAAAAAEAAAAMAPH/AAAAAAEAAAANAPH/AAAAAAEAAAAOAPH/AAAAAAEAAAAMAPL/AAAAAAEAAAALAPL/AAAAAAEAAAANAPL/AAAAAAEAAAAOAPL/AAAAAAEAAAACAPD/AAAAAAAAAAADAPD/AAAAAAAAAAAEAPD/AAAAAAAAAAAFAPD/AAAAAAAAAAAGAPD/AAAAAAAAAAAHAPD/AAAAAAAAAAAIAPD/AAAAAAAAAAAJAPD/AAAAAAAAAAAKAPD/AAAAAAAAAAALAPD/AAAAAAAAAAAMAPD/AAAAAAAAAAANAPD/AAAAAAAAAAAOAPD/AAAAAAAAAAAPAPD/AAAAAAAAAAAPAPH/AAAAAAAAAAAPAPL/AAAAAAAAAAAPAPP/AAAAAAAAAAAOAPP/AAAAAAAAAAANAPP/AAAAAAAAAAAMAPP/AAAAAAAAAAALAPP/AAAAAAAAAAAKAPP/AAAAAAAAAAAJAPP/AAAAAAAAAAAIAPP/AAAAAAAAAAAHAPP/AAAAAAAAAAAGAPP/AAAAAAAAAAAFAPP/AAAAAAAAAAAEAPP/AAAAAAAAAAADAPP/AAAAAAAAAAACAPP/AAAAAAAAAAACAO//AAACAAAAAAADAO//AAACAAAAAAAEAO//AAACAAAAAAAFAO//AAACAAAAAAAGAO//AAACAAAAAAAHAO//AAACAAAAAAAIAO//AAACAAAAAAAJAO//AAACAAAAAAAKAO//AAACAAAAAAALAO//AAACAAAAAAAMAO//AAACAAAAAAANAO//AAACAAAAAAAOAO//AAACAAAAAAAPAO//AAAAAAAAAAAPAO7/AAAAAAAAAAAOAO7/AAAAAAAAAAANAO7/AAAAAAAAAAAMAO7/AAAAAAAAAAALAO7/AAAAAAAAAAAKAO7/AAAAAAAAAAAJAO7/AAAAAAAAAAAIAO7/AAAAAAAAAAAHAO7/AAAAAAAAAAAGAO7/AAAAAAAAAAAFAO7/AAAAAAAAAAAEAO7/AAAAAAAAAAADAO7/AAAAAAAAAAACAO7/AAAAAAAAAAABAOv/AAAAAAAAAAD+/+v/AAAAAAAAAAD+/+r/AAAAAAAAAAD+/+n/AAAAAAAAAAD+/+j/AAAAAAAAAAD//+j/AAAAAAAAAAAAAOj/AAAAAAAAAAABAOj/AAAAAAAAAAABAOn/AAAAAAAAAAABAOr/AAAAAAAAAAD+//H/AAAAAAEAAAD+//L/AAAAAAEAAAD9//L/AAAAAAEAAAD9//H/AAAAAAEAAAD9//D/AAAAAAEAAAD8//L/AAAAAAEAAAD8//H/AAAAAAEAAAD8//D/AAAAAAEAAAD8//P/AAAAAAEAAAD9//P/AAAAAAEAAAD9//T/AAAAAAEAAAD8//T/AAAAAAEAAAD8/+//AAAAAAEAAAD9/+//AAAAAAEAAAD9/+7/AAAAAAAAAAD8/+7/AAAAAAAAAAD7/+7/AAAAAAAAAAD7/+//AAAAAAAAAAD7//D/AAAAAAAAAAD7//H/AAAAAAAAAAD7//L/AAAAAAAAAAD7//P/AAAAAAAAAAD7//T/AAAAAAAAAAD7//X/AAAAAAAAAAD8//X/AAAAAAAAAAD9//X/AAAAAAAAAAD7/+3/AAAAAAAAAAD8/+3/AAAAAAAAAAD9/+3/AAAAAAAAAAA=")
+tile_set = ExtResource("3_me46v")
+
+[node name="YSort" type="Node2D" parent="." unique_id=1470798544]
+y_sort_enabled = true
+
+[node name="Player" parent="YSort" unique_id=1244825177 instance=ExtResource("4_n7grw")]
+
+[node name="Chaser" parent="YSort" unique_id=840268782 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_ksaui")]
+position = Vector2(0, -225)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser" unique_id=1578334052 node_paths=PackedStringArray("root") instance=ExtResource("7_700ii")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=892312809]
+script = ExtResource("8_avhvf")
+enemy_list = Array[ExtResource("9_8iwa5")]([ExtResource("13_y5ge7"), ExtResource("13_y5ge7"), ExtResource("13_y5ge7")])
+song = null
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=134156254]
+script = ExtResource("11_odet7")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Chaser2" parent="YSort" unique_id=511955089 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_ksaui")]
+position = Vector2(202, -226)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser2" unique_id=1740433344 node_paths=PackedStringArray("root") instance=ExtResource("7_700ii")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser2/Goo" unique_id=1437581906]
+script = ExtResource("8_avhvf")
+enemy_list = Array[ExtResource("9_8iwa5")]([ExtResource("13_y5ge7"), ExtResource("13_y5ge7"), ExtResource("13_y5ge7")])
+song = null
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser2/Goo" unique_id=1501134662]
+script = ExtResource("11_odet7")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="MementoMori" type="Node2D" parent="YSort" unique_id=1662106313]
+y_sort_enabled = true
+script = ExtResource("11_me46v")
+metadata/_custom_type_script = "uid://cy04gq26o2le"
+
+[node name="Chaser3" parent="YSort/MementoMori" unique_id=1855206025 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_ksaui")]
+y_sort_enabled = true
+position = Vector2(0, -322)
+target = NodePath("../../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/MementoMori/Chaser3" unique_id=11555927 node_paths=PackedStringArray("root") instance=ExtResource("7_700ii")]
+y_sort_enabled = true
+root = NodePath("../..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/MementoMori/Chaser3/Goo" unique_id=869789769]
+script = ExtResource("8_avhvf")
+enemy_list = Array[ExtResource("9_8iwa5")]([ExtResource("13_y5ge7"), ExtResource("13_y5ge7"), ExtResource("13_y5ge7")])
+song = null
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/MementoMori/Chaser3/Goo" unique_id=1142086783]
+script = ExtResource("11_odet7")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Lock" parent="YSort" unique_id=2032744661 instance=ExtResource("5_4a45f")]
+position = Vector2(0, -303)
+
+[node name="Key" parent="YSort" unique_id=1799302673 instance=ExtResource("12_423ed")]
+position = Vector2(225, -221)
+
+[node name="6Gum" parent="YSort" unique_id=84924078 instance=ExtResource("13_vhpwb")]
+position = Vector2(-48, -249)
+
+[node name="LettuceSandwich" parent="YSort" unique_id=5929249 instance=ExtResource("18_0gepq")]
+position = Vector2(-48, -182)
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=1401094387]
+position = Vector2(0, 41)
+script = ExtResource("14_m4s54")
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="SpawnMarker2" type="Marker2D" parent="." unique_id=134767446]
+position = Vector2(0, -313)
+script = ExtResource("14_m4s54")
+sign = 1
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="InteractionLauncher2" type="Area2D" parent="." unique_id=1859764621]
+position = Vector2(0, 47)
+script = ExtResource("15_85ew8")
+label = "4F"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher2" unique_id=2052162002]
+shape = ExtResource("16_xclmi")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher2" unique_id=1224328497]
+script = ExtResource("17_xqhrg")
+room = "uid://wid0rmte8yen"
+sign = 1
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="InteractionLauncher3" type="Area2D" parent="." unique_id=1618754411]
+position = Vector2(0, -320)
+script = ExtResource("15_85ew8")
+label = "6F"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher3" unique_id=597736534]
+shape = ExtResource("16_xclmi")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher3" unique_id=140000268]
+script = ExtResource("17_xqhrg")
+room = "uid://4vtc6qvr8sdw"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"

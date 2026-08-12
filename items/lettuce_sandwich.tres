@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FoodItem" format=3 uid="uid://ph264b7h6cy7"]
+
+[ext_resource type="Script" uid="uid://dvhtw83ppiufu" path="res://scripts/food_item.gd" id="1_r2lx2"]
+
+[resource]
+script = ExtResource("1_r2lx2")
+heal_ko = true
+heal_amount = 30
+name = "LettuceSandwich"
+desc = "[center]CONSUMABLE[/center]
+Declan's favourite treat!
+- Recover many HP
+- Cure [color=red]Unconciousness[/color]"
+one_line_desc = "Revive and/or recover many HP"
+metadata/_custom_type_script = "uid://dvhtw83ppiufu"

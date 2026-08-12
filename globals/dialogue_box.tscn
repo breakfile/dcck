@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c314ds8qd1812"]
+
+[ext_resource type="Script" uid="uid://dh1bjy7ot62xf" path="res://scripts/dialogue_box.gd" id="1_fu8b5"]
+[ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="2_tm68y"]
+
+[node name="DialogueBox" type="CanvasLayer" unique_id=576152605]
+layer = 42
+visible = false
+script = ExtResource("1_fu8b5")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1787178512]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 80.0
+theme = ExtResource("2_tm68y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=640139121]
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = false
+scroll_following_visible_characters = true
+visible_characters_behavior = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1299414639]
+wait_time = 0.03
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

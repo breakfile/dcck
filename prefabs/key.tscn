@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://du3jyoaeci8yf"]
+
+[ext_resource type="Texture2D" uid="uid://bnmb104ia0iv3" path="res://sprites/huge_key.png" id="1_gqaf4"]
+[ext_resource type="Script" uid="uid://cy04gq26o2le" path="res://scripts/memento_mori.gd" id="1_vsnh1"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="2_wc646"]
+[ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="3_wc646"]
+[ext_resource type="Resource" uid="uid://bhm3m3rhiawpn" path="res://items/key.tres" id="4_kien5"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="7_0o165"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kien5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsnh1"]
+size = Vector2(12, 6)
+
+[node name="Key" type="Node2D" unique_id=1799302673]
+script = ExtResource("1_vsnh1")
+
+[node name="Key" type="Sprite2D" parent="." unique_id=870931619]
+position = Vector2(0, -10)
+texture = ExtResource("1_gqaf4")
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=1989799569 node_paths=PackedStringArray("root")]
+position = Vector2(0, -10)
+script = ExtResource("2_wc646")
+label = "Cathedral Key"
+root = NodePath("..")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=96629218]
+shape = SubResource("RectangleShape2D_kien5")
+
+[node name="ItemInteraction" type="Node" parent="InteractionLauncher" unique_id=1301903342]
+script = ExtResource("3_wc646")
+item = ExtResource("4_kien5")
+metadata/_custom_type_script = "uid://cbc5odn8ededf"
+
+[node name="DeleteRootInteraction" type="Node" parent="InteractionLauncher" unique_id=1000313595]
+script = ExtResource("7_0o165")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=688639566]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1068628887]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_vsnh1")

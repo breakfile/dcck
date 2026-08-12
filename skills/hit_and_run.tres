@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DamageSkill" format=3 uid="uid://dgu8xfjjcjrel"]
+
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="1_557y0"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="2_e1phi"]
+
+[resource]
+script = ExtResource("2_e1phi")
+multiplier = 1000.0
+name = "Hit and Run"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"

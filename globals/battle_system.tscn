@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://buupl71yd3phf"]
+
+[ext_resource type="Script" uid="uid://cs0gf56q8sf83" path="res://scripts/battle_system.gd" id="1_3kiey"]
+[ext_resource type="Texture2D" uid="uid://dmntkampsogi2" path="res://sprites/paper_bg.png" id="3_raux5"]
+[ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="4_raux5"]
+
+[node name="BattleSystem" type="CanvasLayer" unique_id=1927658732]
+script = ExtResource("1_3kiey")
+metadata/_custom_type_script = "uid://cs0gf56q8sf83"
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1567888757]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(16, 16)
+autoscroll = Vector2(10, 10)
+repeat_times = 50
+follow_viewport = false
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1124537581]
+unique_name_in_owner = true
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("3_raux5")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1409567092]
+visible = false
+modulate = Color(0.49747366, 0.49747366, 0.49747366, 1)
+offset_right = 400.0
+offset_bottom = 300.0
+texture = ExtResource("3_raux5")
+stretch_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=799718969]
+unique_name_in_owner = true
+visible = false
+offset_left = 8.0
+offset_top = 200.0
+offset_right = 188.0
+offset_bottom = 292.0
+size_flags_horizontal = 3
+theme = ExtResource("4_raux5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer" unique_id=1506326098]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBOX" type="VBoxContainer" parent="PanelContainer/ScrollContainer" unique_id=1721098856]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="One" type="Sprite2D" parent="." unique_id=1978999130]
+position = Vector2(200, 137)
+
+[node name="Two" type="Sprite2D" parent="." unique_id=347372411]
+position = Vector2(125, 125)
+
+[node name="Three" type="Sprite2D" parent="." unique_id=874328484]
+position = Vector2(274, 125)
+
+[node name="PanelContainer3" type="PanelContainer" parent="." unique_id=1293361475]
+visible = false
+offset_left = 8.0
+offset_top = 160.0
+offset_right = 25.0
+offset_bottom = 199.0
+theme = ExtResource("4_raux5")
+
+[node name="Label" type="Label" parent="PanelContainer3" unique_id=2131079989]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Command?"
+
+[node name="Smt1Encounter" type="AudioStreamPlayer" parent="." unique_id=1456810842]
+autoplay = true

@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://7j6p2465bh08"]
+
+[ext_resource type="Script" uid="uid://rwgm37ngmbyv" path="res://scripts/damage_number.gd" id="1_i4gvm"]
+[ext_resource type="FontFile" uid="uid://bu7iginv0v6p5" path="res://fonts/Mystery Font.ttf" id="2_i4gvm"]
+
+[node name="Node2D" type="RigidBody2D" unique_id=304644304]
+z_index = 1655
+gravity_scale = 0.7
+script = ExtResource("1_i4gvm")
+
+[node name="Border" type="Node2D" parent="." unique_id=1304000441]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="Border" unique_id=1673987057]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.5
+offset_right = 20.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Border" unique_id=1317970290]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Border" unique_id=1631934540]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -9.5
+offset_right = 19.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Border" unique_id=773839833]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -9.5
+offset_right = 21.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Border" unique_id=1862221746]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -9.5
+offset_right = 21.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="Border" unique_id=122756514]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -10.0
+offset_right = 19.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="Border" unique_id=801425369]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -10.0
+offset_right = 21.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="Border" unique_id=11047246]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 21.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="Border" unique_id=996428248]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -8.0
+offset_right = 19.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=63670430]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -9.5
+offset_right = 20.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i4gvm")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1

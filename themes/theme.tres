@@ -1,0 +1,77 @@
+[gd_resource type="Theme" format=3 uid="uid://cmdo1umvcy7mn"]
+
+[ext_resource type="Texture2D" uid="uid://bl68b44ff1lr4" path="res://sprites/9slice.png" id="1_cjfk0"]
+[ext_resource type="FontFile" uid="uid://cwxqh7phoweak" path="res://fonts/unifont.otf" id="2_vj6dk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oryc4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgv31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6c42i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hrgd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8t2u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_110ce"]
+texture = ExtResource("1_cjfk0")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0q7g"]
+content_margin_top = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j33s6"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6c42i"]
+color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8gf3l"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_oryc4"]
+color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_kgv31"]
+color = Color(1, 1, 1, 0.3137255)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vygm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oryc4"]
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hrgd"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[resource]
+default_font = ExtResource("2_vj6dk")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_oryc4")
+Button/styles/focus = SubResource("StyleBoxEmpty_kgv31")
+Button/styles/hover = SubResource("StyleBoxEmpty_6c42i")
+Button/styles/normal = SubResource("StyleBoxEmpty_2hrgd")
+Button/styles/pressed = SubResource("StyleBoxEmpty_a8t2u")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_110ce")
+TabContainer/colors/drop_mark_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_selected_color = Color(0, 1, 1, 1)
+TabContainer/colors/font_unselected_color = Color(1, 1, 1, 0.3137255)
+TabContainer/constants/tab_separation = 12
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_k0q7g")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_j33s6")
+TabContainer/styles/tab_focus = SubResource("StyleBoxLine_6c42i")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxEmpty_8gf3l")
+TabContainer/styles/tab_selected = SubResource("StyleBoxLine_oryc4")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxLine_kgv31")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxEmpty_5vygm")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_oryc4")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_2hrgd")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_2hrgd")

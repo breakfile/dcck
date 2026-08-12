@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://b84snrx0pasfu"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_iikor"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_16fc5"]
+[ext_resource type="Resource" uid="uid://u1hwq81nf2oq" path="res://skills/ice1.tres" id="3_tbggh"]
+[ext_resource type="Resource" uid="uid://berh7y7gtbhd2" path="res://skills/ice2.tres" id="4_3agqy"]
+[ext_resource type="Resource" uid="uid://bqg5rqteseh86" path="res://skills/ice3.tres" id="5_qeac5"]
+[ext_resource type="Resource" uid="uid://c6wbwice2w53k" path="res://skills/iceheal.tres" id="6_73q23"]
+
+[resource]
+script = ExtResource("1_iikor")
+slot = 1
+skills = Array[ExtResource("2_16fc5")]([ExtResource("3_tbggh"), ExtResource("4_3agqy"), ExtResource("5_qeac5"), ExtResource("6_73q23")])
+change_fire_mult = true
+change_ice_mult = true
+fire_mult = 2.0
+ice_mult = 0.0
+name = "Cold Cerebrum"
+aura_name = "THE CEREBRUM OF THE COLD"
+desc = "[center]PROTECTOR[/center]
+A brain part with knowledge of Ice skills."
+one_line_desc = "Equip"
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

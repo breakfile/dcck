@@ -1,0 +1,76 @@
+[gd_scene format=4 uid="uid://b0g8n867i0pko"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_l30ip"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="2_6hd1r"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="3_kmqki"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="4_bmyap"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="5_eaaau"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="6_yv472"]
+[ext_resource type="Script" uid="uid://63054aqh7xvs" path="res://scripts/set_property_interaction.gd" id="7_0of3f"]
+[ext_resource type="Texture2D" uid="uid://dxkopx88kax4l" path="res://sprites/info1.png" id="7_yv472"]
+[ext_resource type="Texture2D" uid="uid://c8k8ami2evrmq" path="res://sprites/info2.png" id="8_0of3f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb110"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yv472")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0of3f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="Tutorial1" type="Node2D" unique_id=1161843272]
+script = ExtResource("1_l30ip")
+title = "-4F"
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1280785980]
+tile_map_data = PackedByteArray("AAD+//3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAACAAAAAAABAAAAAAACAP//AAABAAAAAAACAP7/AAABAAAAAAABAP7/AAABAAAAAAAAAP7/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAAAAP//AAAAAAEAAAD+//7/AAABAAAAAAD+////AAAAAAEAAAABAP//AAAAAAEAAAD+/wAAAAAAAAEAAAD///3/AAACAAEAAAAAAP3/AAACAAEAAAD9//z/AAACAAAAAAACAPz/AAACAAAAAAD+//z/AAAAAAAAAAD8//z/AAAAAAAAAAD8//v/AAAAAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAABAPz/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAD///z/AAAEAAEAAAAAAPz/AAAEAAEAAAA=")
+tile_set = ExtResource("2_6hd1r")
+
+[node name="Player" parent="." unique_id=1244825177 instance=ExtResource("3_kmqki")]
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=1038430894 node_paths=PackedStringArray("root")]
+position = Vector2(0, -48)
+script = ExtResource("4_bmyap")
+label = "[Enter] to go"
+root = NodePath(".")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=458200327]
+shape = ExtResource("5_eaaau")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher" unique_id=1784059410]
+script = ExtResource("6_yv472")
+room = "uid://dmycgxn0cj2pe"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="InteractionLauncher2" type="Area2D" parent="." unique_id=1901035629 node_paths=PackedStringArray("root")]
+position = Vector2(0, -48)
+script = ExtResource("4_bmyap")
+label = "[Enter] to go"
+root = NodePath(".")
+require_input = false
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher2" unique_id=950261595]
+shape = ExtResource("5_eaaau")
+
+[node name="SetPropertyInteraction" type="Node" parent="InteractionLauncher2" unique_id=315991046 node_paths=PackedStringArray("node")]
+script = ExtResource("7_0of3f")
+node = NodePath("../../Info1")
+property = "visible"
+result = true
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="Info1" type="AnimatedSprite2D" parent="." unique_id=678194738]
+visible = false
+position = Vector2(0, -96)
+sprite_frames = SubResource("SpriteFrames_vb110")
+autoplay = "default"
+frame_progress = 0.96588

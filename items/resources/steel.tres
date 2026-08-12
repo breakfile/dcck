@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b4tnct000vv75"]
+
+[ext_resource type="Script" uid="uid://bhuq2ttw35nlx" path="res://scripts/item.gd" id="1_c4nwd"]
+
+[resource]
+script = ExtResource("1_c4nwd")
+name = "Steel Ingot"
+desc = "[center]RESOURCE[/center]
+A small ingot of steel which can be used to CRAFT metal things."
+one_line_desc = "Not useful in battle"
+metadata/_custom_type_script = "uid://bhuq2ttw35nlx"

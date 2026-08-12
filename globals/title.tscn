@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dfsscurhmb1hi"]
+
+[ext_resource type="Script" uid="uid://bgxrt6orgcsd0" path="res://scripts/title.gd" id="1_ck17u"]
+[ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="1_qt0wy"]
+[ext_resource type="Texture2D" uid="uid://bynboekfh1kkt" path="res://sprites/start_screen.png" id="1_rqhfl"]
+[ext_resource type="Texture2D" uid="uid://dmntkampsogi2" path="res://sprites/paper_bg.png" id="4_fhyd0"]
+
+[node name="Control" type="Control" unique_id=797492795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qt0wy")
+script = ExtResource("1_ck17u")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1136037890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer" unique_id=855947896]
+layout_mode = 2
+texture = ExtResource("1_rqhfl")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/TextureRect" unique_id=208970169]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 225.0
+offset_right = 271.0
+offset_bottom = 265.0
+
+[node name="Button" type="Button" parent="TabContainer/TextureRect/VBoxContainer" unique_id=21941380]
+layout_mode = 2
+action_mode = 0
+text = "> START"
+alignment = 0
+
+[node name="Button2" type="Button" parent="TabContainer/TextureRect/VBoxContainer" unique_id=542749495]
+layout_mode = 2
+action_mode = 0
+text = "> CONTINUE"
+alignment = 0
+
+[node name="Control" type="Control" parent="TabContainer" unique_id=1446512661]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="TabContainer/Control" unique_id=1372004185]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(16, 16)
+autoscroll = Vector2(10, 10)
+repeat_times = 50
+follow_viewport = false
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Control/Parallax2D" unique_id=690742574]
+unique_name_in_owner = true
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("4_fhyd0")
+stretch_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Control" unique_id=1764039971]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -64.0
+offset_right = 112.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Control/PanelContainer" unique_id=1195825768]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Control/PanelContainer/VBoxContainer" unique_id=2089823351]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Instructions:
+[color=aqua] WASD[/color] - move
+[color=aqua]Enter[/color] - confirm/interact
+[color=aqua]Shift[/color] - back/deny/sprint
+[color=aqua] Ctrl[/color] - open menu"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Control/PanelContainer/VBoxContainer" unique_id=993425487]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="TabContainer/Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1162055633]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+text = "New Game"
+
+[node name="Back" type="Button" parent="TabContainer/Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1013166620]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+text = "Quit"
+
+[connection signal="pressed" from="TabContainer/TextureRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TabContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="TabContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://db3hgtg1xy4f"]
+
+[ext_resource type="Texture2D" uid="uid://b53w2y7btmt8v" path="res://sprites/tree.png" id="1_odf6j"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="2_a4ng0"]
+[ext_resource type="Script" uid="uid://cy04gq26o2le" path="res://scripts/memento_mori.gd" id="2_k8ndx"]
+[ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="3_3xb55"]
+[ext_resource type="Resource" uid="uid://c556n4butraqj" path="res://items/apple.tres" id="4_3xb55"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="4_vfjb2"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="7_x4xla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0f8o"]
+size = Vector2(20, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8ndx"]
+size = Vector2(24, 12)
+
+[node name="Tree" type="Node2D" unique_id=680460377]
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=1246933129]
+position = Vector2(0, -36)
+texture = ExtResource("1_odf6j")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1388763749]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=938181227]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_l0f8o")
+
+[node name="InteractionRoot" type="Node2D" parent="." unique_id=1158478321]
+script = ExtResource("2_k8ndx")
+metadata/_custom_type_script = "uid://cy04gq26o2le"
+
+[node name="InteractionLauncher" type="Area2D" parent="InteractionRoot" unique_id=414635083 node_paths=PackedStringArray("root")]
+script = ExtResource("2_a4ng0")
+label = "Shake Tree"
+root = NodePath("..")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="DialogueInteraction" type="Node" parent="InteractionRoot/InteractionLauncher" unique_id=349678815]
+script = ExtResource("4_vfjb2")
+dialogues = Array[String](["> Declan shook the tree."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="ItemInteraction" type="Node" parent="InteractionRoot/InteractionLauncher" unique_id=489870694]
+script = ExtResource("3_3xb55")
+item = ExtResource("4_3xb55")
+metadata/_custom_type_script = "uid://cbc5odn8ededf"
+
+[node name="DialogueInteraction2" type="Node" parent="InteractionRoot/InteractionLauncher" unique_id=2131794189]
+script = ExtResource("4_vfjb2")
+dialogues = Array[String](["> The tree ran out of apples."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="DeleteRootInteraction" type="Node" parent="InteractionRoot/InteractionLauncher" unique_id=1268590102]
+script = ExtResource("7_x4xla")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRoot/InteractionLauncher" unique_id=2057102955]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_k8ndx")

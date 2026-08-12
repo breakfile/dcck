@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://uvswi3xy2fmp"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_p5n6j"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="3_r3je2"]
+[ext_resource type="Texture2D" uid="uid://cd0irnb7qiajt" path="res://sprites/sign_fight.png" id="4_woehy"]
+
+[resource]
+script = ExtResource("3_r3je2")
+name = "Oak Sign"
+exp_drop = 0
+description = "Made of quality oak.
+Has a strange statement about battles on it."
+texture = ExtResource("4_woehy")
+fire_multiplier = 0.01
+ice_multiplier = 0.01
+physical_multiplier = 0.01
+max_hp = 1
+max_mp = 0
+attack = 1000000
+defense = 1000000
+additional_skills = Array[ExtResource("1_p5n6j")]([])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

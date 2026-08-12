@@ -1,0 +1,146 @@
+[gd_scene format=4 uid="uid://by8tep2c8pn4h"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_n3vg5"]
+[ext_resource type="AudioStream" uid="uid://uctfmjid2rhb" path="res://music/declan_cathedral.ogg" id="2_jq20c"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="2_x3tt1"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="3_7oe6m"]
+[ext_resource type="PackedScene" uid="uid://bycsqp7ecto7r" path="res://prefabs/lock.tscn" id="5_ieeh6"]
+[ext_resource type="PackedScene" uid="uid://by0o5i03xx86b" path="res://prefabs/chaser.tscn" id="6_i5sx7"]
+[ext_resource type="PackedScene" uid="uid://cg2n8kg6c6qgh" path="res://prefabs/goo.tscn" id="7_28l34"]
+[ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="8_noh8g"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="9_02ybq"]
+[ext_resource type="Resource" uid="uid://dr62q4jqv52wq" path="res://enemies/buster.tres" id="10_i5sx7"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="11_vm2sr"]
+[ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="12_28l34"]
+[ext_resource type="PackedScene" uid="uid://du3jyoaeci8yf" path="res://prefabs/key.tscn" id="13_noh8g"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="14_vm2sr"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="15_va8hb"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="16_8ibkr"]
+[ext_resource type="PackedScene" uid="uid://g3v0t2d6vh0t" path="res://prefabs/6gum.tscn" id="17_va8hb"]
+
+[node name="2F" type="Node2D" unique_id=1276948625]
+script = ExtResource("1_n3vg5")
+title = "2F"
+music = ExtResource("2_jq20c")
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1377258113]
+tile_map_data = PackedByteArray("AAD9//z/AAABAAAAAAD9//3/AAABAAAAAAD9//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD+//z/AAABAAAAAAD+//3/AAABAAAAAAD+//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD///z/AAACAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAAAAPz/AAACAAEAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAPz/AAABAAAAAAABAP3/AAABAAAAAAABAP7/AAAAAAEAAAABAP//AAAAAAEAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAACAPz/AAABAAAAAAACAP3/AAABAAAAAAACAP7/AAAAAAEAAAACAP//AAAAAAEAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAD//wIAAAAAAAEAAAD//wMAAAAEAAEAACAAAAIAAAAAAAEAAAAAAAMAAAAEAAEAACABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAEAAAADAP//AAAAAAEAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAD8//v/AAAAAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAACAAEAAAAAAPv/AAACAAEAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD8//r/AAAAAAAAAAD9//r/AAAAAAAAAAD+//r/AAAAAAAAAAD///r/AAACAAEAAAAAAPr/AAACAAEAAAABAPr/AAAAAAAAAAACAPr/AAAAAAAAAAADAPr/AAAAAAAAAAD8//n/AAAAAAAAAAD9//n/AAAAAAAAAAD+//n/AAAAAAAAAAD///n/AAACAAEAAAAAAPn/AAACAAEAAAABAPn/AAAAAAAAAAACAPn/AAAAAAAAAAADAPn/AAAAAAAAAAD///j/AAAEAAEAAAAAAPj/AAAEAAEAAAAEAP7/AAAAAAEAAAAFAP7/AAAAAAEAAAAGAP7/AAAAAAEAAAAEAP//AAAAAAEAAAAFAP//AAAAAAEAAAAGAP//AAAAAAEAAAAHAP//AAAAAAEAAAAIAP//AAAAAAEAAAAIAP7/AAAAAAEAAAAJAP7/AAAAAAEAAAAHAP7/AAAAAAEAAAAJAP//AAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAGAPz/AAACAAAAAAAFAPz/AAACAAAAAAAEAPz/AAACAAAAAAAHAPz/AAACAAAAAAAIAPz/AAACAAAAAAAJAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAKAP7/AAAAAAEAAAAKAP3/AAAAAAEAAAAKAPz/AAAAAAEAAAALAPz/AAAAAAEAAAALAPv/AAAAAAEAAAAKAP//AAAAAAEAAAAKAPv/AAAAAAEAAAALAP3/AAAAAAEAAAALAP7/AAAAAAEAAAALAP//AAAAAAEAAAAKAAAAAAAAAAEAAAAKAAEAAAAAAAEAAAAKAAIAAAAAAAEAAAALAAEAAAAAAAEAAAALAAAAAAAAAAEAAAALAAIAAAAAAAEAAAAKAAMAAAAAAAEAAAALAAMAAAAAAAEAAAAKAPr/AAAAAAEAAAALAPr/AAAAAAEAAAAKAPn/AAAAAAEAAAALAPn/AAAAAAEAAAAKAPj/AAAAAAEAAAALAPj/AAAAAAEAAAAKAAQAAAAAAAEAAAALAAQAAAAAAAEAAAAJAPj/AAAAAAAAAAAJAPn/AAAAAAAAAAAJAPr/AAAAAAAAAAAJAPv/AAAAAAAAAAAJAPf/AAAAAAAAAAAKAPf/AAAAAAAAAAALAPf/AAAAAAAAAAAKAPb/AAACAAAAAAAJAPb/AAAAAAAAAAALAPb/AAACAAAAAAAEAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAJAPX/AAAAAAAAAAAKAPX/AAAAAAAAAAALAPX/AAAAAAAAAAAMAPX/AAAAAAAAAAAMAPb/AAAAAAAAAAAMAPf/AAAAAAAAAAAMAPj/AAAAAAAAAAAMAPn/AAAAAAAAAAAMAPr/AAAAAAAAAAAMAPv/AAAAAAAAAAAMAPz/AAAAAAAAAAAMAP3/AAAAAAAAAAAMAP7/AAAAAAEAAAAMAP//AAAAAAEAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAEAAAAAAAAAAAANAP//AAAAAAEAAAAOAP//AAAAAAEAAAAPAP7/AAAAAAEAAAAOAP7/AAAAAAEAAAANAP7/AAAAAAEAAAAPAP//AAAAAAEAAAAQAP//AAAAAAEAAAAQAP7/AAAAAAEAAAANAPv/AAAAAAAAAAANAPz/AAACAAAAAAANAP3/AAAAAAAAAAAOAP3/AAAAAAAAAAAPAP3/AAAAAAAAAAAQAP3/AAAAAAAAAAAQAPz/AAACAAAAAAAQAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAOAPv/AAAAAAAAAAAOAPz/AAACAAAAAAAPAPz/AAACAAAAAAARAPv/AAAAAAAAAAARAPz/AAAAAAAAAAARAP3/AAAAAAAAAAARAP7/AAAAAAAAAAARAP//AAAAAAAAAAARAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAANAAAAAAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAA=")
+tile_set = ExtResource("3_7oe6m")
+
+[node name="YSort" type="Node2D" parent="." unique_id=1470798544]
+y_sort_enabled = true
+
+[node name="Player" parent="YSort" unique_id=1244825177 instance=ExtResource("2_x3tt1")]
+
+[node name="Lock" parent="YSort" unique_id=2032744661 instance=ExtResource("5_ieeh6")]
+position = Vector2(0, -65)
+
+[node name="Lock2" parent="YSort" unique_id=1553124891 instance=ExtResource("5_ieeh6")]
+position = Vector2(0, -71)
+
+[node name="Lock3" parent="YSort" unique_id=868918109 instance=ExtResource("5_ieeh6")]
+position = Vector2(0, -76)
+
+[node name="Chaser" parent="YSort" unique_id=840268782 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_i5sx7")]
+position = Vector2(176, -118)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser" unique_id=1578334052 node_paths=PackedStringArray("root") instance=ExtResource("7_28l34")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=1651479596]
+script = ExtResource("8_noh8g")
+enemy_list = Array[ExtResource("9_02ybq")]([ExtResource("10_i5sx7")])
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=247408300]
+script = ExtResource("11_vm2sr")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Chaser2" parent="YSort" unique_id=1119695167 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_i5sx7")]
+position = Vector2(259, -15)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser2" unique_id=1918998283 node_paths=PackedStringArray("root") instance=ExtResource("7_28l34")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser2/Goo" unique_id=1461045927]
+script = ExtResource("8_noh8g")
+enemy_list = Array[ExtResource("9_02ybq")]([ExtResource("10_i5sx7")])
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser2/Goo" unique_id=2070429237]
+script = ExtResource("11_vm2sr")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Chaser3" parent="YSort" unique_id=983719140 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_i5sx7")]
+position = Vector2(177, 71)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser3" unique_id=1110172021 node_paths=PackedStringArray("root") instance=ExtResource("7_28l34")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser3/Goo" unique_id=1950134205]
+script = ExtResource("8_noh8g")
+enemy_list = Array[ExtResource("9_02ybq")]([ExtResource("10_i5sx7")])
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser3/Goo" unique_id=376296810]
+script = ExtResource("11_vm2sr")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Key" parent="YSort" unique_id=1799302673 instance=ExtResource("13_noh8g")]
+position = Vector2(176, -90)
+
+[node name="Key2" parent="YSort" unique_id=765228940 instance=ExtResource("13_noh8g")]
+position = Vector2(236, -2)
+
+[node name="Key3" parent="YSort" unique_id=676678268 instance=ExtResource("13_noh8g")]
+position = Vector2(176, 55)
+
+[node name="6Gum" parent="YSort" unique_id=84924078 instance=ExtResource("17_va8hb")]
+position = Vector2(-36, 31)
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=1401094387]
+position = Vector2(0, 41)
+script = ExtResource("12_28l34")
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="SpawnMarker2" type="Marker2D" parent="." unique_id=134767446]
+position = Vector2(0, -109)
+script = ExtResource("12_28l34")
+sign = 1
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="InteractionLauncher2" type="Area2D" parent="." unique_id=1859764621]
+position = Vector2(0, 47)
+script = ExtResource("14_vm2sr")
+label = "1F"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher2" unique_id=2052162002]
+shape = ExtResource("15_va8hb")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher2" unique_id=1224328497]
+script = ExtResource("16_8ibkr")
+room = "uid://buamhibxe7p0y"
+sign = 1
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="InteractionLauncher3" type="Area2D" parent="." unique_id=1618754411]
+position = Vector2(0, -112)
+script = ExtResource("14_vm2sr")
+label = "3F"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher3" unique_id=597736534]
+shape = ExtResource("15_va8hb")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher3" unique_id=140000268]
+script = ExtResource("16_8ibkr")
+room = "uid://dmm2vbfcfrsee"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"

@@ -1,0 +1,133 @@
+[gd_scene format=4 uid="uid://buamhibxe7p0y"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_f6lbb"]
+[ext_resource type="AudioStream" uid="uid://uctfmjid2rhb" path="res://music/declan_cathedral.ogg" id="2_l1ne5"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="3_1whu2"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="3_uccij"]
+[ext_resource type="PackedScene" uid="uid://du3jyoaeci8yf" path="res://prefabs/key.tscn" id="5_q2j15"]
+[ext_resource type="PackedScene" uid="uid://by0o5i03xx86b" path="res://prefabs/chaser.tscn" id="6_ht3sf"]
+[ext_resource type="PackedScene" uid="uid://cg2n8kg6c6qgh" path="res://prefabs/goo.tscn" id="7_ixhdx"]
+[ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="8_rrov8"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="9_siot7"]
+[ext_resource type="Resource" uid="uid://ck37f2t1y874t" path="res://enemies/evilfly.tres" id="10_kf107"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="11_siot7"]
+[ext_resource type="PackedScene" uid="uid://bycsqp7ecto7r" path="res://prefabs/lock.tscn" id="12_kf107"]
+[ext_resource type="PackedScene" uid="uid://d1iw53mdnx61m" path="res://prefabs/lettuce_sandwich.tscn" id="13_vhtvl"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="14_bpjvt"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="15_5gmxg"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="16_70wfw"]
+[ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="17_70wfw"]
+[ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="18_mflg7"]
+[ext_resource type="Resource" uid="uid://ph264b7h6cy7" path="res://items/lettuce_sandwich.tres" id="19_vim8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vim8p"]
+
+[node name="1F" type="Node2D" unique_id=1343929096]
+script = ExtResource("1_f6lbb")
+title = "1F"
+music = ExtResource("2_l1ne5")
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=339531087]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAD///7/AAAAAAEAAAD///3/AAAAAAEAAAD///z/AAACAAEAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAEAAAAAAPz/AAACAAEAAAD+//z/AAABAAAAAAD+//3/AAABAAAAAAD+//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAABAAAAAAABAAAAAAABAP//AAABAAAAAAABAP7/AAABAAAAAAABAP3/AAABAAAAAAABAPz/AAABAAAAAAD+//v/AAAAAAAAAAD+//r/AAAAAAAAAAABAPv/AAAAAAAAAAABAPr/AAAAAAAAAAD///v/AAACAAEAAAD///r/AAACAAEAAAAAAPr/AAACAAEAAAAAAPv/AAACAAEAAAD///n/AAAAAAEAAAAAAPn/AAAAAAEAAAD///j/AAAAAAEAAAAAAPj/AAAAAAEAAAD///f/AAAAAAEAAAAAAPf/AAAAAAEAAAABAPf/AAAAAAEAAAACAPf/AAAAAAEAAAACAPj/AAAAAAEAAAABAPj/AAAAAAEAAAADAPj/AAAAAAEAAAAEAPj/AAAAAAEAAAAFAPj/AAAAAAEAAAAGAPj/AAAAAAEAAAAEAPf/AAAAAAEAAAADAPf/AAAAAAEAAAAFAPf/AAAAAAEAAAAHAPj/AAAAAAEAAAAGAPf/AAAAAAEAAAAHAPf/AAAAAAEAAAAIAPf/AAAAAAEAAAAIAPj/AAAAAAEAAAAJAPj/AAAAAAEAAAAKAPj/AAAAAAEAAAALAPj/AAAAAAEAAAAMAPj/AAAAAAEAAAAMAPf/AAAAAAEAAAALAPf/AAAAAAEAAAAKAPf/AAAAAAEAAAAJAPf/AAAAAAEAAAANAPf/AAAAAAEAAAANAPj/AAAAAAEAAAAOAPj/AAAAAAEAAAAOAPf/AAAAAAEAAAANAPn/AAAAAAEAAAAOAPn/AAAAAAEAAAANAPr/AAACAAEAAAANAPv/AAACAAEAAAAOAPv/AAACAAEAAAAOAPr/AAACAAEAAAANAPz/AAACAAEAAAAOAPz/AAACAAEAAAAMAPz/AAABAAAAAAAMAP3/AAABAAAAAAAMAP7/AAABAAAAAAAMAP//AAABAAAAAAAMAAAAAAABAAAAAAAPAAAAAAABAAAAAAAPAP//AAABAAAAAAAPAP7/AAABAAAAAAAPAP3/AAABAAAAAAAPAPz/AAABAAAAAAANAP//AAAAAAEAAAANAP7/AAAAAAEAAAANAP3/AAAAAAEAAAAOAP3/AAAAAAEAAAAOAP7/AAAAAAEAAAAOAP//AAAAAAEAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAMAPv/AAAAAAAAAAAMAPr/AAAAAAAAAAAPAPv/AAAAAAAAAAAPAPr/AAAAAAAAAAD+//n/AAABAAAAAAD+//j/AAABAAAAAAD+//f/AAABAAAAAAABAPn/AAABAAAAAAACAPn/AAABAAAAAAADAPn/AAABAAAAAAAEAPn/AAABAAAAAAAFAPn/AAABAAAAAAAGAPn/AAABAAAAAAAHAPn/AAABAAAAAAAIAPn/AAABAAAAAAAJAPn/AAABAAAAAAAKAPn/AAABAAAAAAALAPn/AAABAAAAAAAMAPn/AAABAAAAAAACAPr/AAAAAAAAAAACAPv/AAAAAAAAAAACAPz/AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAD//wEAAAAAAAEAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAD9//z/AAAAAAAAAAD9//v/AAAAAAAAAAD9//r/AAAAAAAAAAD9//n/AAAAAAAAAAD9//j/AAAAAAAAAAD9//f/AAAAAAAAAAD9//b/AAAAAAAAAAD+//b/AAABAAAAAAD///b/AAABAAAAAAAAAPb/AAABAAAAAAABAPb/AAABAAAAAAACAPb/AAABAAAAAAADAPb/AAABAAAAAAAEAPb/AAABAAAAAAAFAPb/AAABAAAAAAAGAPb/AAACAAEAAAAHAPb/AAACAAEAAAAIAPb/AAABAAAAAAAJAPb/AAABAAAAAAAKAPb/AAABAAAAAAALAPb/AAABAAAAAAAMAPb/AAABAAAAAAANAPb/AAABAAAAAAAOAPb/AAABAAAAAAAQAPb/AAAAAAAAAAAQAPf/AAAAAAAAAAAQAPj/AAAAAAAAAAAQAPn/AAAAAAAAAAAQAPr/AAAAAAAAAAAQAPv/AAAAAAAAAAAQAPz/AAAAAAAAAAAQAP3/AAAAAAAAAAAQAP7/AAAAAAAAAAAQAP//AAAAAAAAAAAQAAAAAAAAAAAAAAAPAPf/AAABAAAAAAAPAPj/AAABAAAAAAAPAPn/AAABAAAAAAAPAPb/AAABAAAAAAAQAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAAAAAALAAAAAAAAAAAAAAALAP//AAAAAAAAAAALAP7/AAAAAAAAAAALAP3/AAAAAAAAAAALAPz/AAAAAAAAAAALAPv/AAAAAAAAAAALAPr/AAAAAAAAAAAKAPr/AAAAAAAAAAAJAPr/AAAAAAAAAAAIAPr/AAAAAAAAAAAHAPr/AAAAAAAAAAAGAPr/AAAAAAAAAAAFAPr/AAAAAAAAAAAEAPr/AAAAAAAAAAADAPr/AAAAAAAAAAD9//X/AAAAAAAAAAD+//X/AAAAAAAAAAD///X/AAAAAAAAAAAAAPX/AAAAAAAAAAABAPX/AAAAAAAAAAACAPX/AAAAAAAAAAADAPX/AAAAAAAAAAAEAPX/AAAAAAAAAAAFAPX/AAAAAAAAAAAGAPX/AAACAAEAAAAHAPX/AAACAAEAAAAIAPX/AAAAAAAAAAAJAPX/AAAAAAAAAAAKAPX/AAAAAAAAAAALAPX/AAAAAAAAAAAMAPX/AAAAAAAAAAANAPX/AAAAAAAAAAAOAPX/AAAAAAAAAAAPAPX/AAAAAAAAAAAQAPX/AAAAAAAAAAAQAPT/AAAAAAAAAAAPAPT/AAACAAAAAAAOAPT/AAACAAAAAAANAPT/AAACAAAAAAAMAPT/AAACAAAAAAALAPT/AAACAAAAAAAKAPT/AAACAAAAAAAJAPT/AAACAAAAAAAIAPT/AAAAAAAAAAAHAPT/AAACAAEAAAAGAPT/AAACAAEAAAAFAPT/AAAAAAAAAAAEAPT/AAACAAAAAAADAPT/AAACAAAAAAACAPT/AAACAAAAAAABAPT/AAACAAAAAAAAAPT/AAACAAAAAAD///T/AAACAAAAAAD+//T/AAACAAAAAAD9//T/AAAAAAAAAAD+//P/AAAAAAAAAAD9//P/AAAAAAAAAAD///P/AAAAAAAAAAAAAPP/AAAAAAAAAAABAPP/AAAAAAAAAAACAPP/AAAAAAAAAAADAPP/AAAAAAAAAAAEAPP/AAAAAAAAAAAFAPP/AAAAAAAAAAAGAPP/AAACAAEAAAAHAPP/AAACAAEAAAAIAPP/AAAAAAAAAAAJAPP/AAAAAAAAAAAKAPP/AAAAAAAAAAALAPP/AAAAAAAAAAAMAPP/AAAAAAAAAAANAPP/AAAAAAAAAAAOAPP/AAAAAAAAAAAPAPP/AAAAAAAAAAAQAPP/AAAAAAAAAAD+//L/AAABAAAAAAD///L/AAABAAAAAAAAAPL/AAABAAAAAAABAPL/AAABAAAAAAACAPL/AAABAAAAAAADAPL/AAABAAAAAAAEAPL/AAABAAAAAAAFAPL/AAABAAAAAAAGAPL/AAAAAAEAAAAHAPL/AAAAAAEAAAAIAPL/AAABAAAAAAAJAPL/AAABAAAAAAAKAPL/AAABAAAAAAALAPL/AAABAAAAAAAMAPL/AAABAAAAAAANAPL/AAABAAAAAAAOAPL/AAABAAAAAAAPAPL/AAABAAAAAAAPAPH/AAABAAAAAAAOAPH/AAABAAAAAAANAPH/AAABAAAAAAAMAPH/AAABAAAAAAALAPH/AAABAAAAAAAKAPH/AAABAAAAAAAJAPH/AAABAAAAAAAIAPH/AAABAAAAAAAHAPH/AAAAAAEAAAAGAPH/AAAAAAEAAAAFAPH/AAABAAAAAAAEAPH/AAABAAAAAAADAPH/AAABAAAAAAACAPH/AAABAAAAAAABAPH/AAABAAAAAAAAAPH/AAABAAAAAAD///H/AAABAAAAAAD+//H/AAABAAAAAAD+//D/AAABAAAAAAD///D/AAABAAAAAAAAAPD/AAABAAAAAAABAPD/AAABAAAAAAACAPD/AAABAAAAAAADAPD/AAABAAAAAAAEAPD/AAABAAAAAAAFAPD/AAABAAAAAAAGAPD/AAAAAAEAAAAHAPD/AAAAAAEAAAAIAPD/AAABAAAAAAAJAPD/AAABAAAAAAAKAPD/AAABAAAAAAALAPD/AAABAAAAAAAMAPD/AAABAAAAAAANAPD/AAABAAAAAAAOAPD/AAABAAAAAAAPAPD/AAABAAAAAAAQAPL/AAAAAAAAAAAQAPH/AAAAAAAAAAAQAPD/AAAAAAAAAAAQAO//AAAAAAAAAAAPAO//AAAAAAAAAAAOAO//AAAAAAAAAAANAO//AAAAAAAAAAAMAO//AAAAAAAAAAALAO//AAAAAAAAAAAKAO//AAAAAAAAAAAJAO//AAAAAAAAAAAIAO//AAAAAAAAAAAHAO//AAACAAEAAAAGAO//AAACAAEAAAAFAO//AAAAAAAAAAAEAO//AAAAAAAAAAADAO//AAAAAAAAAAACAO//AAAAAAAAAAABAO//AAAAAAAAAAAAAO//AAAAAAAAAAD//+//AAAAAAAAAAD+/+//AAAAAAAAAAD9/+//AAAAAAAAAAD9//D/AAAAAAAAAAD9//H/AAAAAAAAAAD9//L/AAAAAAAAAAD9/+7/AAAAAAAAAAD+/+7/AAACAAAAAAD//+7/AAACAAAAAAAAAO7/AAACAAAAAAABAO7/AAACAAAAAAACAO7/AAACAAAAAAADAO7/AAACAAAAAAAEAO7/AAACAAAAAAAFAO7/AAAAAAAAAAAGAO7/AAAEAAEAAAAHAO7/AAAEAAEAAAAIAO7/AAAAAAAAAAAJAO7/AAACAAAAAAAKAO7/AAACAAAAAAALAO7/AAACAAAAAAAMAO7/AAACAAAAAAANAO7/AAACAAAAAAAOAO7/AAACAAAAAAAPAO7/AAACAAAAAAAQAO7/AAAAAAAAAAAQAO3/AAAAAAAAAAAPAO3/AAAAAAAAAAAOAO3/AAAAAAAAAAANAO3/AAAAAAAAAAAMAO3/AAAAAAAAAAALAO3/AAAAAAAAAAAKAO3/AAAAAAAAAAAJAO3/AAAAAAAAAAAIAO3/AAAAAAAAAAAHAO3/AAABAAEAAAAGAO3/AAABAAEAAAAFAO3/AAAAAAAAAAAEAO3/AAAAAAAAAAADAO3/AAAAAAAAAAACAO3/AAAAAAAAAAABAO3/AAAAAAAAAAAAAO3/AAAAAAAAAAD//+3/AAAAAAAAAAD+/+3/AAAAAAAAAAD9/+3/AAAAAAAAAAD//wIAAAAEAAEAACAAAAIAAAAEAAEAACA=")
+tile_set = ExtResource("3_1whu2")
+
+[node name="YSort" type="Node2D" parent="." unique_id=793389034]
+y_sort_enabled = true
+
+[node name="Player" parent="YSort" unique_id=1244825177 instance=ExtResource("3_uccij")]
+
+[node name="Key" parent="YSort" unique_id=1799302673 instance=ExtResource("5_q2j15")]
+position = Vector2(224, -12)
+
+[node name="Chaser" parent="YSort" unique_id=840268782 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_ht3sf")]
+position = Vector2(224, -41)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser" unique_id=1578334052 node_paths=PackedStringArray("root") instance=ExtResource("7_ixhdx")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=731169361]
+script = ExtResource("8_rrov8")
+enemy_list = Array[ExtResource("9_siot7")]([ExtResource("10_kf107")])
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=1539131693]
+script = ExtResource("11_siot7")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Chaser2" parent="YSort" unique_id=1980561412 node_paths=PackedStringArray("target", "goo") instance=ExtResource("6_ht3sf")]
+position = Vector2(112, -209)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser2" unique_id=158770494 node_paths=PackedStringArray("root") instance=ExtResource("7_ixhdx")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser2/Goo" unique_id=1661109895]
+script = ExtResource("8_rrov8")
+enemy_list = Array[ExtResource("9_siot7")]([ExtResource("10_kf107"), ExtResource("10_kf107")])
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser2/Goo" unique_id=741005842]
+script = ExtResource("11_siot7")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="Lock" parent="YSort" unique_id=2032744661 instance=ExtResource("12_kf107")]
+position = Vector2(112, -256)
+
+[node name="LettuceSandwich" parent="YSort" unique_id=84924078 instance=ExtResource("13_vhtvl")]
+position = Vector2(112, -212)
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=580873245]
+position = Vector2(0, 32)
+script = ExtResource("14_bpjvt")
+label = "Leave"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=1620922325]
+shape = ExtResource("15_5gmxg")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher" unique_id=931982813]
+script = ExtResource("16_70wfw")
+room = "uid://bc1uyh5alc36u"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=150747914]
+position = Vector2(0, 25)
+script = ExtResource("17_70wfw")
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="SpawnMarker2" type="Marker2D" parent="." unique_id=2124410089]
+position = Vector2(112, -265)
+script = ExtResource("17_70wfw")
+sign = 1
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="InteractionLauncher2" type="Area2D" parent="." unique_id=424217154]
+position = Vector2(112, -272)
+script = ExtResource("14_bpjvt")
+label = "2F"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher2" unique_id=684338373]
+shape = ExtResource("15_5gmxg")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher2" unique_id=472541938]
+script = ExtResource("16_70wfw")
+room = "uid://by8tep2c8pn4h"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="InteractionLauncher3" type="Area2D" parent="." unique_id=101171707]
+position = Vector2(1, -72)
+script = ExtResource("14_bpjvt")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher3" unique_id=1327897889]
+shape = SubResource("RectangleShape2D_vim8p")
+
+[node name="ItemInteraction" type="Node" parent="InteractionLauncher3" unique_id=2015914533]
+script = ExtResource("18_mflg7")
+item = ExtResource("19_vim8p")
+metadata/_custom_type_script = "uid://cbc5odn8ededf"

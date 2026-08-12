@@ -1,0 +1,285 @@
+[gd_scene format=3 uid="uid://dvvvkvib77jni"]
+
+[ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="1_acv8w"]
+[ext_resource type="Script" uid="uid://bk1vjw7jif3pr" path="res://globals/menu2.gd" id="1_kgepp"]
+[ext_resource type="Texture2D" uid="uid://dmntkampsogi2" path="res://sprites/paper_bg.png" id="2_iqtha"]
+[ext_resource type="Script" uid="uid://c5mogq7v63u8d" path="res://scripts/stat.gd" id="2_kmsvt"]
+[ext_resource type="Script" uid="uid://bbqf2tuu15xpm" path="res://globals/party_info.gd" id="4_1u65s"]
+[ext_resource type="AudioStream" uid="uid://cxbl7j0o4mpr1" path="res://sfx/open_menu.wav" id="6_x74jp"]
+[ext_resource type="AudioStream" uid="uid://de8av3sbubcbs" path="res://sfx/close_menu.ogg" id="7_7dfq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqtha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u65s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x74jp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dfq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agf5j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tmne"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_en3fm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acv8w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmsvt"]
+
+[node name="BetterMenu" type="CanvasLayer" unique_id=2062223608]
+visible = false
+script = ExtResource("1_kgepp")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=769578274]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(16, 16)
+autoscroll = Vector2(10, 10)
+repeat_times = 50
+follow_viewport = false
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=524723482]
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_iqtha")
+stretch_mode = 1
+
+[node name="Menu" type="Control" parent="." unique_id=883376107]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_acv8w")
+
+[node name="PanelContainer" type="PanelContainer" parent="Menu" unique_id=2003011812]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 163.0
+offset_bottom = 292.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu/PanelContainer" unique_id=1263699529]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="Menu/PanelContainer/ScrollContainer" unique_id=1949209013]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Menu" unique_id=72825219]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 40.0
+
+[node name="CurrentInfo" type="Label" parent="Menu/PanelContainer2" unique_id=927402083]
+unique_name_in_owner = true
+layout_mode = 2
+text = "What will you do?"
+
+[node name="PanelContainer3" type="PanelContainer" parent="Menu" unique_id=259769134]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 40.0
+offset_right = 392.0
+offset_bottom = 292.0
+
+[node name="TabContainer" type="TabContainer" parent="Menu/PanelContainer3" unique_id=1461554379]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iqtha")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_1u65s")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_x74jp")
+theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_7dfq5")
+theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_agf5j")
+theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_5tmne")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_en3fm")
+current_tab = 0
+tabs_visible = false
+
+[node name="QuickInfo" type="RichTextLabel" parent="Menu/PanelContainer3/TabContainer" unique_id=653990950]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "Declan
+[img]sprites/ailment/normal.png[/img]Fine
+120HP 120MP
+[hr]
+Declan
+[img]sprites/ailment/poison.png[/img][color=green]Poisoned[/color]
+120HP 120MP
+[hr]
+Declan
+[img]sprites/ailment/poison.png[/img][color=green]Poisoned[/color]
+120HP 120MP
+[hr]
+Declan
+[img]sprites/ailment/poison.png[/img][color=green]Poisoned[/color]
+120HP 120MP
+[hr]
+"
+script = ExtResource("4_1u65s")
+metadata/_tab_index = 0
+
+[node name="StatsScreen" type="Control" parent="Menu/PanelContainer3/TabContainer" unique_id=1218641168]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("2_kmsvt")
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/PanelContainer3/TabContainer/StatsScreen" unique_id=498251666]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Names" type="VBoxContainer" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer" unique_id=967005338]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=1420252098]
+layout_mode = 2
+text = "Level"
+
+[node name="Label3" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=892805885]
+layout_mode = 2
+text = "Experience"
+
+[node name="Label9" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=490120880]
+layout_mode = 2
+text = "Next Level"
+
+[node name="Label10" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=669464879]
+layout_mode = 2
+text = "Health"
+
+[node name="Label11" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=917262376]
+layout_mode = 2
+text = "Mind Power"
+
+[node name="Label" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=655715474]
+layout_mode = 2
+text = "Attack"
+
+[node name="Label2" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=901818058]
+layout_mode = 2
+text = "Defense"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=1579505447]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_acv8w")
+
+[node name="Label12" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=122733189]
+layout_mode = 2
+text = "Weapon"
+
+[node name="Label13" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=917715450]
+layout_mode = 2
+text = "Protector"
+
+[node name="HSeparator2" type="HSeparator" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=1828676542]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_acv8w")
+
+[node name="Label6" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=2141737906]
+modulate = Color(1, 1, 1, 0.49803922)
+layout_mode = 2
+text = "INTAKE:"
+
+[node name="Label5" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=594708918]
+layout_mode = 2
+text = "Fire"
+
+[node name="Label7" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=1941040987]
+layout_mode = 2
+text = "Ice"
+
+[node name="Label8" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Names" unique_id=1398924815]
+layout_mode = 2
+text = "Physical"
+
+[node name="VSeparator" type="VSeparator" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer" unique_id=186181697]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kmsvt")
+
+[node name="Values" type="VBoxContainer" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer" unique_id=942652197]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LevelNo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=194612407]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ExpNo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1968582453]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NextNo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1822332967]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HPNo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1374910133]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MPNo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1934330777]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AtkNo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1046918056]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DefNo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=2027754170]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1351137718]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_acv8w")
+
+[node name="Weapon" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1913725126]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Protector" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=371021046]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="---" type="HSeparator" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=2000024959]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_acv8w")
+
+[node name="----" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1221302669]
+modulate = Color(1, 1, 1, 0.49803922)
+layout_mode = 2
+
+[node name="FireINo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=265940711]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="IceINo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=53580700]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PhysINo" type="Label" parent="Menu/PanelContainer3/TabContainer/StatsScreen/HBoxContainer/Values" unique_id=1580456597]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OpenMenu" type="AudioStreamPlayer" parent="." unique_id=1663084436]
+stream = ExtResource("6_x74jp")
+
+[node name="CloseMenu" type="AudioStreamPlayer" parent="." unique_id=1881114610]
+stream = ExtResource("7_7dfq5")

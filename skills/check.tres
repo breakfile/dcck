@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CheckSkill" format=3 uid="uid://28o4j0fjd1ip"]
+
+[ext_resource type="Script" uid="uid://dgpttxclkf1i" path="res://scripts/check_skill.gd" id="1_7fgd5"]
+
+[resource]
+script = ExtResource("1_7fgd5")
+name = "Check"
+desc = "(Shows up in main UI...)"
+one_line_desc = "Check enemy info"
+metadata/_custom_type_script = "uid://dgpttxclkf1i"

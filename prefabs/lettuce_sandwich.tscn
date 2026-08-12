@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d1iw53mdnx61m"]
+
+[ext_resource type="Script" uid="uid://cy04gq26o2le" path="res://scripts/memento_mori.gd" id="1_7tx6j"]
+[ext_resource type="Texture2D" uid="uid://wmq6poj36dd8" path="res://sprites/lettuce_sandwich.png" id="1_wstyt"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="2_pnom0"]
+[ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="3_7tx6j"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="3_pnom0"]
+[ext_resource type="Resource" uid="uid://ph264b7h6cy7" path="res://items/lettuce_sandwich.tres" id="4_wstyt"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="8_l0rmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kien5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsnh1"]
+size = Vector2(16, 11)
+
+[node name="LettuceSandwich" type="Node2D" unique_id=84924078]
+script = ExtResource("1_7tx6j")
+metadata/_custom_type_script = "uid://cy04gq26o2le"
+
+[node name="Key" type="Sprite2D" parent="." unique_id=870931619]
+position = Vector2(0, -10)
+texture = ExtResource("1_wstyt")
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=1989799569 node_paths=PackedStringArray("root")]
+position = Vector2(0, -10)
+script = ExtResource("2_pnom0")
+label = "Lettuce Sandwich"
+root = NodePath("..")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=96629218]
+shape = SubResource("RectangleShape2D_kien5")
+
+[node name="DialogueInteraction" type="Node" parent="InteractionLauncher" unique_id=660642616]
+script = ExtResource("3_pnom0")
+dialogues = Array[String](["> Looks edible enough."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="ItemInteraction" type="Node" parent="InteractionLauncher" unique_id=62587889]
+script = ExtResource("3_7tx6j")
+item = ExtResource("4_wstyt")
+metadata/_custom_type_script = "uid://cbc5odn8ededf"
+
+[node name="DeleteRootInteraction" type="Node" parent="InteractionLauncher" unique_id=1450511055]
+script = ExtResource("8_l0rmv")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=688639566]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1068628887]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_vsnh1")

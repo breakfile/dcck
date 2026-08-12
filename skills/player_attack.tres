@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DamageSkill" format=3 uid="uid://d1vxd7k65yrg6"]
+
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="1_h0i26"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="1_o7sri"]
+
+[resource]
+script = ExtResource("1_o7sri")
+name = "Attack"
+desc = "[color=yellow]Physical[/color]
+Attack * 1"
+one_line_desc = "Atk x 1"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"

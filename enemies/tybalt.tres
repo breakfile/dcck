@@ -1,0 +1,36 @@
+[gd_resource type="Resource" format=3 uid="uid://k126l62lwuku"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_ssamd"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_mkpvb"]
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="3_7xsr3"]
+[ext_resource type="Script" uid="uid://dlb0e8eg0asr8" path="res://scripts/enemy/tybalt.gd" id="4_mkpvb"]
+[ext_resource type="Resource" uid="uid://wa20mcnpfqct" path="res://skills/fire1.tres" id="4_q4eme"]
+[ext_resource type="Texture2D" uid="uid://c8u7iyl2ongum" path="res://sprites/guardian.png" id="4_ssamd"]
+[ext_resource type="Resource" uid="uid://ctsgnetgk53ty" path="res://skills/fire2.tres" id="5_rro2o"]
+[ext_resource type="Resource" uid="uid://31k2aia8trcl" path="res://skills/fireheal.tres" id="6_grjud"]
+[ext_resource type="Resource" uid="uid://b63kvsfpop6c1" path="res://skills/firepoison.tres" id="7_7cpny"]
+
+[sub_resource type="Resource" id="Resource_20jxp"]
+script = ExtResource("3_7xsr3")
+slot = 1
+skills = Array[ExtResource("1_ssamd")]([ExtResource("4_q4eme"), ExtResource("5_rro2o"), ExtResource("6_grjud"), ExtResource("7_7cpny")])
+change_fire_mult = true
+change_ice_mult = true
+fire_mult = 0.0
+ice_mult = 2.0
+name = "Warm Cerebrum"
+aura_name = "THE CEREBRUM OF WARMTH"
+desc = "[center]PROTECTOR[/center]
+A brain part with knowledge of Fire skills."
+one_line_desc = "Equip"
+metadata/_custom_type_script = "uid://c1f0wn67agteb"
+
+[resource]
+script = ExtResource("4_mkpvb")
+name = "Tybalt"
+level = 2
+description = "Wields the Cerebrum of Warmth."
+texture = ExtResource("4_ssamd")
+max_hp = 100
+protection = SubResource("Resource_20jxp")
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

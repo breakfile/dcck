@@ -1,0 +1,65 @@
+[gd_scene format=4 uid="uid://bfmfkcx0l8fpn"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_q2633"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="2_adtuc"]
+[ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="3_jnkie"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="4_vbijl"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="5_uu628"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="6_7we83"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="7_tyb6j"]
+[ext_resource type="PackedScene" uid="uid://cg2n8kg6c6qgh" path="res://prefabs/goo.tscn" id="8_166hd"]
+[ext_resource type="PackedScene" uid="uid://by0o5i03xx86b" path="res://prefabs/chaser.tscn" id="8_genj2"]
+[ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="9_1ttr0"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="10_genj2"]
+[ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="10_ls5ns"]
+[ext_resource type="Resource" uid="uid://uvswi3xy2fmp" path="res://enemies/oak_sign.tres" id="11_2bsqv"]
+
+[node name="Tutorial5" type="Node2D" unique_id=780514146]
+script = ExtResource("1_q2633")
+title = "-1F"
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=825483819]
+tile_map_data = PackedByteArray("AAD//wEAAAAEAAEAACAAAAEAAAAEAAEAACD//wAAAAAAAAEAAAD/////AAAAAAEAAAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAD///v/AAAAAAEAAAD///z/AAAAAAEAAAAAAPv/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPz/AAAAAAEAAAD///r/AAAAAAEAAAD///n/AAACAAEAAAAAAPn/AAACAAEAAAD///j/AAAAAAEAAAAAAPj/AAAAAAEAAAD9//j/AAAAAAAAAAD9//n/AAAAAAAAAAD9//r/AAAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAACAPj/AAAAAAAAAAACAPn/AAAAAAAAAAACAPr/AAAAAAAAAAACAPv/AAAAAAAAAAACAPz/AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAD+//r/AAABAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD+//3/AAABAAAAAAD+//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAABAAAAAAABAP7/AAABAAAAAAABAP3/AAABAAAAAAABAPz/AAABAAAAAAABAPv/AAABAAAAAAABAPr/AAABAAAAAAABAPn/AAAAAAAAAAD+//n/AAAAAAAAAAD+//j/AAABAAAAAAABAPj/AAABAAAAAAD///f/AAAEAAEAAAAAAPf/AAAEAAEAAAD9//b/AAAAAAAAAAD9//f/AAAAAAAAAAD+//f/AAAAAAAAAAD+//b/AAAAAAAAAAABAPb/AAAAAAAAAAABAPf/AAAAAAAAAAACAPf/AAAAAAAAAAACAPb/AAAAAAAAAAD9//X/AAAAAAAAAAD+//X/AAAAAAAAAAD///X/AAAAAAAAAAAAAPX/AAAAAAAAAAABAPX/AAAAAAAAAAACAPX/AAAAAAAAAAA=")
+tile_set = ExtResource("2_adtuc")
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=342057796]
+script = ExtResource("3_jnkie")
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=2111772383]
+script = ExtResource("5_uu628")
+label = "Go"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=1512981405]
+position = Vector2(0, -128)
+shape = ExtResource("6_7we83")
+
+[node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher" unique_id=2020552372]
+script = ExtResource("7_tyb6j")
+room = "uid://bc1uyh5alc36u"
+sign = -1
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="YSort" type="Node2D" parent="." unique_id=2085105335]
+y_sort_enabled = true
+
+[node name="Player" parent="YSort" unique_id=1244825177 instance=ExtResource("4_vbijl")]
+
+[node name="Chaser" parent="YSort" unique_id=840268782 node_paths=PackedStringArray("target", "goo") instance=ExtResource("8_genj2")]
+position = Vector2(0, -119)
+target = NodePath("../Player")
+goo = NodePath("Goo")
+
+[node name="Goo" parent="YSort/Chaser" unique_id=1972167672 node_paths=PackedStringArray("root") instance=ExtResource("8_166hd")]
+root = NodePath("..")
+
+[node name="StartBattleInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=743800329]
+script = ExtResource("9_1ttr0")
+enemy_list = Array[ExtResource("10_genj2")]([ExtResource("11_2bsqv")])
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="DeleteRootInteraction" type="Node" parent="YSort/Chaser/Goo" unique_id=1376844552]
+script = ExtResource("10_ls5ns")
+metadata/_custom_type_script = "uid://ct202mhbmuidd"

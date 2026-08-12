@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bycsqp7ecto7r"]
+
+[ext_resource type="Script" uid="uid://cy04gq26o2le" path="res://scripts/memento_mori.gd" id="1_02xng"]
+[ext_resource type="Texture2D" uid="uid://dr1qusm2o5f4y" path="res://sprites/lock.png" id="2_f22pd"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="3_3aqel"]
+[ext_resource type="Script" uid="uid://3e3380kev2yt" path="res://scripts/lock_interaction.gd" id="4_g1rb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f22pd"]
+size = Vector2(32, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiiwj"]
+size = Vector2(32, 3)
+
+[node name="Lock" type="Node2D" unique_id=2032744661]
+script = ExtResource("1_02xng")
+metadata/_custom_type_script = "uid://cy04gq26o2le"
+
+[node name="Lock" type="Sprite2D" parent="." unique_id=784817273]
+position = Vector2(0, -16)
+texture = ExtResource("2_f22pd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1767370373]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1744403662]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_f22pd")
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=731126488 node_paths=PackedStringArray("root")]
+script = ExtResource("3_3aqel")
+label = "Cathedral Lock"
+root = NodePath("..")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=482120650]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_aiiwj")
+
+[node name="LockInteraction" type="Node" parent="InteractionLauncher" unique_id=362758990]
+script = ExtResource("4_g1rb7")
+metadata/_custom_type_script = "uid://3e3380kev2yt"

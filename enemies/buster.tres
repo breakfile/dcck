@@ -1,0 +1,19 @@
+[gd_resource type="Resource" format=3 uid="uid://dr62q4jqv52wq"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_gji2p"]
+[ext_resource type="Resource" uid="uid://btq3k2bipr8ki" path="res://skills/recharge.tres" id="2_4amif"]
+[ext_resource type="Script" uid="uid://cffpfxqj7bhj8" path="res://scripts/enemy/buster.gd" id="3_4amif"]
+[ext_resource type="Texture2D" uid="uid://dbpjljyga6fw8" path="res://sprites/buster_battle.png" id="5_7nmcv"]
+
+[resource]
+script = ExtResource("3_4amif")
+name = "Buster"
+level = 4
+exp_drop = 1
+description = "A pacifist robot designed to cure sickness and poison, despite it's name. Being FRIENDLY to it may help your poisoned friends..."
+texture = ExtResource("5_7nmcv")
+fire_multiplier = 10.0
+ice_multiplier = 2.0
+physical_multiplier = 0.0
+additional_skills = Array[ExtResource("1_gji2p")]([ExtResource("2_4amif")])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

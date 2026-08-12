@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dlx2x4pss08ha"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_h5s07"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="1_jyjec"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_fealp"]
+
+[resource]
+script = ExtResource("1_jyjec")
+name = "Partyboy"
+description = "PARTYBOY, Loyal servant"
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"
