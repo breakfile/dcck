@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_bpnv3")
 slot = 1
-name = "Resiliance"
+name = "---"
 one_line_desc = "How are you seeing this"
 metadata/_custom_type_script = "uid://c1f0wn67agteb"

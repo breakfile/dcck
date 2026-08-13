@@ -49,3 +49,14 @@ func ai(enemy: Character, battle_system: BattleSystem):
 
 	if skill:
 		await skill.cast(enemy)
+		
+
+func new_button(text: String, logic: Callable):
+	var b := Button.new()
+	MenuManager.say_grid.add_child(b)
+	b.text = text
+	b.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+	b.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	b.pressed.connect(logic)
+	MenuManager.say_grid.reset_size()
+	return b

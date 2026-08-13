@@ -11,13 +11,14 @@ func _ready():
 	_connect_focus_signals(self)
 
 func _process(_x):
-	#_connect_focus_signals(self)
+	_connect_focus_signals(self)
 	pass
 
 func _connect_focus_signals(node: Node):
 	for child in node.get_children():
 		if child is Control:
-			child.focus_entered.connect(_on_child_focus_entered.bind(child))
+			if not child.focus_entered.is_connected(_on_child_focus_entered.bind(child)):
+				child.focus_entered.connect(_on_child_focus_entered.bind(child))
 		# recurse in case controls are nested inside other containers
 		_connect_focus_signals(child)
 

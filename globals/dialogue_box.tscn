@@ -9,9 +9,9 @@ visible = false
 script = ExtResource("1_fu8b5")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1787178512]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 384.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
 offset_bottom = 80.0
 theme = ExtResource("2_tm68y")
 

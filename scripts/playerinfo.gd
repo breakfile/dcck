@@ -5,7 +5,7 @@ var bm: BattleSystem
 var is_animating = false
 @export var number := 0
 
-func _process(x):
+func _process(_x):
 	if Global.party.size() >= number+1:
 		chara = Global.party[number]
 		chara.sprite = self
@@ -49,10 +49,10 @@ func _process(x):
 					$HPslash.text = "CONFUSED"
 					chara.sprite.self_modulate = Color.ORANGE
 					$HPslash.modulate = Color.ORANGE
+				
+			if rtl.get_total_character_count() > 0:
+				visible = false
+			else:
+				visible = true
 	else:
 		visible = false
-	
-	if rtl.get_total_character_count() > 0:
-		visible = false
-	else:
-		visible = true

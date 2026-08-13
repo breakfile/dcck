@@ -3,17 +3,19 @@ extends EnemyData
 func talk(caster: Character, bs: BattleSystem):
 	await DialogueBox.type("Bz bz bz")
 	await DialogueBox.type("> The fly is awaiting your response.")
-	bs.pop_up("Your plan?")
+	MenuManager.push(MenuManager.say)
+	#bs.pop_up("Your plan?")
+	MenuManager.say_label.text = "Your plan?"
 	
-	bs.new_button("Yell", func():
-		bs.vbox.visible = false
+	new_button("Yell", func():
+		MenuManager.clear(false)
 		await DialogueBox.type("> The fly looked shocked!")
 		await caster.target.weigh_defense(-7)
 		await bs._progress()
 	).grab_focus()
 	
-	bs.new_button("Beg", func():
-		bs.vbox.visible = false
+	new_button("Beg", func():
+		MenuManager.clear(false)
 		await DialogueBox.type("> You begged the fly for an apple.")
 		await DialogueBox.type("Bz bz bz bz bzzz bz\n(Who do you think I am!? Issac Newton?)")
 		await DialogueBox.type("Bzzz bz bz\n(If you can beat me, I'll give ya one.)")

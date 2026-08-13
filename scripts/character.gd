@@ -119,9 +119,9 @@ var ai_skills: Array[Skill]
 func _init(tree: SceneTree, new_name: String, new_desc: String, new_lv: int, fire_m: float = 1, freeze_m: float = 1, phys_m: float = 1, new_max_hp: int = -1, new_max_mp: int = -1, new_at: int = -1, new_df: int = -1):
 	self.tree = tree
 	weapon = Equipment.new()
-	weapon.name = "Fist"
+	weapon.name = "---"
 	protection = Equipment.new()
-	protection.name = "Resiliance"
+	protection.name = "---"
 	
 	character_name = new_name
 	

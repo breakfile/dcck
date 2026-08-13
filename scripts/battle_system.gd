@@ -98,7 +98,8 @@ func _ready():
 	if current_member != checked_member or checked_member.ailment == Character.Ailments.KO:
 		return
 	
-	_create_main(current_member)
+	#_create_main(current_member)
+	MenuManager.push(MenuManager.battle_command_menu)
 		
 var turn_index := 0
 
@@ -291,6 +292,7 @@ func check_player_deaths():
 			fallen.append(player)
 	if fallen.size() == Global.party.size():
 		battle_over = true
+		Global.in_battle = false
 		await DialogueBox.type("> Declan's party was obliterated.")
 		await Fader.fade_in()
 		get_tree().change_scene_to_file("res://globals/title.tscn")
@@ -364,5 +366,5 @@ func _progress():
 	if current_member != checked_member:
 		return
 
-	_create_main(current_member)
-	%VBOX.visible = true
+	MenuManager.push(MenuManager.battle_command_menu)
+	#%VBOX.visible = true

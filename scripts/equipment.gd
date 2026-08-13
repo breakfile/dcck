@@ -24,10 +24,10 @@ func on_use(caster: Character):
 			enemy = true
 	
 	if slot == Slot.WEAPON:
-		if caster.target.weapon.name != "Fist" and not enemy: Global.items.append(caster.target.weapon)
+		if caster.target.weapon.name != "---" and not enemy: Global.items.append(caster.target.weapon)
 		caster.target.weapon = self
 	elif slot == Slot.PROTECTION:
-		if caster.target.protection.name != "Resiliance" and not enemy: Global.items.append(caster.target.protection)
+		if caster.target.protection.name != "---" and not enemy: Global.items.append(caster.target.protection)
 		caster.target.protection = self
 	
 	if slot == Slot.PROTECTION:

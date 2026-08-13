@@ -4,7 +4,7 @@ class_name KeySandwichItem extends FoodItem
 
 func on_use(caster: Character):
 	await super.on_use(caster)
-	if Global.party.find(caster) == 3:
+	if Global.party.find(caster.target) == 3:
 		await DialogueBox.type("> Inside the sandwich, Kagu found a key!")
 		Global.items.append(load("res://items/key.tres"))
 	else:

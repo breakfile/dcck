@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="16_70wfw"]
 [ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="17_70wfw"]
 [ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="18_mflg7"]
-[ext_resource type="Resource" uid="uid://ph264b7h6cy7" path="res://items/lettuce_sandwich.tres" id="19_vim8p"]
+[ext_resource type="Resource" uid="uid://bpdq58lporobi" path="res://items/weapon/cheese_knife.tres" id="19_vim8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vim8p"]
 
