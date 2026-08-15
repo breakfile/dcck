@@ -5,6 +5,8 @@ extends Node
 var party: Array[Character]
 @export var snails: int = 0
 var remembered: Array[String]
+var route_memory: Dictionary[String, int]
+
 
 var in_battle = false
 var bs: BattleSystem
@@ -25,10 +27,12 @@ func _ready():
 		Global.party.append(Character.enemy_factory(get_tree(), load("res://enemies/" + path + ".tres")))
 
 func add_exp(exp: int):
+	Global.snails += ceil(exp/2.0)
+	
 	if exp == 1:
-		await DialogueBox.type("> You got " + str(exp) + " experience point.")
+		await DialogueBox.type("> You got " + str(exp) + " experience point and 1sn.")
 	else:
-		await DialogueBox.type("> You got " + str(exp) + " experience points.")
+		await DialogueBox.type("> You got " + str(exp) + " experience points and " + str(int(ceil(exp/2.0))) + "sn.")
 
 	for member in party:
 		if member.ailment != Character.Ailments.KO:

@@ -23,7 +23,7 @@ func talk(caster: Character, bs: BattleSystem):
 			await DialogueBox.type("YOUR FRIENDLINESS DOES NOT PIERCE MY SOUL!!! AS I SAID PRIOR")
 			await bs._progress()
 		)
-		new_button("Illness help", func():
+		new_button("Illness help (5sn)", func():
 			MenuManager.clear(false)
 			var no_helped = 0
 			for member in Global.party:
@@ -35,9 +35,24 @@ func talk(caster: Character, bs: BattleSystem):
 				await DialogueBox.type("NONE OF YOU APPEAR PARTICULARLY UNWELL")
 				await bs._progress()
 			else:
-				await DialogueBox.type("YOU HAVE BEEN HEALED. YOU WILL BE CHARGED 5sn FOR THIS TRANSACTION")
-				Global.snails = max(Global.snails - 5, 0)
-				await bs._stop()
+				if Global.snails >= 5:
+					await DialogueBox.type("YOU HAVE BEEN HEALED. YOU WILL BE CHARGED 5sn FOR THIS TRANSACTION")
+					Global.snails = max(Global.snails - 5, 0)
+					await bs._stop()
+				else:
+					await DialogueBox.type("> Declan's card declined! Not enough snails!")
+					await bs._progress()
+		)
+		new_button("Input tan(90)", func():
+			MenuManager.clear(false)
+			await DialogueBox.type("> Declan input 'T-A-N-space-9-0-°' into the keypad.")
+			DialogueBox.skipping = false
+			await DialogueBox.type("Sure! Here's a simple tutorial on how to calculate tan(90)!")
+			await DialogueBox.type("You should know that sin(90) is 1 and cos(90) is 0, so tan(90) is equal to 1/0, which is............................................")
+			await DialogueBox.type("This program has performed an illegal operation and will be shut down. If the problem persists contact your program vendor.")
+			DialogueBox.skipping = true
+			await caster.target.hurt(250, Character.AttackType.FIRE)
+			await bs._progress()
 		)
 	).grab_focus()
 	

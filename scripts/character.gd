@@ -43,9 +43,11 @@ func _void_anim():
 		hit_number.text = "Void"
 		sprite.add_child(hit_number)
 
-		sprite.self_modulate = Color(18.892, 18.892, 18.892)
-		await tree.create_timer(0.15).timeout
-		sprite.self_modulate = Color.WHITE
+		var make_white = func():
+			sprite.self_modulate = Color(18.892, 18.892, 18.892)
+			await tree.create_timer(0.15).timeout
+			sprite.self_modulate = Color.WHITE
+		make_white.call()
 	
 	if sprite is PlayerInfoSprite: sprite.is_animating = false
 

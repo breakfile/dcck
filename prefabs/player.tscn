@@ -76,6 +76,7 @@ script = ExtResource("1_1txc5")
 occluder = SubResource("OccluderPolygon2D_rgeog")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2068903521]
+light_mask = 2
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_rgeog")
 animation = &"b_walk"

@@ -105,7 +105,7 @@ position = Vector2(432, -29)
 
 [node name="ChangeLevelInteraction" type="Node" parent="Node2D/FastRoomExit" unique_id=1092557725]
 script = ExtResource("14_v7xv0")
-room = "uid://cky14756hao4r"
+room = "uid://s686afxx0w2d"
 metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=502658920]

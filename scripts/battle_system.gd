@@ -89,6 +89,16 @@ func _ready():
 		await DialogueBox.type("> ...Who are you fighting!?")
 	%VBOX.visible = true
 	
+	# find the first non-KO'd party member to start the battle with
+	turn_index = 0
+	while turn_index < Global.party.size() and Global.party[turn_index].ailment == Character.Ailments.KO:
+		turn_index += 1
+
+	if turn_index >= Global.party.size():
+		# entire party is KO'd entering battle
+		await check_player_deaths()
+		return
+
 	current_member = Global.party[turn_index]
 	var checked_member = current_member
 	await check_for_poison(current_member)

@@ -7,7 +7,7 @@
 script = ExtResource("1_qbt4e")
 ailment = 2
 name = "UncommonHot"
-desc = "Chance of inflicting [img]res://sprites/ailment/poison.png[/img][color=green]Poison[/color]"
+desc = "Chance of inflicting [color=green]Poison[/color]"
 one_line_desc = "Inflict poison"
 cost = 10
 effect = ExtResource("1_1jjrv")

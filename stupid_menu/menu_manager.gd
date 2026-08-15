@@ -278,4 +278,82 @@ func _on_stats_push() -> void:
 
 func _on_skills_push() -> void:
 	for child in skill_vbox.get_children():
-		child.queue_free()
+		child.free()
+		
+	var first = false
+		
+	for skillx in selected_skillcaster.protection.skills:
+		var b := Button.new()
+		
+		var element = "Rec."
+		if skillx is DamageSkill:
+			match skillx.attack_type:
+				Character.AttackType.FIRE:
+					element = "Fire"
+					#break
+				Character.AttackType.ICE:
+					element = "Ice "
+					#break
+				Character.AttackType.PHYS:
+					element = "Phys"
+					#break
+		elif skillx is AilmentSkill:
+			element = "Ail."
+		
+		b.text = "%2dMP %s %s" % [skillx.cost, element, skillx.name]
+		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		b.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+		skill_vbox.add_child(b)
+		
+		var font = load("res://fonts/Px437_Portfolio_6x8.ttf")
+		b.add_theme_font_override("font", font)
+		b.add_theme_font_size_override("font_size", 8)
+		
+		b.focus_entered.connect(func():
+			if skillx.cost > selected_skillcaster.mp:
+				b.modulate = Color(1,0,0)
+			$PlayerStats/PanelContainer2/RichTextLabel.text = skillx.desc
+		)
+		b.focus_exited.connect(func():
+			if skillx.cost > selected_skillcaster.mp:
+				b.modulate = Color(0.5,0.5,0.5)
+			$PlayerStats/PanelContainer2/RichTextLabel.text = ""
+		)
+		b.pressed.connect(func():
+			if skillx.cost > selected_skillcaster.mp:
+				$Deny.play()
+				return
+			if skillx is HealSkill:
+				pvb_ownparty = true
+			else:
+				pvb_ownparty = false
+			pvb_onchoice = func(member: Character):
+				clear(false)
+				selected_skillcaster.target = member
+				await skillx.cast(selected_skillcaster)
+				Global.bs._progress()
+			push(party)
+		)
+		
+		if skillx.cost > selected_skillcaster.mp:
+			b.modulate = Color(0.5,0.5,0.5)
+		
+		if !first:
+			first = true
+			b.grab_focus()
+			skill.last_control = b
+		
+
+
+func _on_battle_command_push() -> void:
+	$BattleCommand.last_control = null
+	
+	if Global.items.size() >= 1:
+		$BattleCommand/GridContainer/Item.visible = true
+	else:
+		$BattleCommand/GridContainer/Item.visible = false
+	
+	if Global.bs.current_member.protection.skills.size() >= 1:
+		$BattleCommand/GridContainer/Skill.visible = true
+	else:
+		$BattleCommand/GridContainer/Skill.visible = false

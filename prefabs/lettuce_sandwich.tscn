@@ -13,11 +13,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsnh1"]
 size = Vector2(16, 11)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nr6tt"]
+polygon = PackedVector2Array(-8, 2, -7, 2, -7, 3, -6, 3, -6, 5, -5, 5, -5, 6, -3, 6, -3, 7, -2, 7, -2, 8, 0, 8, 0, 7, 2, 7, 2, 6, 4, 6, 4, 5, 6, 5, 6, 4, 7, 4, 7, 2, 8, 2)
+
 [node name="LettuceSandwich" type="Node2D" unique_id=84924078]
 script = ExtResource("1_7tx6j")
 metadata/_custom_type_script = "uid://cy04gq26o2le"
 
 [node name="Key" type="Sprite2D" parent="." unique_id=870931619]
+light_mask = 2
 position = Vector2(0, -10)
 texture = ExtResource("1_wstyt")
 
@@ -50,3 +54,7 @@ metadata/_custom_type_script = "uid://ct202mhbmuidd"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1068628887]
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_vsnh1")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=519984129]
+position = Vector2(0, -10)
+occluder = SubResource("OccluderPolygon2D_nr6tt")

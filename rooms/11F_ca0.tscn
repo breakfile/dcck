@@ -1,0 +1,141 @@
+[gd_scene format=4 uid="uid://c2c382a4fyl5n"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_0e2te"]
+[ext_resource type="AudioStream" uid="uid://dptxj6euav64v" path="res://music/my_own/catacombs.ogg" id="2_5t6ue"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="2_ruqq1"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="3_pxrsg"]
+[ext_resource type="Texture2D" uid="uid://grspercwwh51" path="res://sprites/sign.png" id="4_7xos0"]
+[ext_resource type="Script" uid="uid://cy04gq26o2le" path="res://scripts/memento_mori.gd" id="5_bjsma"]
+[ext_resource type="Texture2D" uid="uid://ucs4vmdm55cp" path="res://sprites/radial_lighting.png" id="5_jbsi8"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="6_sa3fr"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="7_f3a20"]
+[ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="10_bjsma"]
+[ext_resource type="PackedScene" uid="uid://d1iw53mdnx61m" path="res://prefabs/lettuce_sandwich.tscn" id="11_f3a20"]
+[ext_resource type="PackedScene" uid="uid://boxug6iu0eeh3" path="res://prefabs/save_station.tscn" id="12_wvhw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xos0"]
+size = Vector2(16, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjsma"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sa3fr"]
+polygon = PackedVector2Array(-2, 6, 2, 6, 2, 8, -2, 8)
+
+[node name="11FCa0" type="Node2D" unique_id=1434015500]
+script = ExtResource("1_0e2te")
+title = "Catacombs"
+music = ExtResource("2_5t6ue")
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1320668802]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAP7/AAAAAAEAAAD///7/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAAAAPz/AAAAAAEAAAD///z/AAAAAAEAAAD///v/AAAAAAEAAAD///r/AAAAAAEAAAAAAPv/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPn/AAAAAAEAAAD///n/AAAAAAEAAAABAPr/AAAAAAEAAAACAPn/AAAAAAEAAAADAPn/AAAAAAEAAAAEAPn/AAAAAAEAAAAFAPn/AAAAAAEAAAABAPn/AAAAAAEAAAACAPr/AAAAAAEAAAADAPr/AAAAAAEAAAAEAPr/AAAAAAEAAAAFAPr/AAAAAAEAAAAGAPr/AAAAAAEAAAAHAPr/AAAAAAEAAAAIAPn/AAAAAAEAAAAJAPn/AAAAAAEAAAAHAPn/AAAAAAEAAAAGAPn/AAAAAAEAAAAIAPr/AAAAAAEAAAAJAPr/AAAAAAEAAAAKAPr/AAAAAAEAAAALAPr/AAAAAAEAAAAKAPn/AAAAAAEAAAALAPn/AAAAAAEAAAAMAPn/AAAAAAEAAAAMAPr/AAAAAAEAAAALAPj/AAAAAAEAAAALAPf/AAAAAAEAAAALAPb/AAAAAAEAAAALAPX/AAAAAAEAAAAMAPj/AAAAAAEAAAAMAPf/AAAAAAEAAAAMAPb/AAAAAAEAAAAMAPX/AAAAAAEAAAANAPn/AAAAAAEAAAANAPr/AAAAAAEAAAAOAPr/AAAAAAEAAAAPAPn/AAAAAAEAAAAQAPn/AAAAAAEAAAARAPn/AAAAAAEAAAASAPn/AAAAAAEAAAATAPn/AAAAAAEAAAAOAPn/AAAAAAEAAAASAPr/AAAAAAEAAAATAPr/AAAAAAEAAAARAPr/AAAAAAEAAAAQAPr/AAAAAAEAAAAPAPr/AAAAAAEAAAAUAPr/AAAAAAEAAAAUAPn/AAAAAAEAAAAVAPn/AAAAAAEAAAAWAPn/AAAAAAEAAAAXAPn/AAAAAAEAAAAVAPr/AAAAAAEAAAAWAPr/AAAAAAEAAAAXAPr/AAAAAAEAAAAWAPv/AAAAAAEAAAAWAPz/AAAAAAEAAAAWAP3/AAAAAAEAAAAXAP3/AAAAAAEAAAAXAP7/AAAAAAEAAAAXAPz/AAAAAAEAAAAXAPv/AAAAAAEAAAAWAP7/AAAAAAEAAAAWAP//AAAAAAEAAAAXAP//AAAAAAEAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAABAPz/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAAKAPv/AAAAAAAAAAALAPv/AAAAAAAAAAAMAPv/AAAAAAAAAAANAPv/AAAAAAAAAAAOAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAQAPv/AAAAAAAAAAARAPv/AAAAAAAAAAASAPv/AAAAAAAAAAATAPv/AAAAAAAAAAAUAPv/AAAAAAAAAAAVAPv/AAAAAAAAAAAVAPz/AAAAAAAAAAAVAP3/AAAAAAAAAAAVAP7/AAAAAAAAAAAVAP//AAAAAAAAAAAVAAAAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAYAP//AAAAAAAAAAAYAP7/AAAAAAAAAAAYAP3/AAAAAAAAAAAYAPz/AAAAAAAAAAAYAPv/AAAAAAAAAAAYAPr/AAAAAAAAAAAYAPn/AAAAAAAAAAAYAPj/AAAAAAAAAAAXAPj/AAAAAAAAAAAWAPj/AAAAAAAAAAAVAPj/AAAAAAAAAAAUAPj/AAAAAAAAAAATAPj/AAAAAAAAAAASAPj/AAAAAAAAAAARAPj/AAAAAAAAAAAQAPj/AAAAAAAAAAAPAPj/AAAAAAAAAAAOAPj/AAAAAAAAAAANAPj/AAAAAAAAAAANAPf/AAAAAAAAAAANAPb/AAAAAAAAAAANAPX/AAAAAAAAAAAKAPX/AAAAAAAAAAAKAPb/AAAAAAAAAAAKAPf/AAAAAAAAAAAKAPj/AAAAAAAAAAAJAPj/AAAAAAAAAAAIAPj/AAAAAAAAAAAHAPj/AAAAAAAAAAAGAPj/AAAAAAAAAAAFAPj/AAAAAAAAAAAEAPj/AAAAAAAAAAADAPj/AAAAAAAAAAACAPj/AAAAAAAAAAABAPj/AAAAAAAAAAAAAPj/AAAAAAAAAAD///j/AAAAAAAAAAD+//j/AAAAAAAAAAD+//n/AAAAAAAAAAD+//r/AAAAAAAAAAD+//v/AAAAAAAAAAD+//z/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+//f/AAAAAAAAAAD///f/AAAAAAAAAAAAAPf/AAAAAAAAAAABAPf/AAAAAAAAAAACAPf/AAAAAAAAAAADAPf/AAAAAAAAAAAEAPf/AAAAAAAAAAAFAPf/AAAAAAAAAAAGAPf/AAAAAAAAAAAHAPf/AAAAAAAAAAAIAPf/AAAAAAAAAAAJAPf/AAAAAAAAAAAOAPf/AAAAAAAAAAAPAPf/AAAAAAAAAAAQAPf/AAAAAAAAAAARAPf/AAAAAAAAAAASAPf/AAAAAAAAAAATAPf/AAAAAAAAAAAUAPf/AAAAAAAAAAAVAPf/AAAAAAAAAAAWAPf/AAAAAAAAAAAXAPf/AAAAAAAAAAAYAPf/AAAAAAAAAAAWAAIAAAAAAAEAAAAWAAMAAAAAAAEAAAAXAAQAAAAAAAEAAAAXAAUAAAAAAAEAAAAXAAMAAAAAAAEAAAAXAAIAAAAAAAEAAAAWAAQAAAAAAAEAAAAWAAUAAAAAAAEAAAAYAAIAAAAAAAAAAAAYAAMAAAAAAAAAAAAYAAQAAAAAAAAAAAAYAAUAAAAAAAAAAAAYAAYAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAgAAAAAAAAAAAAYAAkAAAAAAAAAAAAYAAoAAAAAAAAAAAAYAAsAAAAAAAAAAAAYAAwAAAAAAAAAAAAYAA0AAAAAAAAAAAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAVAAwAAAAAAAAAAAAVAAsAAAAAAAAAAAAVAAoAAAAAAAAAAAAVAAkAAAAAAAAAAAAVAAgAAAAAAAAAAAAVAAcAAAAAAAAAAAAVAAYAAAAAAAAAAAAVAAUAAAAAAAAAAAAVAAQAAAAAAAAAAAAVAAMAAAAAAAAAAAAVAAIAAAAAAAAAAAAXAAkAAAAAAAEAAAAXAAgAAAAAAAEAAAAXAAcAAAAAAAEAAAAXAAYAAAAAAAEAAAAWAAYAAAAAAAEAAAAWAAcAAAAAAAEAAAAWAAgAAAAAAAEAAAAWAAkAAAAAAAEAAAAWAAoAAAAAAAEAAAAWAAsAAAAAAAEAAAAWAAwAAAAAAAEAAAAXAAwAAAAAAAEAAAAXAAsAAAAAAAEAAAAXAAoAAAAAAAEAAAAKAPP/AAAAAAAAAAAKAPT/AAAAAAAAAAANAPP/AAAAAAEAAAANAPT/AAAAAAAAAAANAPL/AAAAAAEAAAAKAPL/AAAAAAAAAAALAPP/AAAAAAEAAAALAPT/AAAAAAEAAAAMAPT/AAAAAAEAAAAMAPP/AAAAAAEAAAAMAPL/AAAAAAEAAAALAPL/AAAAAAEAAAAKAPH/AAAAAAAAAAAKAPD/AAAAAAAAAAAKAO//AAAAAAAAAAAKAO7/AAAAAAAAAAAKAO3/AAAAAAAAAAAKAOz/AAAAAAAAAAANAPH/AAAAAAAAAAANAPD/AAAAAAAAAAANAO//AAAAAAAAAAANAO7/AAAAAAAAAAANAO3/AAAAAAAAAAANAOz/AAAAAAAAAAANAOv/AAAAAAAAAAAKAOv/AAAAAAAAAAALAPH/AAAAAAEAAAALAPD/AAAAAAEAAAALAO//AAAAAAEAAAALAO7/AAAAAAEAAAALAO3/AAAAAAEAAAALAOz/AAAAAAEAAAAMAOv/AAAAAAEAAAAMAOr/AAAAAAEAAAAMAOz/AAAAAAEAAAAMAO3/AAAAAAEAAAAMAO7/AAAAAAEAAAAMAO//AAAAAAEAAAAMAPD/AAAAAAEAAAAMAPH/AAAAAAEAAAALAOr/AAAAAAEAAAALAOv/AAAAAAEAAAAKAOr/AAAAAAAAAAANAOr/AAAAAAAAAAAOAPP/AAAAAAEAAAAOAPL/AAAAAAEAAAAPAPL/AAAAAAEAAAAQAPL/AAAAAAEAAAARAPL/AAAAAAEAAAASAPL/AAAAAAEAAAATAPL/AAAAAAEAAAAPAPP/AAAAAAEAAAAQAPP/AAAAAAEAAAARAPP/AAAAAAEAAAASAPP/AAAAAAEAAAATAPP/AAAAAAEAAAAUAPP/AAAAAAEAAAAUAPL/AAAAAAEAAAAVAPL/AAAAAAEAAAAWAPP/AAAAAAEAAAAXAPP/AAAAAAEAAAAWAPL/AAAAAAEAAAAVAPP/AAAAAAEAAAAXAPL/AAAAAAEAAAAOAPD/AAAAAAAAAAAPAPD/AAAAAAAAAAAQAPD/AAAAAAAAAAAOAPH/AAAAAAAAAAAPAPH/AAAAAAAAAAAQAPH/AAAAAAAAAAARAPH/AAAAAAAAAAASAPH/AAAAAAAAAAATAPH/AAAAAAAAAAAUAPH/AAAAAAAAAAAVAPH/AAAAAAAAAAAUAPD/AAAAAAAAAAATAPD/AAAAAAAAAAASAPD/AAAAAAAAAAARAPD/AAAAAAAAAAAVAPD/AAAAAAAAAAAWAPD/AAAAAAAAAAAXAPH/AAAAAAAAAAAWAPH/AAAAAAAAAAAXAPD/AAAAAAAAAAAYAPD/AAAAAAAAAAAYAPH/AAAAAAAAAAAYAPL/AAAAAAAAAAAYAPP/AAAAAAAAAAAYAPT/AAAAAAAAAAAXAPT/AAAAAAAAAAAWAPT/AAAAAAAAAAAVAPT/AAAAAAAAAAAUAPT/AAAAAAAAAAATAPT/AAAAAAAAAAASAPT/AAAAAAAAAAARAPT/AAAAAAAAAAAQAPT/AAAAAAAAAAAPAPT/AAAAAAAAAAAOAPT/AAAAAAAAAAA=")
+tile_set = ExtResource("3_pxrsg")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=354560328]
+color = Color(0.27022192, 0.27022192, 0.2702219, 1)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=936991290]
+y_sort_enabled = true
+
+[node name="Player" parent="Node2D" unique_id=1244825177 instance=ExtResource("2_ruqq1")]
+
+[node name="LightOccluder2D" parent="Node2D/Player" index="0" unique_id=2031991981]
+visible = false
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D/Player" unique_id=2117997676]
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("5_jbsi8")
+texture_scale = 0.5
+
+[node name="Sign2" type="Node2D" parent="Node2D" unique_id=1756449703]
+position = Vector2(0, -101)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/Sign2" unique_id=424687047]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sign2/StaticBody2D" unique_id=1682877260]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_7xos0")
+
+[node name="Sign" type="Sprite2D" parent="Node2D/Sign2" unique_id=189330678]
+light_mask = 2
+position = Vector2(0, -7)
+texture = ExtResource("4_7xos0")
+
+[node name="InteractionRoot" type="Node2D" parent="Node2D/Sign2" unique_id=1461244382]
+script = ExtResource("5_bjsma")
+metadata/_custom_type_script = "uid://cy04gq26o2le"
+
+[node name="InteractionLauncher" type="Area2D" parent="Node2D/Sign2/InteractionRoot" unique_id=88163645 node_paths=PackedStringArray("root")]
+script = ExtResource("6_sa3fr")
+label = "Sign Post"
+root = NodePath("..")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sign2/InteractionRoot/InteractionLauncher" unique_id=373828797]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_bjsma")
+
+[node name="DialogueInteraction" type="Node" parent="Node2D/Sign2/InteractionRoot/InteractionLauncher" unique_id=1973921139]
+script = ExtResource("7_f3a20")
+dialogues = Array[String](["[font=fonts/BradleyHand.ttf]catacombs are for workers only
+   do not enter Trespassing Fee 300sn[/font]", "[font=fonts/BradleyHand.ttf]workers only allowed to enter catacombs under [s]strict conditions[/s] 		
+			[color=red]NEVER[/color][/font]"])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Node2D/Sign2" unique_id=119676385]
+position = Vector2(0, -6)
+occluder = SubResource("OccluderPolygon2D_sa3fr")
+
+[node name="Sign3" type="Node2D" parent="Node2D" unique_id=1338441697]
+position = Vector2(208, -221)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/Sign3" unique_id=703863375]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sign3/StaticBody2D" unique_id=436651639]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_7xos0")
+
+[node name="Sign" type="Sprite2D" parent="Node2D/Sign3" unique_id=1195788811]
+light_mask = 2
+position = Vector2(0, -7)
+texture = ExtResource("4_7xos0")
+
+[node name="InteractionRoot" type="Node2D" parent="Node2D/Sign3" unique_id=1760761366]
+script = ExtResource("5_bjsma")
+metadata/_custom_type_script = "uid://cy04gq26o2le"
+
+[node name="InteractionLauncher" type="Area2D" parent="Node2D/Sign3/InteractionRoot" unique_id=1050608829 node_paths=PackedStringArray("root")]
+script = ExtResource("6_sa3fr")
+label = "Sign Post"
+root = NodePath("..")
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sign3/InteractionRoot/InteractionLauncher" unique_id=502700245]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_bjsma")
+
+[node name="DialogueInteraction" type="Node" parent="Node2D/Sign3/InteractionRoot/InteractionLauncher" unique_id=1652660674]
+script = ExtResource("7_f3a20")
+dialogues = Array[String](["[font=fonts/BradleyHand.ttf]there is absolutely nothing dangerous in the catacombs
+[color=red]LEAVE[/color]", "[font=fonts/BradleyHand.ttf]There's nothing. I didn't do anything.", "[font=fonts/BradleyHand.ttf]There is nothing. @@@@"])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Node2D/Sign3" unique_id=1240651760]
+position = Vector2(0, -6)
+occluder = SubResource("OccluderPolygon2D_sa3fr")
+
+[node name="LettuceSandwich" parent="Node2D" unique_id=84924078 instance=ExtResource("11_f3a20")]
+position = Vector2(367, -203)
+
+[node name="SaveStation" parent="Node2D" unique_id=966866564 instance=ExtResource("12_wvhw1")]
+position = Vector2(303, -240)
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=2061407253]
+script = ExtResource("10_bjsma")
+metadata/_custom_type_script = "uid://b5b7vxf81u73l"
+
+[editable path="Node2D/Player"]

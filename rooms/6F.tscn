@@ -81,6 +81,7 @@ texture = ExtResource("8_cvvtp")
 script = ExtResource("16_a0yc1")
 label = "Talk"
 routes = [NodePath("."), NodePath("../PostTalk")]
+remember_route = true
 metadata/_custom_type_script = "uid://dqefeqi2a08ol"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/BusterTiny2/InteractionLauncher" unique_id=118773435]
@@ -117,6 +118,7 @@ texture = ExtResource("8_cvvtp")
 script = ExtResource("16_a0yc1")
 label = "Talk"
 routes = [NodePath("."), NodePath("../PostTalk")]
+remember_route = true
 metadata/_custom_type_script = "uid://dqefeqi2a08ol"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/BusterTiny3/InteractionLauncher" unique_id=1223698106]

@@ -12,12 +12,14 @@ script = ExtResource("1_fu8b5")
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 392.0
-offset_bottom = 80.0
+offset_bottom = 73.0
 theme = ExtResource("2_tm68y")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=640139121]
 layout_mode = 2
+theme_override_constants/strikethrough_alpha = 255
 bbcode_enabled = true
+text = "[s]Hello there[/s]"
 scroll_active = false
 scroll_following_visible_characters = true
 visible_characters_behavior = 1

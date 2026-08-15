@@ -8,7 +8,7 @@ script = ExtResource("1_40aom")
 attack_type = 1
 name = "Cooler"
 desc = "Ice
-1 * Attack"
+Attack * 1"
 one_line_desc = "Atk x 1"
 cost = 10
 wait_for_animation_to_finish = true

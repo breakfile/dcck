@@ -1,5 +1,6 @@
 class_name DeleteRootInteraction extends Interaction
 
+
 @export var delete_permanently := true
 
 func on_interaction():
@@ -8,5 +9,3 @@ func on_interaction():
 			root.destroy_permanently()
 		else:
 			root.free()
-
-		#stop.emit()

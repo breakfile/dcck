@@ -25,8 +25,10 @@ func _connect_focus_signals(node: Node):
 func _on_child_focus_entered(control: Control):
 	last_control = control
 
+@export var always_default_control := false
+
 func focus_last_control():
-	if last_control:
+	if last_control and last_control.visible and !always_default_control:
 		last_control.grab_focus()
 	elif default_control:
 		default_control.grab_focus()

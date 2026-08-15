@@ -29,6 +29,7 @@ func _on_run_pressed() -> void:
 		Global.bs._stop()
 	else:
 		await DialogueBox.type("> Can't run from this battle!")
+		await Global.bs._progress()
 
 
 func _on_talk_pressed() -> void:
