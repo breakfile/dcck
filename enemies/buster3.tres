@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c48xyqebg7jxa"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_lutck"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_gygve"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="3_u15gu"]
+[ext_resource type="Resource" uid="uid://btq3k2bipr8ki" path="res://skills/recharge.tres" id="3_w2ew4"]
+[ext_resource type="Texture2D" uid="uid://b2ejt5dksm25h" path="res://sprites/last_buster_battle.png" id="4_gygve"]
+
+[resource]
+script = ExtResource("3_u15gu")
+name = "Last Buster"
+level = 14
+exp_drop = 8
+description = "A diamond robot that hates talking and doesn't care about your feelings."
+texture = ExtResource("4_gygve")
+ice_multiplier = 0.0
+additional_skills = Array[ExtResource("1_lutck")]([ExtResource("2_gygve"), ExtResource("3_w2ew4")])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

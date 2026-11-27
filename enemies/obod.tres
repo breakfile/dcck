@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("3_868tu")
 name = "Orange Bug of Death"
-exp_drop = -10
+exp_drop = 0
 description = "An entirely pacifist creature."
 texture = ExtResource("3_virh3")
 fire_multiplier = 0.001

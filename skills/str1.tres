@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DamageSkill" format=3 uid="uid://rdc3nn76clrn"]
+
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="1_pnff7"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="2_u700x"]
+
+[resource]
+script = ExtResource("2_u700x")
+multiplier = 3.0
+name = "Strength III"
+desc = "Physical
+Attack * 3"
+one_line_desc = "Atk x 1.5"
+cost = 15
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://db02omixbwbq7"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_w8p64"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_ku6m5"]
+[ext_resource type="Resource" uid="uid://f40dwetmqi4o" path="res://skills/recvheal1.tres" id="3_fmkq0"]
+[ext_resource type="Resource" uid="uid://cwtkl0tpr2edy" path="res://skills/recvheal2.tres" id="4_lekeu"]
+[ext_resource type="Resource" uid="uid://330gxypmqdh1" path="res://skills/recvheal3.tres" id="5_6kcaq"]
+[ext_resource type="Resource" uid="uid://dkvvsveq5xr8u" path="res://skills/recvhealmax.tres" id="6_6kcaq"]
+[ext_resource type="Resource" uid="uid://cerq33b5jprmq" path="res://skills/recvpoison.tres" id="6_lekeu"]
+[ext_resource type="Resource" uid="uid://d4hryhxhg8wxl" path="res://skills/recvcure.tres" id="8_eff46"]
+
+[resource]
+script = ExtResource("1_w8p64")
+slot = 1
+attack_increase = -1
+defense_increase = 7
+skills = Array[ExtResource("2_ku6m5")]([ExtResource("3_fmkq0"), ExtResource("4_lekeu"), ExtResource("5_6kcaq"), ExtResource("6_6kcaq"), ExtResource("6_lekeu"), ExtResource("8_eff46")])
+name = "Rec. Cerebrum"
+aura_name = "THE CEREBRUM OF RECOVERY"
+desc = "[center]PROTECTOR[/center]
+A brain part with knowledge of Recovery skills."
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

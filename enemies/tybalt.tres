@@ -1,7 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://k126l62lwuku"]
 
 [ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_ssamd"]
-[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_mkpvb"]
 [ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="3_7xsr3"]
 [ext_resource type="Script" uid="uid://dlb0e8eg0asr8" path="res://scripts/enemy/tybalt.gd" id="4_mkpvb"]
 [ext_resource type="Resource" uid="uid://wa20mcnpfqct" path="res://skills/fire1.tres" id="4_q4eme"]
@@ -29,8 +28,17 @@ metadata/_custom_type_script = "uid://c1f0wn67agteb"
 script = ExtResource("4_mkpvb")
 name = "Tybalt"
 level = 2
+exp_drop = null
 description = "Wields the Cerebrum of Warmth."
 texture = ExtResource("4_ssamd")
+fire_multiplier = null
+ice_multiplier = null
+physical_multiplier = null
 max_hp = 100
+max_mp = null
+attack = null
+defense = null
 protection = SubResource("Resource_20jxp")
+additional_skills = null
+dont_use_cerebrum_skills = null
 metadata/_custom_type_script = "uid://dmumirl5j1gqx"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bx04wx6mjxbj3"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_m6ao7"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_b5i15"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="3_65ccs"]
+[ext_resource type="Texture2D" uid="uid://cu45jc2xku7vo" path="res://sprites/busted_battle.png" id="4_wdpax"]
+
+[resource]
+script = ExtResource("3_65ccs")
+name = "Busted"
+level = 10
+exp_drop = 5
+description = "Broken"
+texture = ExtResource("4_wdpax")
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

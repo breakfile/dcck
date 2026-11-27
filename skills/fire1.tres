@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_ppkoj")
 attack_type = 0
-name = "Warmdown"
+name = "Fire I"
 desc = "Fire
 Attack * 1"
 one_line_desc = "Atk x 1"

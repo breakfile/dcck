@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://bhm3m3rhiawpn" path="res://items/key.tres" id="8_hfoa3"]
 [ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="8_yvya1"]
 [ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="12_q0q4j"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="13_4u382"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="13_4u382"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvya1"]
 size = Vector2(16, 2)
@@ -21,7 +21,7 @@ size = Vector2(16, 2)
 
 [node name="Tutorial2" type="Node2D" unique_id=507593530]
 script = ExtResource("1_8nsh3")
-title = "-3F"
+title = "Cathedral -3F"
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1993674213]

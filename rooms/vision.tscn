@@ -1,0 +1,151 @@
+[gd_scene format=4 uid="uid://27kuhjbmwf0c"]
+
+[ext_resource type="Script" uid="uid://dqniouit467f5" path="res://rooms/vision.gd" id="1_tik16"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="2_qlnqg"]
+[ext_resource type="Script" uid="uid://c6y1vo548y0x1" path="res://scripts/autoplay_interaction_launcher.gd" id="3_wm43f"]
+[ext_resource type="Texture2D" uid="uid://tid1cjs75fpb" path="res://sprites/callum_hurt.png" id="4_jy843"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="4_tik16"]
+[ext_resource type="Texture2D" uid="uid://dw6jpaeilosi8" path="res://sprites/nocharacter.png" id="5_hjum7"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="5_pwag1"]
+[ext_resource type="Script" uid="uid://63054aqh7xvs" path="res://scripts/set_property_interaction.gd" id="5_qgl8n"]
+[ext_resource type="Texture2D" uid="uid://ev4qtpqctoed" path="res://sprites/table.png" id="6_88gjl"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="8_pwag1"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="11_orog3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwag1"]
+size = Vector2(15, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orog3"]
+size = Vector2(15, 33)
+
+[node name="Vision" type="Node2D" unique_id=188458386]
+script = ExtResource("1_tik16")
+title = "The Gully"
+can_open_menu = false
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="YSort" type="Node2D" parent="." unique_id=479323197]
+y_sort_enabled = true
+
+[node name="Player" parent="YSort" unique_id=1244825177 instance=ExtResource("2_qlnqg")]
+visible = false
+modulate = Color(18.892, 18.892, 18.892, 1)
+
+[node name="Camera2D" parent="YSort/Player/Sprite" parent_id_path=PackedInt32Array(1244825177, 2068903521) index="0" unique_id=1148712733]
+limit_left = 0
+limit_right = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort" unique_id=293436891]
+y_sort_enabled = true
+
+[node name="Table" type="Sprite2D" parent="YSort/StaticBody2D" unique_id=852520315]
+position = Vector2(0, -477)
+texture = ExtResource("6_88gjl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/StaticBody2D" unique_id=821853651]
+position = Vector2(0, -477)
+polygon = PackedVector2Array(-22, -15, -22, -14, -23, -14, -23, -13, -24, -13, -24, 3, -23, 3, -23, 4, -22, 4, -22, 10, -21, 10, -21, 11, -22, 11, -22, 12, -21, 12, -21, 13, -20, 13, -20, 15, -19, 15, -19, 16, -14, 16, -14, 15, -13, 15, -13, 14, -14, 14, -14, 12, 14, 12, 14, 14, 13, 14, 13, 15, 14, 15, 14, 16, 19, 16, 19, 15, 20, 15, 20, 13, 21, 13, 21, 12, 22, 12, 22, 11, 21, 11, 21, 10, 22, 10, 22, 4, 23, 4, 23, 3, 24, 3, 24, -13, 23, -13, 23, -14, 22, -14, 22, -15)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="YSort" unique_id=381791543]
+y_sort_enabled = true
+position = Vector2(-74, 0)
+
+[node name="Table" type="Sprite2D" parent="YSort/StaticBody2D2" unique_id=1464473028]
+position = Vector2(0, -477)
+texture = ExtResource("6_88gjl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/StaticBody2D2" unique_id=1477958286]
+position = Vector2(0, -477)
+polygon = PackedVector2Array(-22, -15, -22, -14, -23, -14, -23, -13, -24, -13, -24, 3, -23, 3, -23, 4, -22, 4, -22, 10, -21, 10, -21, 11, -22, 11, -22, 12, -21, 12, -21, 13, -20, 13, -20, 15, -19, 15, -19, 16, -14, 16, -14, 15, -13, 15, -13, 14, -14, 14, -14, 12, 14, 12, 14, 14, 13, 14, 13, 15, 14, 15, 14, 16, 19, 16, 19, 15, 20, 15, 20, 13, 21, 13, 21, 12, 22, 12, 22, 11, 21, 11, 21, 10, 22, 10, 22, 4, 23, 4, 23, 3, 24, 3, 24, -13, 23, -13, 23, -14, 22, -14, 22, -15)
+
+[node name="CallumStandstill" type="Sprite2D" parent="YSort" unique_id=245317962]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(37, -485)
+texture = ExtResource("4_jy843")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/CallumStandstill" unique_id=271883644]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CallumStandstill/StaticBody2D" unique_id=1330492060]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pwag1")
+
+[node name="InteractionLauncher" type="Area2D" parent="YSort/CallumStandstill" unique_id=1212924516]
+script = ExtResource("5_pwag1")
+label = "Callum"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CallumStandstill/InteractionLauncher" unique_id=1397267210]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_orog3")
+
+[node name="DialogueInteraction" type="Node" parent="YSort/CallumStandstill/InteractionLauncher" unique_id=69057363]
+script = ExtResource("4_tik16")
+dialogues = Array[String](["I... I don't know what happened Declan...", "Lachlan... he- he just... went insane...!", "His eyes started glowing and... and... he started saying that he had acquired [color=aqua]
+THE CEREBRUM OF SOVERIGNTY[/color]...", "Said that... [color=red][shake]Onguk[/shake][/color] granted it to him.", "He... had... the power to do anything...", "...", "Declan...", "...We need to make sure this doesn't happen again."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="SetPropertyInteraction" type="Node" parent="YSort/CallumStandstill/InteractionLauncher" unique_id=1056857345 node_paths=PackedStringArray("node")]
+script = ExtResource("5_qgl8n")
+node = NodePath("../../..")
+property = "visible"
+result = false
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="DialogueInteraction2" type="Node" parent="YSort/CallumStandstill/InteractionLauncher" unique_id=1248256651]
+script = ExtResource("4_tik16")
+dialogues = Array[String](["[color=red][shake]\"[/shake][/color]...We need to make sure this doesn't happen again.[color=red][shake]\"[/shake][/color]", "[color=red][shake]That was the day we sealed our deal...", "[color=red][shake]Now you remember...", "[color=red][shake]Yet darkness still clouds your heart..", "[color=red][shake]Has chaos truly made you it's avatar?", "[color=red][shake]We'll see how it suits you Declan...", "[color=red][shake]One hour until our meeting."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="ChangeLevelInteraction" type="Node" parent="YSort/CallumStandstill/InteractionLauncher" unique_id=506978435]
+script = ExtResource("8_pwag1")
+room = "uid://c2c382a4fyl5n"
+sign = 2
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="Nocharacter" type="Sprite2D" parent="YSort" unique_id=1875824131]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(-38, -488)
+texture = ExtResource("5_hjum7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Nocharacter" unique_id=1509217771]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Nocharacter/StaticBody2D" unique_id=2116833574]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pwag1")
+
+[node name="InteractionLauncher" type="Area2D" parent="YSort/Nocharacter" unique_id=1866937957]
+script = ExtResource("5_pwag1")
+label = "Friend Group B member"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Nocharacter/InteractionLauncher" unique_id=1177010520]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_orog3")
+
+[node name="DialogueInteraction" type="Node" parent="YSort/Nocharacter/InteractionLauncher" unique_id=529774101]
+script = ExtResource("4_tik16")
+dialogues = Array[String](["...Callum said something happened with Lachlan...", "Just, go talk to him."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1584963515]
+tile_map_data = PackedByteArray("AAD6/wMAAAABAAEAAAD7/wMAAAABAAEAAAD8/wMAAAABAAEAAAD9/wMAAAABAAEAAAD+/wMAAAABAAEAAAD//wMAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAFAAMAAAABAAEAAAAGAAMAAAABAAEAAAAGAAIAAAABAAEAAAAGAAEAAAABAAEAAAAGAAAAAAABAAEAAAAGAP//AAABAAEAAAAGAP7/AAABAAEAAAAGAP3/AAABAAEAAAAGAPz/AAABAAEAAAAGAPv/AAABAAEAAAAGAPr/AAABAAEAAAAGAPn/AAABAAEAAAAGAPj/AAABAAEAAAAGAPf/AAABAAEAAAAGAPb/AAABAAEAAAAGAPX/AAABAAEAAAAGAPT/AAABAAEAAAAGAPP/AAABAAEAAAAGAPL/AAABAAEAAAAGAPH/AAABAAEAAAAGAPD/AAABAAEAAAAGAO//AAABAAEAAAAGAO7/AAABAAEAAAAGAO3/AAABAAEAAAAGAOz/AAABAAEAAAAGAOv/AAABAAEAAAAGAOr/AAABAAEAAAAGAOn/AAABAAEAAAAGAOj/AAABAAEAAAAGAOf/AAABAAEAAAAGAOb/AAABAAEAAAAGAOX/AAABAAEAAAAGAOT/AAABAAEAAAAGAOP/AAABAAEAAAAGAOL/AAABAAEAAAAGAOH/AAABAAEAAAAGAOD/AAABAAEAAAAGAN//AAABAAEAAAAFAN//AAABAAEAAAAEAN//AAABAAEAAAADAN//AAABAAEAAAACAN//AAABAAEAAAABAN//AAABAAEAAAAAAN//AAABAAEAAAD//9//AAABAAEAAAD+/9//AAABAAEAAAD9/9//AAABAAEAAAD8/9//AAABAAEAAAD7/9//AAABAAEAAAD6/9//AAABAAEAAAD5/9//AAABAAEAAAD4/9//AAABAAEAAAD5/wMAAAABAAEAAAD4/wMAAAABAAEAAAD3/wMAAAABAAEAAAD3/wIAAAABAAEAAAD3/wEAAAABAAEAAAD3/wAAAAABAAEAAAD3////AAABAAEAAAD3//7/AAABAAEAAAD3//3/AAABAAEAAAD3//z/AAABAAEAAAD3//v/AAABAAEAAAD3//r/AAABAAEAAAD3//n/AAABAAEAAAD3//j/AAABAAEAAAD3//f/AAABAAEAAAD3//b/AAABAAEAAAD3//X/AAABAAEAAAD3//T/AAABAAEAAAD3//P/AAABAAEAAAD3//L/AAABAAEAAAD3//H/AAABAAEAAAD3//D/AAABAAEAAAD3/+//AAABAAEAAAD3/+7/AAABAAEAAAD3/+3/AAABAAEAAAD3/+z/AAABAAEAAAD3/+v/AAABAAEAAAD3/+r/AAABAAEAAAD3/+n/AAABAAEAAAD3/+j/AAABAAEAAAD3/+f/AAABAAEAAAD3/+b/AAABAAEAAAD3/+X/AAABAAEAAAD3/+T/AAABAAEAAAD3/+P/AAABAAEAAAD3/+L/AAABAAEAAAD3/+H/AAABAAEAAAD3/+D/AAABAAEAAAD3/9//AAABAAEAAAA=")
+tile_set = ExtResource("11_orog3")
+
+[node name="AutoPlayInteractionLauncher" type="Area2D" parent="." unique_id=476122925]
+script = ExtResource("3_wm43f")
+metadata/_custom_type_script = "uid://c6y1vo548y0x1"
+
+[node name="DialogueInteraction" type="Node" parent="AutoPlayInteractionLauncher" unique_id=328371748]
+script = ExtResource("4_tik16")
+dialogues = Array[String](["[color=red][shake]One hour until our meeting.", "[color=red][shake]...", "[color=red][shake]In your heart I sense naught but darkness.", "[color=red][shake]You promised to me that you would defeat King Kilmister, and grant me rightful ownership of the world...", "[color=red][shake]So why are you holding back...?", "[color=red][shake]What changed since...", "[color=aqua][wave]THEN?[/wave][/color]"])
+disable_skipping = true
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="SetPropertyInteraction" type="Node" parent="AutoPlayInteractionLauncher" unique_id=186711084 node_paths=PackedStringArray("node")]
+script = ExtResource("5_qgl8n")
+node = NodePath("../../YSort/Player")
+property = "visible"
+result = true
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[editable path="YSort/Player"]

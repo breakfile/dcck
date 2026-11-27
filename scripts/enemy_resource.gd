@@ -27,6 +27,8 @@ class_name EnemyData extends Resource
 @export_group("Skills for A.I.")
 @export var additional_skills: Array[Skill] = [preload("res://skills/attack.tres")]
 
+@export var dont_use_cerebrum_skills := false
+
 func talk(caster: Character, battle_system: BattleSystem):
 	await DialogueBox.type("> %s doesn't care about talking!" % name)
 	await battle_system._progress()
@@ -35,7 +37,7 @@ func ai(enemy: Character, battle_system: BattleSystem):
 	var all = enemy.protection.skills.duplicate()
 
 	for skill in all:
-		if skill.cost > enemy.mp:
+		if skill.cost > enemy.mp or dont_use_cerebrum_skills:
 			all.erase(skill)
 
 	all.append_array(enemy.ai_skills)
@@ -60,3 +62,6 @@ func new_button(text: String, logic: Callable):
 	b.pressed.connect(logic)
 	MenuManager.say_grid.reset_size()
 	return b
+
+func death(enemy: Character):
+	pass # Virtual

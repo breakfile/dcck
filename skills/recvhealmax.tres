@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HealSkill" format=3 uid="uid://dkvvsveq5xr8u"]
+
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="1_qasl6"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="2_vkmtf"]
+
+[resource]
+script = ExtResource("2_vkmtf")
+heal_amount = 10000
+name = "Channel Onguk"
+desc = "Recover all HP"
+cost = 35
+effect = ExtResource("1_qasl6")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"

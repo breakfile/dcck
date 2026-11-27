@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://b5sacyct145aj"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_ixqbh"]
+[ext_resource type="Script" uid="uid://rw1gprfplyoq" path="res://scripts/enemy/callumdie.gd" id="2_hcowd"]
+[ext_resource type="Texture2D" uid="uid://cunidi8ij37hk" path="res://sprites/callum_standstill.png" id="5_5jtan"]
+
+[resource]
+script = ExtResource("2_hcowd")
+name = "Callum"
+exp_drop = 0
+description = "..."
+texture = ExtResource("5_5jtan")
+additional_skills = Array[ExtResource("1_ixqbh")]([])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

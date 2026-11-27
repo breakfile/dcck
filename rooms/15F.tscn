@@ -1,0 +1,363 @@
+[gd_scene format=4 uid="uid://cykj4h1b73kho"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_kwcn8"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="2_1ic1c"]
+[ext_resource type="AudioStream" uid="uid://uubo3nubmixt" path="res://music/loudwind.wav" id="2_62yir"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="2_mqqbb"]
+[ext_resource type="PackedScene" uid="uid://b3ru2dtud3mob" path="res://prefabs/fast_room_entry.tscn" id="5_88cfm"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="6_ax632"]
+[ext_resource type="PackedScene" uid="uid://d152ob5yu458j" path="res://prefabs/fast_room_exit.tscn" id="7_ax632"]
+[ext_resource type="Script" uid="uid://63054aqh7xvs" path="res://scripts/set_property_interaction.gd" id="8_ad87a"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="8_m8gkk"]
+[ext_resource type="Script" uid="uid://dj2omdb5gtjt5" path="res://scripts/set_global_song.gd" id="9_3g3vn"]
+[ext_resource type="AudioStream" uid="uid://ccxe7ackew4pf" path="res://music/my_own/harry_law.ogg" id="10_voepr"]
+[ext_resource type="Script" uid="uid://cyb4m2646an71" path="res://scripts/set_sprite_animation_interaction.gd" id="11_voepr"]
+[ext_resource type="Script" uid="uid://ormn6pkwn5wr" path="res://scripts/linear_tween_interaction.gd" id="12_l4dlw"]
+[ext_resource type="Script" uid="uid://dccnmfh6yby00" path="res://scripts/tween_camera_interaction.gd" id="13_144ii"]
+[ext_resource type="Script" uid="uid://22ysojfimc1s" path="res://scripts/wait_for_timer_interaction.gd" id="15_3q6o5"]
+[ext_resource type="Texture2D" uid="uid://cunidi8ij37hk" path="res://sprites/callum_standstill.png" id="15_li4o8"]
+[ext_resource type="Texture2D" uid="uid://co8q1aemh0qmh" path="res://sprites/callum_walk1.png" id="16_3q6o5"]
+[ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="16_dxw0f"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="17_14ko1"]
+[ext_resource type="Texture2D" uid="uid://doggc5fb3sla8" path="res://sprites/callum_walk2.png" id="17_pugyr"]
+[ext_resource type="Resource" uid="uid://bstow8iv35i6u" path="res://enemies/callum.tres" id="18_1awar"]
+[ext_resource type="AudioStream" uid="uid://bph5f3c2go36q" path="res://music/my_own/harry_neutralboss.ogg" id="19_14ko1"]
+[ext_resource type="Texture2D" uid="uid://b06xgqeriqc3" path="res://sprites/callum-bg.png" id="19_hqbni"]
+[ext_resource type="Script" uid="uid://sxsgfmsyc76c" path="res://scripts/stop_global_song_interaction.gd" id="22_cvyn2"]
+[ext_resource type="Texture2D" uid="uid://tid1cjs75fpb" path="res://sprites/callum_hurt.png" id="22_hqbni"]
+[ext_resource type="Script" uid="uid://cbc5odn8ededf" path="res://scripts/item_interaction.gd" id="23_bayef"]
+[ext_resource type="PackedScene" uid="uid://boxug6iu0eeh3" path="res://prefabs/save_station.tscn" id="24_1awar"]
+[ext_resource type="Resource" uid="uid://db02omixbwbq7" path="res://items/recv_cerebrum.tres" id="24_2bjaw"]
+[ext_resource type="Script" uid="uid://jd404i6s2dir" path="res://scripts/play_sound_interaction.gd" id="25_tirhx"]
+[ext_resource type="AudioStream" uid="uid://dfj8ib8f8ot0i" path="res://fx/slash.wav" id="26_tirhx"]
+[ext_resource type="Script" uid="uid://cqlffcrhml807" path="res://scripts/shake_camera_interaction.gd" id="27_n1w56"]
+[ext_resource type="AudioStream" uid="uid://cstaugcpd7o3d" path="res://sfx/fall.ogg" id="28_nskjr"]
+[ext_resource type="AudioStream" uid="uid://ctb1tjsifvyx5" path="res://sfx/landing.wav" id="29_nskjr"]
+[ext_resource type="Script" uid="uid://dnnunxfy41qq" path="res://scripts/change_route_interaction.gd" id="30_a4d22"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="35_ds2f3"]
+[ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="36_i2hxa"]
+[ext_resource type="Script" uid="uid://c8j056l75jaao" path="res://scripts/shop_menu.gd" id="37_1u8hk"]
+[ext_resource type="Script" uid="uid://bhuq2ttw35nlx" path="res://scripts/item.gd" id="38_4tg25"]
+[ext_resource type="Resource" uid="uid://bi4qlvd8cjr13" path="res://items/weapon/rusty_spade.tres" id="39_7jres"]
+[ext_resource type="Resource" uid="uid://cnawgrg813x0t" path="res://items/snow_apple.tres" id="40_eromt"]
+[ext_resource type="Resource" uid="uid://ph264b7h6cy7" path="res://items/lettuce_sandwich.tres" id="41_0j1nq"]
+[ext_resource type="Resource" uid="uid://b0d6drw8dkege" path="res://items/kilmislop.tres" id="42_tmour"]
+[ext_resource type="Resource" uid="uid://gm28ruu0fgma" path="res://items/cure.tres" id="43_1u8hk"]
+[ext_resource type="Resource" uid="uid://b84snrx0pasfu" path="res://items/cold_cerebrum.tres" id="44_4tg25"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2cu6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_hqbni")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_li4o8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_3q6o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_li4o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pugyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_li4o8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="15F" type="Node2D" unique_id=1892398896]
+script = ExtResource("1_kwcn8")
+title = "Cathedral 15F"
+music = ExtResource("2_62yir")
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TrapDoor" type="TileMapLayer" parent="." unique_id=1925371641]
+tile_map_data = PackedByteArray("AAD///n/AAAAAAEAAAD///r/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPn/AAAAAAEAAAA=")
+tile_set = ExtResource("2_mqqbb")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1203553679]
+tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAD//wMAAAAAAAEAAAD+//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAABAAAAAAD+/wMAAAABAAAAAAD+//3/AAABAAAAAAD+//z/AAABAAAAAAD///3/AAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAABAAAAAAABAAIAAAABAAAAAAABAAEAAAABAAAAAAABAAAAAAAAAAEAAAABAP//AAAAAAEAAAABAP7/AAABAAAAAAABAP3/AAABAAAAAAAAAP3/AAAAAAEAAAD///z/AAAAAAEAAAAAAPz/AAAAAAEAAAABAPz/AAABAAAAAAD//wQAAAAAAAEAAAAAAAQAAAAAAAEAAAD///j/AAAAAAEAAAAAAPj/AAAAAAEAAAD+//v/AAABAAAAAAD+//r/AAABAAAAAAD+//n/AAABAAAAAAD+//j/AAABAAAAAAABAPv/AAABAAAAAAABAPr/AAABAAAAAAABAPn/AAABAAAAAAABAPj/AAABAAAAAAD+//f/AAAAAAAAAAD+//b/AAAAAAAAAAD+//X/AAAAAAAAAAD+//T/AAAAAAAAAAD///T/AAAAAAAAAAAAAPT/AAAAAAAAAAABAPT/AAAAAAAAAAABAPX/AAAAAAAAAAABAPb/AAAAAAAAAAABAPf/AAAAAAAAAAD///f/AAAEAAEAAAAAAPf/AAAEAAEAAAD+//P/AAAAAAAAAAD+//L/AAAAAAAAAAD+//H/AAAAAAAAAAD+//D/AAAAAAAAAAD+/+//AAAAAAAAAAD//+//AAACAAAAAAD//+7/AAAAAAAAAAD///D/AAACAAAAAAD///H/AAACAAAAAAD///L/AAACAAAAAAD///P/AAACAAAAAAD+/+7/AAAAAAAAAAAAAO//AAACAAAAAAAAAPD/AAACAAAAAAAAAPH/AAACAAAAAAAAAPL/AAACAAAAAAAAAPP/AAACAAAAAAABAPP/AAAAAAAAAAABAPL/AAAAAAAAAAABAPH/AAAAAAAAAAABAPD/AAAAAAAAAAABAO//AAAAAAAAAAAAAO7/AAAAAAAAAAABAO7/AAAAAAAAAAD+/+3/AAABAAAAAAD+/+z/AAABAAAAAAD//+z/AAAAAAEAAAAAAOz/AAAAAAEAAAAAAO3/AAABAAAAAAABAO3/AAABAAAAAAD//+3/AAABAAAAAAABAOz/AAABAAAAAAAAAOv/AAAAAAEAAAD//+v/AAAAAAEAAAD+/+v/AAABAAAAAAABAOv/AAABAAAAAAD//+r/AAAEAAEAAAAAAOr/AAAEAAEAAAD+/+r/AAAAAAAAAAD+/+n/AAAAAAAAAAD+/+j/AAAAAAAAAAD+/+f/AAAAAAAAAAABAOf/AAAAAAAAAAABAOj/AAAAAAAAAAABAOn/AAAAAAAAAAABAOr/AAAAAAAAAAAAAOf/AAAAAAAAAAD//+f/AAAAAAAAAAACAOf/AAAAAAAAAAACAOj/AAAAAAAAAAACAOn/AAAAAAAAAAACAOr/AAAAAAAAAAACAOv/AAAAAAAAAAACAOz/AAAAAAAAAAACAO3/AAAAAAAAAAACAO7/AAAAAAAAAAACAO//AAAAAAAAAAACAPD/AAAAAAAAAAACAPH/AAAAAAAAAAACAPL/AAAAAAAAAAACAPP/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAACAPf/AAAAAAAAAAACAPj/AAAAAAAAAAACAPn/AAAAAAAAAAACAPr/AAAAAAAAAAACAPv/AAAAAAAAAAACAPz/AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAD9//z/AAAAAAAAAAD9//v/AAAAAAAAAAD9//r/AAAAAAAAAAD9//n/AAAAAAAAAAD9//j/AAAAAAAAAAD9//f/AAAAAAAAAAD9//b/AAAAAAAAAAD9//X/AAAAAAAAAAD9//T/AAAAAAAAAAD9//P/AAAAAAAAAAD9//L/AAAAAAAAAAD9//H/AAAAAAAAAAD9//D/AAAAAAAAAAD9/+//AAAAAAAAAAD9/+7/AAAAAAAAAAD9/+3/AAAAAAAAAAD9/+z/AAAAAAAAAAD9/+v/AAAAAAAAAAD9/+r/AAAAAAAAAAD9/+n/AAAAAAAAAAD9/+j/AAAAAAAAAAD9/+f/AAAAAAAAAAD//wUAAAAEAAEAACAAAAUAAAAEAAEAACADAP//AAAAAAEAAAAEAP//AAAAAAEAAAAFAP//AAAAAAEAAAAGAP//AAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAIAP//AAAAAAEAAAAHAP//AAAAAAEAAAAJAP//AAAAAAEAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAAAAAAAAAAAAAAKAP//AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAKAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAGAPz/AAAOAAEAAAAFAPz/AAANAAEAAAAEAPz/AAAOAAAAAAADAPz/AAANAAAAAAADAP3/AAAAAAAAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAAAAAAAAAAEAP7/AAAOAAIAADAFAP7/AAAOAAIAADAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAADAP7/AAAAAAAAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAA=")
+tile_set = ExtResource("2_mqqbb")
+
+[node name="YSort" type="Node2D" parent="." unique_id=464209238]
+y_sort_enabled = true
+
+[node name="Player" parent="YSort" unique_id=1244825177 instance=ExtResource("2_1ic1c")]
+
+[node name="SaveStation" parent="YSort" unique_id=966866564 instance=ExtResource("24_1awar")]
+position = Vector2(133, -35)
+
+[node name="FastRoomEntry" parent="." unique_id=1091932744 instance=ExtResource("5_88cfm")]
+position = Vector2(0, 77)
+
+[node name="ChangeLevelInteraction" type="Node" parent="FastRoomEntry" unique_id=1808122989]
+script = ExtResource("6_ax632")
+room = "uid://cjp5obmohkmpp"
+sign = 1
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="FastRoomExit" parent="." unique_id=387514990 instance=ExtResource("7_ax632")]
+position = Vector2(0, -125)
+
+[node name="InteractionLauncher" parent="FastRoomExit" index="0" unique_id=558179258 node_paths=PackedStringArray("routes")]
+routes = [NodePath(".."), NodePath("../Node")]
+remember_route = true
+
+[node name="Node" type="Node" parent="FastRoomExit" unique_id=626428601]
+
+[node name="ChangeLevelInteraction" type="Node" parent="FastRoomExit/Node" unique_id=464275554]
+script = ExtResource("6_ax632")
+room = "res://rooms/16F.tscn"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="SetPropertyInteraction" type="Node" parent="FastRoomExit" unique_id=1445048837 node_paths=PackedStringArray("node")]
+script = ExtResource("8_ad87a")
+node = NodePath("../../TileMapLayer2")
+property = "visible"
+result = true
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="DialogueInteraction" type="Node" parent="FastRoomExit" unique_id=183239646]
+script = ExtResource("8_m8gkk")
+dialogues = Array[String](["Leaving so soon Declan?"])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="SetGlobalSongInteraction" type="Node" parent="FastRoomExit" unique_id=1859511072]
+script = ExtResource("9_3g3vn")
+stream = ExtResource("10_voepr")
+metadata/_custom_type_script = "uid://dj2omdb5gtjt5"
+
+[node name="PlayPlayerSpriteAnimationInteraction" type="Node" parent="FastRoomExit" unique_id=399431585]
+script = ExtResource("11_voepr")
+animation = "b_walk"
+metadata/_custom_type_script = "uid://cyb4m2646an71"
+
+[node name="LinearTweenInteraction" type="Node" parent="FastRoomExit" unique_id=1261611170 node_paths=PackedStringArray("node")]
+script = ExtResource("12_l4dlw")
+node = NodePath("../../YSort/Player")
+property = "position"
+new_value = Vector2(0, -90)
+time = 1.0
+metadata/_custom_type_script = "uid://ormn6pkwn5wr"
+
+[node name="PlayPlayerSpriteAnimationInteraction2" type="Node" parent="FastRoomExit" unique_id=1654739947]
+script = ExtResource("11_voepr")
+animation = "b_idle"
+metadata/_custom_type_script = "uid://cyb4m2646an71"
+
+[node name="TweenCameraInteraction" type="Node" parent="FastRoomExit" unique_id=463220857]
+script = ExtResource("13_144ii")
+property = "global_position"
+new_value = Vector2(0, -360)
+time = 2.0
+metadata/_custom_type_script = "uid://dccnmfh6yby00"
+
+[node name="WaitForTimerInteraction" type="Node" parent="FastRoomExit" unique_id=1722162633]
+script = ExtResource("15_3q6o5")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://22ysojfimc1s"
+
+[node name="LinearTweenInteraction2" type="Node" parent="FastRoomExit" unique_id=19442310 node_paths=PackedStringArray("node")]
+script = ExtResource("12_l4dlw")
+node = NodePath("../../TileMapLayer2")
+property = "modulate"
+new_value = Color(0, 0, 0, 1)
+time = 0.5
+metadata/_custom_type_script = "uid://ormn6pkwn5wr"
+
+[node name="LinearTweenInteraction3" type="Node" parent="FastRoomExit" unique_id=490946764 node_paths=PackedStringArray("node")]
+script = ExtResource("12_l4dlw")
+node = NodePath("../../AnimatedSprite2D")
+property = "modulate"
+new_value = Color(1, 1, 1, 1)
+time = 0.5
+metadata/_custom_type_script = "uid://ormn6pkwn5wr"
+
+[node name="SetPropertyInteraction2" type="Node" parent="FastRoomExit" unique_id=304584722 node_paths=PackedStringArray("node")]
+script = ExtResource("8_ad87a")
+node = NodePath("../../AnimatedSprite2D")
+property = "animation"
+result = "walk"
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="LinearTweenInteraction4" type="Node" parent="FastRoomExit" unique_id=296280320 node_paths=PackedStringArray("node")]
+script = ExtResource("12_l4dlw")
+node = NodePath("../../AnimatedSprite2D")
+property = "position"
+new_value = Vector2(0, -290)
+time = 1.0
+metadata/_custom_type_script = "uid://ormn6pkwn5wr"
+
+[node name="SetPropertyInteraction3" type="Node" parent="FastRoomExit" unique_id=131483988 node_paths=PackedStringArray("node")]
+script = ExtResource("8_ad87a")
+node = NodePath("../../AnimatedSprite2D")
+property = "animation"
+result = "idle"
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="DialogueInteraction2" type="Node" parent="FastRoomExit" unique_id=925308668]
+script = ExtResource("8_m8gkk")
+dialogues = Array[String](["So we meet again, Declan!", "I'd love to say our last meeting went well, but... you know how it went... with... Lachlan.", "And, of course, we swore we'd never let that happen again. So why am I now trying to let that happen again?", "I mean, you and I were both there when we made our oath to [color=red][shake]Him[/shake][/color].", "Well, I'd love to tell you, but I don't really want to get into the specifics right now.", "Besides, it looks like you're breaking your oath too. Did [color=red][shake]He[/shake][/color] send you to stop me?", "You want the next CEREBRUM, though. Right?", "Here's an idea: fight me for it!", "I'd love to give you a fighting chance! The last slither of hope. You're gonna need it if you want to really defeat me later on!", "Not that I'd ever let that happen. Let's fight! I'll try not to kill you...", "...this time."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="StartBattleInteraction" type="Node" parent="FastRoomExit" unique_id=1629476204]
+script = ExtResource("16_dxw0f")
+enemy_list = Array[ExtResource("17_14ko1")]([ExtResource("18_1awar")])
+song = ExtResource("19_14ko1")
+can_escape = false
+background = ExtResource("19_hqbni")
+autoscroll = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="SetPropertyInteraction4" type="Node" parent="FastRoomExit" unique_id=826603275 node_paths=PackedStringArray("node")]
+script = ExtResource("8_ad87a")
+node = NodePath("../../AnimatedSprite2D")
+property = "animation"
+result = "hurt"
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="StopGlobalSongInteraction" type="Node" parent="FastRoomExit" unique_id=739252672]
+script = ExtResource("22_cvyn2")
+metadata/_custom_type_script = "uid://sxsgfmsyc76c"
+
+[node name="DialogueInteraction3" type="Node" parent="FastRoomExit" unique_id=607947602]
+script = ExtResource("8_m8gkk")
+dialogues = Array[String](["Hah... hah...", "Fine... I guess you've earned this."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="ItemInteraction" type="Node" parent="FastRoomExit" unique_id=540748971]
+script = ExtResource("23_bayef")
+item = ExtResource("24_2bjaw")
+metadata/_custom_type_script = "uid://cbc5odn8ededf"
+
+[node name="TweenCameraInteraction2" type="Node" parent="FastRoomExit" unique_id=1067699514]
+script = ExtResource("13_144ii")
+property = "position"
+new_value = Vector2(0, 0)
+time = 2.0
+metadata/_custom_type_script = "uid://dccnmfh6yby00"
+
+[node name="DialogueInteraction4" type="Node" parent="FastRoomExit" unique_id=752213672]
+script = ExtResource("8_m8gkk")
+dialogues = Array[String](["Well, you're stronger than you look...", "But you honestly might be a bit too strong... it's actually kind of concerning!"])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="SetPropertyInteraction5" type="Node" parent="FastRoomExit" unique_id=1830140604 node_paths=PackedStringArray("node")]
+script = ExtResource("8_ad87a")
+node = NodePath("../../TrapDoor")
+property = "visible"
+result = false
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="SetPropertyInteraction6" type="Node" parent="FastRoomExit" unique_id=374287252 node_paths=PackedStringArray("node")]
+script = ExtResource("8_ad87a")
+node = NodePath("../../Overlay")
+property = "visible"
+result = true
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="PlaySoundInteraction" type="Node" parent="FastRoomExit" unique_id=34001001]
+script = ExtResource("25_tirhx")
+sound = ExtResource("26_tirhx")
+metadata/_custom_type_script = "uid://jd404i6s2dir"
+
+[node name="DialogueInteraction5" type="Node" parent="FastRoomExit" unique_id=1317127875]
+script = ExtResource("8_m8gkk")
+dialogues = Array[String](["This wouldn't have happened if you didn't put up such a fight!"])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="PlayPlayerSpriteAnimationInteraction3" type="Node" parent="FastRoomExit" unique_id=1439635165]
+script = ExtResource("11_voepr")
+animation = "fall"
+metadata/_custom_type_script = "uid://cyb4m2646an71"
+
+[node name="PlaySoundInteraction2" type="Node" parent="FastRoomExit" unique_id=1172879765]
+script = ExtResource("25_tirhx")
+sound = ExtResource("28_nskjr")
+wait = false
+metadata/_custom_type_script = "uid://jd404i6s2dir"
+
+[node name="LinearTweenInteraction5" type="Node" parent="FastRoomExit" unique_id=934187399 node_paths=PackedStringArray("node")]
+script = ExtResource("12_l4dlw")
+node = NodePath("../../YSort/Player")
+property = "position"
+new_value = Vector2(0, 64)
+time = 3.0
+metadata/_custom_type_script = "uid://ormn6pkwn5wr"
+
+[node name="CameraShakeInteraction" type="Node" parent="FastRoomExit" unique_id=1601160563]
+script = ExtResource("27_n1w56")
+wait = false
+metadata/_custom_type_script = "uid://cqlffcrhml807"
+
+[node name="PlaySoundInteraction3" type="Node" parent="FastRoomExit" unique_id=348088415]
+script = ExtResource("25_tirhx")
+sound = ExtResource("29_nskjr")
+metadata/_custom_type_script = "uid://jd404i6s2dir"
+
+[node name="ChangeRouteInteraction" type="Node" parent="FastRoomExit" unique_id=2002202333 node_paths=PackedStringArray("interaction_launcher")]
+script = ExtResource("30_a4d22")
+interaction_launcher = NodePath("../InteractionLauncher")
+route = 1
+metadata/_custom_type_script = "uid://dnnunxfy41qq"
+
+[node name="ChangeLevelInteraction" type="Node" parent="FastRoomExit" unique_id=575882938]
+script = ExtResource("6_ax632")
+room = "res://rooms/vision.tscn"
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="FastRoomExit2" parent="." unique_id=1946373273 instance=ExtResource("7_ax632")]
+position = Vector2(0, -333)
+sign = 2
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=7942737]
+visible = false
+position = Vector2(8, 0)
+tile_map_data = PackedByteArray("AAD//+n/AAAIAAEAAAA=")
+tile_set = ExtResource("2_mqqbb")
+
+[node name="Overlay" type="TileMapLayer" parent="." unique_id=372978124]
+visible = false
+tile_map_data = PackedByteArray("AAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAAAAPz/AAAAAAEAAAD///v/AAAAAAEAAAAAAP3/AAAAAAEAAAAAAPv/AAAAAAEAAAAAAP7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAD//wMAAAAAAAEAAAAAAP//AAAAAAEAAAD//wQAAAAAAAEAAAAAAAQAAAAAAAEAAAA=")
+tile_set = ExtResource("2_mqqbb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=116428718]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -337)
+sprite_frames = SubResource("SpriteFrames_v2cu6")
+animation = &"hurt"
+autoplay = "idle"
+offset = Vector2(0, -16)
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=1050730990]
+position = Vector2(80, -16)
+script = ExtResource("35_ds2f3")
+label = "Shop"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=1728511482]
+shape = ExtResource("36_i2hxa")
+
+[node name="ShopMenuInteractions" type="Node" parent="InteractionLauncher" unique_id=1181045147]
+script = ExtResource("37_1u8hk")
+items = Array[ExtResource("38_4tg25")]([ExtResource("39_7jres"), ExtResource("40_eromt"), ExtResource("41_0j1nq"), ExtResource("42_tmour"), ExtResource("43_1u8hk"), ExtResource("44_4tg25")])
+relative_price = Array[int]([25, 8, 6, 1, 7, 32])
+metadata/_custom_type_script = "uid://c8j056l75jaao"
+
+[editable path="FastRoomExit"]

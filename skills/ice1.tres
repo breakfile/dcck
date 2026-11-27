@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_40aom")
 attack_type = 1
-name = "Cooler"
+name = "Ice I"
 desc = "Ice
 Attack * 1"
 one_line_desc = "Atk x 1"

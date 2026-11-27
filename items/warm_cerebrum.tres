@@ -21,4 +21,5 @@ aura_name = "THE CEREBRUM OF WARMTH"
 desc = "[center]PROTECTOR[/center]
 A brain part with knowledge of Fire skills."
 one_line_desc = "Equip"
+cannot_toss = true
 metadata/_custom_type_script = "uid://c1f0wn67agteb"

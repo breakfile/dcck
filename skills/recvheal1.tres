@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="HealSkill" format=3 uid="uid://f40dwetmqi4o"]
+
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="1_4bkic"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="2_gxunl"]
+
+[resource]
+script = ExtResource("2_gxunl")
+heal_ko = true
+name = "Life"
+desc = "Recover many HP
+Cure [color=red]Unconciousness[/color]"
+cost = 4
+effect = ExtResource("1_4bkic")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="12_yiddv"]
 [ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="13_wspek"]
 [ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="14_4ypba"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="15_vgggu"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="15_vgggu"]
 [ext_resource type="Texture2D" uid="uid://cbcbisareyha5" path="res://sprites/ctrl1.png" id="16_hemop"]
 [ext_resource type="Texture2D" uid="uid://1h58o0ej26x3" path="res://sprites/ctrl2.png" id="17_3ps65"]
 
@@ -38,7 +38,7 @@ animations = [{
 
 [node name="Tutorial4" type="Node2D" unique_id=471529246]
 script = ExtResource("1_65o62")
-title = "-1F"
+title = "Cathedral -1F"
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1557700389]

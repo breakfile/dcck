@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HealSkill" format=3 uid="uid://330gxypmqdh1"]
+
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="1_6g3v1"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="2_3kl2r"]
+
+[resource]
+script = ExtResource("2_3kl2r")
+heal_amount = 90
+name = "Triple Life"
+desc = "Recover plenty of HP"
+cost = 21
+effect = ExtResource("1_6g3v1")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"

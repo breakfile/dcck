@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cmdo1umvcy7mn"]
 
 [ext_resource type="Texture2D" uid="uid://bl68b44ff1lr4" path="res://sprites/9slice.png" id="1_cjfk0"]
+[ext_resource type="Texture2D" uid="uid://b1ucqs156fef6" path="res://sprites/sel.png" id="1_kgv31"]
 [ext_resource type="FontFile" uid="uid://cwxqh7phoweak" path="res://fonts/unifont.otf" id="2_vj6dk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oryc4"]
@@ -50,11 +51,13 @@ expand_margin_right = 4.0
 [resource]
 default_font = ExtResource("2_vj6dk")
 Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_focus_color = Color(1, 1, 0, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(1, 1, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/icons/icon = ExtResource("1_kgv31")
 Button/styles/disabled = SubResource("StyleBoxEmpty_oryc4")
 Button/styles/focus = SubResource("StyleBoxEmpty_kgv31")
 Button/styles/hover = SubResource("StyleBoxEmpty_6c42i")

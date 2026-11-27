@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://bgxrt6orgcsd0" path="res://scripts/title.gd" id="1_ck17u"]
 [ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="1_qt0wy"]
 [ext_resource type="Texture2D" uid="uid://bynboekfh1kkt" path="res://sprites/start_screen.png" id="1_rqhfl"]
+[ext_resource type="AudioStream" uid="uid://cegnm4xgpm2nb" path="res://music/my_own/jingle.ogg" id="3_urmx3"]
+[ext_resource type="Script" uid="uid://bld1ooryuj7qs" path="res://scripts/save_file_display.gd" id="4_2wdh8"]
 [ext_resource type="Texture2D" uid="uid://dmntkampsogi2" path="res://sprites/paper_bg.png" id="4_fhyd0"]
+[ext_resource type="FontFile" uid="uid://gcly6m1bwe8u" path="res://fonts/Px437_Portfolio_6x8.ttf" id="6_7jj2e"]
+[ext_resource type="Texture2D" uid="uid://dxkopx88kax4l" path="res://sprites/info1.png" id="8_r6j4u"]
 
 [node name="Control" type="Control" unique_id=797492795]
 layout_mode = 3
@@ -14,6 +18,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_qt0wy")
 script = ExtResource("1_ck17u")
+
+[node name="Jingle" type="AudioStreamPlayer" parent="." unique_id=86548433]
+stream = ExtResource("3_urmx3")
+autoplay = true
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1136037890]
 layout_mode = 1
@@ -33,22 +41,46 @@ metadata/_tab_index = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/TextureRect" unique_id=208970169]
 layout_mode = 0
-offset_left = 191.0
-offset_top = 225.0
-offset_right = 271.0
-offset_bottom = 265.0
+offset_left = 212.0
+offset_top = 192.0
+offset_right = 398.0
+offset_bottom = 280.0
 
 [node name="Button" type="Button" parent="TabContainer/TextureRect/VBoxContainer" unique_id=21941380]
 layout_mode = 2
 action_mode = 0
-text = "> START"
+text = "START"
 alignment = 0
 
 [node name="Button2" type="Button" parent="TabContainer/TextureRect/VBoxContainer" unique_id=542749495]
 layout_mode = 2
 action_mode = 0
-text = "> CONTINUE"
+text = "CONTINUE"
 alignment = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/TextureRect/VBoxContainer" unique_id=757274527]
+modulate = Color(0.44010997, 0.42169067, 0.59939474, 1)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+script = ExtResource("4_2wdh8")
+
+[node name="Label" type="Label" parent="TabContainer/TextureRect" unique_id=1110675964]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 385.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.645684, 0.6351736, 0.78909427, 1)
+theme_override_fonts/font = ExtResource("6_7jj2e")
+theme_override_font_sizes/font_size = 8
+text = "(c/w implications and exaggerated depictions 
+of death)"
+
+[node name="Info1" type="Sprite2D" parent="TabContainer/TextureRect" unique_id=1961717351]
+position = Vector2(65, 281)
+texture = ExtResource("8_r6j4u")
 
 [node name="Control" type="Control" parent="TabContainer" unique_id=1446512661]
 visible = false
@@ -106,13 +138,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 action_mode = 0
 text = "New Game"
+alignment = 0
 
 [node name="Back" type="Button" parent="TabContainer/Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1013166620]
 layout_mode = 2
 size_flags_horizontal = 3
 action_mode = 0
 text = "Quit"
+alignment = 0
 
 [connection signal="pressed" from="TabContainer/TextureRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TabContainer/TextureRect/VBoxContainer/Button2" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="TabContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TabContainer/Control/PanelContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

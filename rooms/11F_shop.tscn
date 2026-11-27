@@ -1,0 +1,102 @@
+[gd_scene format=4 uid="uid://be6ps6hswhnxu"]
+
+[ext_resource type="PackedScene" uid="uid://b3ru2dtud3mob" path="res://prefabs/fast_room_entry.tscn" id="1_dwsh2"]
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_hs6yl"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="1_j6wph"]
+[ext_resource type="AudioStream" uid="uid://ckblk6yj178e6" path="res://music/my_own/shop.ogg" id="2_3ipe6"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="2_68m2c"]
+[ext_resource type="Texture2D" uid="uid://bred75h5ud7gh" path="res://sprites/buster_gold.png" id="4_wmgpr"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="5_wmgpr"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="6_p6bng"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="7_jfnq2"]
+[ext_resource type="Texture2D" uid="uid://ucs4vmdm55cp" path="res://sprites/radial_lighting.png" id="7_yjkxv"]
+[ext_resource type="Texture2D" uid="uid://fl423ee8qfo7" path="res://sprites/weapon.png" id="11_pmqta"]
+[ext_resource type="Texture2D" uid="uid://wmq6poj36dd8" path="res://sprites/lettuce_sandwich.png" id="12_tagll"]
+[ext_resource type="Script" uid="uid://c8j056l75jaao" path="res://scripts/shop_menu.gd" id="13_7q1g0"]
+[ext_resource type="Script" uid="uid://bhuq2ttw35nlx" path="res://scripts/item.gd" id="14_pvtl8"]
+[ext_resource type="Resource" uid="uid://bi4qlvd8cjr13" path="res://items/weapon/rusty_spade.tres" id="15_a34ch"]
+[ext_resource type="Resource" uid="uid://cnawgrg813x0t" path="res://items/snow_apple.tres" id="16_udpcc"]
+[ext_resource type="Resource" uid="uid://ph264b7h6cy7" path="res://items/lettuce_sandwich.tres" id="17_uqc22"]
+[ext_resource type="Resource" uid="uid://b0d6drw8dkege" path="res://items/kilmislop.tres" id="18_udpcc"]
+[ext_resource type="Resource" uid="uid://gm28ruu0fgma" path="res://items/cure.tres" id="19_uqc22"]
+[ext_resource type="Resource" uid="uid://b84snrx0pasfu" path="res://items/cold_cerebrum.tres" id="21_7vqbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6bng"]
+size = Vector2(67, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tagll"]
+size = Vector2(96, 32)
+
+[node name="11FShop" type="Node2D" unique_id=288209763]
+script = ExtResource("1_hs6yl")
+title = "Shop"
+music = ExtResource("2_3ipe6")
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=585514405]
+tile_map_data = PackedByteArray("AAD/////AAALAAEAAAD//wAAAAALAAEAAAAAAAAAAAALAAEAAAAAAP//AAALAAEAAAD+////AAALAAEAAAD9////AAALAAEAAAABAP//AAALAAEAAAACAP//AAALAAEAAAD8////AAALAAEAAAD7////AAALAAEAAAADAP//AAALAAEAAAAEAP//AAALAAEAAAAFAP//AAALAAEAAAD6////AAALAAEAAAD6//r/AAANAAIAAAD6//v/AAALAAEAAAD6//z/AAALAAEAAAD6//3/AAALAAEAAAD7//3/AAALAAEAAAD7//7/AAALAAEAAAD8//7/AAALAAEAAAD9//7/AAALAAEAAAD9//3/AAALAAEAAAD9//z/AAALAAEAAAD8//z/AAALAAEAAAD6//7/AAALAAEAAAD8//3/AAALAAEAAAD9//v/AAALAAEAAAD8//v/AAALAAEAAAD7//v/AAALAAEAAAD7//z/AAALAAEAAAD+//z/AAALAAEAAAD+//v/AAALAAEAAAD9//r/AAANAAIAAAD8//r/AAANAAIAAAD7//r/AAANAAIAAAD+//3/AAALAAEAAAD///3/AAALAAEAAAAAAP3/AAALAAEAAAABAP3/AAALAAEAAAACAP3/AAALAAEAAAABAPz/AAALAAEAAAAAAPz/AAALAAEAAAD///z/AAALAAEAAAD+//7/AAALAAEAAAD///7/AAALAAEAAAAAAP7/AAALAAEAAAABAP7/AAALAAEAAAACAP7/AAALAAEAAAADAP7/AAALAAEAAAAEAP7/AAALAAEAAAAEAP3/AAALAAEAAAADAP3/AAALAAEAAAADAPz/AAALAAEAAAACAPz/AAALAAEAAAAFAP7/AAALAAEAAAAFAP3/AAALAAEAAAAEAPz/AAALAAEAAAAEAPv/AAALAAEAAAADAPv/AAALAAEAAAACAPv/AAALAAEAAAABAPv/AAALAAEAAAAAAPv/AAALAAEAAAD///v/AAALAAEAAAAAAPr/AAALAAEAAAD///r/AAALAAEAAAD+//r/AAALAAEAAAADAPr/AAALAAEAAAAEAPr/AAALAAEAAAAFAPv/AAALAAEAAAAFAPz/AAALAAEAAAAFAPr/AAALAAEAAAACAPr/AAALAAEAAAABAPr/AAALAAEAAAAFAPn/AAALAAEAAAAEAPn/AAAAAAAAAAADAPn/AAAAAAAAAAACAPn/AAAAAAAAAAABAPn/AAAAAAAAAAAAAPn/AAAAAAAAAAD6//n/AAALAAEAAAD7//n/AAALAAEAAAD8//n/AAALAAEAAAD9//n/AAANAAIAAAD+//n/AAALAAEAAAD///n/AAAAAAAAAAD+/wAAAAANAAIAAAD9/wAAAAANAAIAAAD8/wAAAAANAAIAAAD7/wAAAAANAAIAAAD6/wAAAAANAAIAAAD5/wAAAAANAAIAAAD5////AAANAAIAAAD5//7/AAANAAIAAAD5//3/AAANAAIAAAD5//z/AAANAAIAAAD5//v/AAANAAIAAAD5//r/AAANAAIAAAD5//n/AAANAAIAAAD5//j/AAANAAIAAAD6//j/AAANAAIAAAD7//j/AAANAAIAAAD8//j/AAANAAIAAAD9//j/AAANAAIAAAD+//j/AAANAAIAAAD///j/AAANAAIAAAAAAPj/AAANAAIAAAABAPj/AAANAAIAAAACAPj/AAANAAIAAAADAPj/AAANAAIAAAAEAPj/AAANAAIAAAAFAPj/AAANAAIAAAAGAPj/AAANAAIAAAAGAPn/AAANAAIAAAAGAPr/AAANAAIAAAAGAPv/AAANAAIAAAAGAPz/AAANAAIAAAAGAP3/AAANAAIAAAAGAP7/AAANAAIAAAAGAP//AAANAAIAAAAGAAAAAAANAAIAAAAFAAAAAAANAAIAAAAEAAAAAAANAAIAAAADAAAAAAANAAIAAAACAAAAAAANAAIAAAABAAAAAAANAAIAAAD5//f/AAANAAIAAAD6//f/AAANAAIAAAD7//f/AAANAAIAAAD8//f/AAANAAIAAAD9//f/AAANAAIAAAD+//f/AAANAAIAAAD///f/AAANAAIAAAAAAPf/AAANAAIAAAABAPf/AAANAAIAAAACAPf/AAANAAIAAAADAPf/AAANAAIAAAAEAPf/AAANAAIAAAAFAPf/AAANAAIAAAAGAPf/AAANAAIAAAAGAPb/AAANAAIAAAAFAPb/AAANAAIAAAAEAPb/AAANAAIAAAADAPb/AAANAAIAAAACAPb/AAANAAIAAAABAPb/AAANAAIAAAAAAPb/AAANAAIAAAD///b/AAANAAIAAAD+//b/AAANAAIAAAD9//b/AAANAAIAAAD8//b/AAANAAIAAAD7//b/AAANAAIAAAD6//b/AAANAAIAAAD5//b/AAANAAIAAAD//wEAAAAOAAIAAAAAAAEAAAAOAAIAAAA=")
+tile_set = ExtResource("1_j6wph")
+
+[node name="BusterGold" type="Sprite2D" parent="." unique_id=1017234718]
+position = Vector2(-73, -116)
+texture = ExtResource("4_wmgpr")
+
+[node name="InteractionLauncher" type="Area2D" parent="BusterGold" unique_id=1594526442]
+script = ExtResource("5_wmgpr")
+label = "Talk"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusterGold/InteractionLauncher" unique_id=707700542]
+position = Vector2(11.5, 10)
+shape = SubResource("RectangleShape2D_p6bng")
+
+[node name="DialogueInteraction" type="Node" parent="BusterGold/InteractionLauncher" unique_id=1965753269]
+script = ExtResource("6_p6bng")
+dialogues = Array[String](["Shopkeeper: WELCOME TO MY SHOP.", "FEEL FREE TO PURCHASE ANY OF THESE ITEMS.", "...BECAUSE I AM SELLING THEM."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="PointLight2D" type="PointLight2D" parent="BusterGold" unique_id=231654021]
+position = Vector2(1, -9)
+color = Color(1, 0.43486077, 0.36571398, 1)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("7_yjkxv")
+
+[node name="Weapon" type="Sprite2D" parent="." unique_id=1937210351]
+position = Vector2(9, -113)
+texture = ExtResource("11_pmqta")
+
+[node name="LettuceSandwich" type="Sprite2D" parent="." unique_id=25302896]
+position = Vector2(56, -110)
+texture = ExtResource("12_tagll")
+
+[node name="Player" parent="." unique_id=1244825177 instance=ExtResource("7_jfnq2")]
+position = Vector2(19, -45)
+
+[node name="FastRoomEntry" parent="." unique_id=1091932744 instance=ExtResource("1_dwsh2")]
+position = Vector2(0, 13)
+
+[node name="ChangeLevelInteraction" type="Node" parent="FastRoomEntry" unique_id=549491410]
+script = ExtResource("2_68m2c")
+room = "uid://s686afxx0w2d"
+sign = 2
+metadata/_custom_type_script = "uid://cj1n0dwjh7bbh"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1362404245]
+color = Color(0.29219002, 0.29219002, 0.29219007, 1)
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=1177172429]
+script = ExtResource("5_wmgpr")
+label = "Shop"
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=9942083]
+position = Vector2(32, -96)
+shape = SubResource("RectangleShape2D_tagll")
+
+[node name="ShopMenuInteractions" type="Node" parent="InteractionLauncher" unique_id=1641521480]
+script = ExtResource("13_7q1g0")
+items = Array[ExtResource("14_pvtl8")]([ExtResource("15_a34ch"), ExtResource("16_udpcc"), ExtResource("17_uqc22"), ExtResource("18_udpcc"), ExtResource("19_uqc22"), ExtResource("21_7vqbb")])
+relative_price = Array[int]([25, 8, 6, 1, 7, 32])
+metadata/_custom_type_script = "uid://c8j056l75jaao"

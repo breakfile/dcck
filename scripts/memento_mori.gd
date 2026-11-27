@@ -4,6 +4,8 @@ var unique_path := ""
 var remember := false
 
 func _ready():
+	#queue_free()
+	
 	if get_tree().current_scene is Level:
 		var level := get_tree().current_scene as Level
 		unique_path = "%s:%s" % [level.title, get_path()]

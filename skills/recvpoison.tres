@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AilmentSkill" format=3 uid="uid://cerq33b5jprmq"]
+
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="1_a03tl"]
+[ext_resource type="Script" uid="uid://d3j5ggxjsvima" path="res://scripts/ailment_skill.gd" id="2_8uxvo"]
+
+[resource]
+script = ExtResource("2_8uxvo")
+ailment = 2
+name = "Malpractice"
+desc = "Chance of inflicting [color=green]Poison[/color]"
+cost = 10
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://d3j5ggxjsvima"

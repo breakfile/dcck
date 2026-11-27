@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_gymnw")
-heal_amount = 1000
-name = "a full recharge"
+heal_amount = 15
+name = "a partial recharge"
 effect = ExtResource("1_5og6f")
 wait_for_animation_to_finish = true
 metadata/_custom_type_script = "uid://c0vrsvjq67v2o"

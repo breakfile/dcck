@@ -10,18 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://5ah8h2ovba4d" path="res://prefabs/fast_goo.tscn" id="7_m5tle"]
 [ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="8_8kclo"]
 [ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="9_f6101"]
-[ext_resource type="Resource" uid="uid://dioy1py7iiqnp" path="res://enemies/mercutio.tres" id="11_3gdws"]
 [ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="11_eefx2"]
+[ext_resource type="Resource" uid="uid://dioy1py7iiqnp" path="res://enemies/mercutio.tres" id="11_mmmh3"]
 [ext_resource type="PackedScene" uid="uid://b3ru2dtud3mob" path="res://prefabs/fast_room_entry.tscn" id="13_qg2lo"]
 [ext_resource type="PackedScene" uid="uid://d152ob5yu458j" path="res://prefabs/fast_room_exit.tscn" id="14_mmmh3"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="14_v7xv0"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="14_v7xv0"]
 [ext_resource type="PackedScene" uid="uid://boxug6iu0eeh3" path="res://prefabs/save_station.tscn" id="15_v7xv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mcrn"]
 size = Vector2(368, 20)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m5tle"]
-polygon = PackedVector2Array(-8, 4, 8, 4, 8, 5, -8, 5)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mmmh3"]
+polygon = PackedVector2Array(-8, 1, 8, 1, 8, 4, -8, 4)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3gdws"]
 polygon = PackedVector2Array(0, 32, 464, 32, 464, 33, 0, 33)
@@ -34,7 +34,7 @@ polygon = PackedVector2Array(400, -144, 464, -144, 464, -32, 400, -32)
 
 [node name="10F" type="Node2D" unique_id=1560667882]
 script = ExtResource("1_5msrx")
-title = "10F"
+title = "Cathedral 10F"
 music = ExtResource("2_po040")
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 
@@ -84,18 +84,17 @@ position = Vector2(-16, 44)
 position = Vector2(237, -6)
 target = NodePath("../Player")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Node2D/Chaser" unique_id=498317319]
-position = Vector2(0, -3)
-occluder = SubResource("OccluderPolygon2D_m5tle")
-
 [node name="StartBattleInteraction" type="Node" parent="Node2D/Chaser" unique_id=2091571841]
 script = ExtResource("8_8kclo")
-enemy_list = Array[ExtResource("9_f6101")]([ExtResource("11_3gdws")])
+enemy_list = Array[ExtResource("9_f6101")]([ExtResource("11_mmmh3")])
 metadata/_custom_type_script = "uid://dnyju85d604l5"
 
 [node name="DeleteRootInteraction" type="Node" parent="Node2D/Chaser" unique_id=137728325]
 script = ExtResource("11_eefx2")
 metadata/_custom_type_script = "uid://ct202mhbmuidd"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Node2D/Chaser" unique_id=1297444245]
+occluder = SubResource("OccluderPolygon2D_mmmh3")
 
 [node name="SaveStation" parent="Node2D" unique_id=966866564 instance=ExtResource("15_v7xv0")]
 position = Vector2(-1, -52)

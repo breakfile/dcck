@@ -18,3 +18,6 @@ func ai(enemy: Character, bs: BattleSystem):
 		await DialogueBox.type("Tybalt: Dam you suck")
 		await enemy.weigh_defense(-300)
 	await super.ai(enemy, bs)
+	
+func death(enemy: Character):
+	enemy.bs.reward = load("res://items/cure.tres")

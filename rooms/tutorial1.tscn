@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="3_kmqki"]
 [ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="4_bmyap"]
 [ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="5_eaaau"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="6_yv472"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="6_yv472"]
 [ext_resource type="Script" uid="uid://63054aqh7xvs" path="res://scripts/set_property_interaction.gd" id="7_0of3f"]
 [ext_resource type="Texture2D" uid="uid://dxkopx88kax4l" path="res://sprites/info1.png" id="7_yv472"]
 [ext_resource type="Texture2D" uid="uid://c8k8ami2evrmq" path="res://sprites/info2.png" id="8_0of3f"]
@@ -26,7 +26,7 @@ animations = [{
 
 [node name="Tutorial1" type="Node2D" unique_id=1161843272]
 script = ExtResource("1_l30ip")
-title = "-4F"
+title = "Cathedral -4F"
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1280785980]

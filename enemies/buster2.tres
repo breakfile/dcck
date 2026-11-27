@@ -1,0 +1,20 @@
+[gd_resource type="Resource" format=3 uid="uid://dyvckks0r27d8"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_m6ao7"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_b5i15"]
+[ext_resource type="Resource" uid="uid://btq3k2bipr8ki" path="res://skills/recharge.tres" id="3_b5i15"]
+[ext_resource type="Script" uid="uid://dgrqosd0fb6j0" path="res://scripts/enemy/buster2.gd" id="4_b5i15"]
+[ext_resource type="Texture2D" uid="uid://b4u1k7knv6bhl" path="res://sprites/buster_gold_battle.png" id="6_si5qx"]
+
+[resource]
+script = ExtResource("4_b5i15")
+name = "Buster GOLD"
+level = 10
+exp_drop = 5
+description = "A slightly less pacifist robot designed to look cool. It's curing abilities transfer from the last model."
+texture = ExtResource("6_si5qx")
+fire_multiplier = 0.0
+ice_multiplier = 10.0
+physical_multiplier = 0.5
+additional_skills = Array[ExtResource("1_m6ao7")]([ExtResource("2_b5i15"), ExtResource("3_b5i15")])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

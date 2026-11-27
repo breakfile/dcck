@@ -36,6 +36,7 @@ var enemy_list: Array[EnemyData]
 var enemies: Array[Character]
 
 var song: AudioStream
+@onready var player := $Smt1Encounter
 
 var earned := 0
 
@@ -87,9 +88,7 @@ func _ready():
 			await DialogueBox.type("> Now's your chance for a surprise opening attack!")
 	else:
 		await DialogueBox.type("> ...Who are you fighting!?")
-	%VBOX.visible = true
 	
-	# find the first non-KO'd party member to start the battle with
 	turn_index = 0
 	while turn_index < Global.party.size() and Global.party[turn_index].ailment == Character.Ailments.KO:
 		turn_index += 1
@@ -109,6 +108,10 @@ func _ready():
 		return
 	
 	#_create_main(current_member)
+	
+	#for enemy in enemies:
+		#earned += enemy.exp_drop
+	#await _stop()
 	MenuManager.push(MenuManager.battle_command_menu)
 		
 var turn_index := 0
@@ -319,7 +322,7 @@ func handle_death(character: Character):
 		if character.hp >= 1:
 			return
 		death_anim(character)
-		await DialogueBox.type("> %s was slain!" % [character.character_name])
+		await DialogueBox.type("> %s was defeated!" % [character.character_name])
 		enemies.erase(character)
 		earned += character.exp_drop
 		if enemies.is_empty():

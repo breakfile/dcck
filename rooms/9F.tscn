@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ru2dtud3mob" path="res://prefabs/fast_room_entry.tscn" id="4_52q7p"]
 [ext_resource type="Texture2D" uid="uid://d1holbyqew5on" path="res://sprites/moon.png" id="4_plv4d"]
 [ext_resource type="PackedScene" uid="uid://db3hgtg1xy4f" path="res://prefabs/tree.tscn" id="4_x5elm"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="5_3mrm7"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="5_3mrm7"]
 [ext_resource type="PackedScene" uid="uid://du3jyoaeci8yf" path="res://prefabs/key.tscn" id="5_52q7p"]
 [ext_resource type="PackedScene" uid="uid://bycsqp7ecto7r" path="res://prefabs/lock.tscn" id="9_kbami"]
 [ext_resource type="Texture2D" uid="uid://grspercwwh51" path="res://sprites/sign.png" id="9_kyftj"]
@@ -34,7 +34,7 @@ size = Vector2(16, 2)
 
 [node name="9F" type="Node2D" unique_id=1109819047]
 script = ExtResource("1_2bmv8")
-title = "9F"
+title = "Cathedral 9F"
 music = ExtResource("2_w26x2")
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 

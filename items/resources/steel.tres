@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_c4nwd")
 name = "Steel Ingot"
-desc = "[center]RESOURCE[/center]
-A small ingot of steel which can be used to CRAFT metal things."
+desc = "It doesn't really... do anything..."
 one_line_desc = "Not useful in battle"
 metadata/_custom_type_script = "uid://bhuq2ttw35nlx"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CureItem" format=3 uid="uid://gm28ruu0fgma"]
+
+[ext_resource type="Script" uid="uid://d0h48gj8ooy7r" path="res://scripts/cure_item.gd" id="1_v80hk"]
+
+[resource]
+script = ExtResource("1_v80hk")
+name = "OrangeJuice"
+desc = "[center]CONSUMABLE[/center]
+Sugary without the pulp
+- Cure one status effect"
+metadata/_custom_type_script = "uid://d0h48gj8ooy7r"

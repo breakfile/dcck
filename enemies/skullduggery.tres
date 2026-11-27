@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://wfbsfewnodpv"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_tlhsh"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_0thmw"]
+[ext_resource type="Script" uid="uid://scb0osot3ko" path="res://scripts/enemy/skullduggery.gd" id="3_0thmw"]
+[ext_resource type="Texture2D" uid="uid://1hrck5rtrldm" path="res://sprites/skullduggery.png" id="4_0thmw"]
+
+[resource]
+script = ExtResource("3_0thmw")
+name = "Skullduggery"
+level = 11
+description = "...Skullduggery."
+texture = ExtResource("4_0thmw")
+max_hp = 6
+max_mp = 0
+defense = 1000
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://csaabsymu48x6" path="res://sprites/save_station.png" id="1_xuof1"]
 [ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="2_dn7e6"]
+[ext_resource type="Script" uid="uid://bwsfr70v6ov3m" path="res://scripts/save_interaction.gd" id="3_dn7e6"]
+[ext_resource type="Script" uid="uid://7hrjhti0gjvg" path="res://scripts/stop_if_chase_interaction.gd" id="3_esa38"]
 [ext_resource type="Script" uid="uid://djbchq2ja34nc" path="res://scripts/restore_party_interaction.gd" id="3_qy8r6"]
 [ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="4_esa38"]
 
@@ -20,11 +22,20 @@ metadata/_custom_type_script = "uid://dqefeqi2a08ol"
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_8w63o")
 
+[node name="Interaction2" type="Node" parent="Area2D" unique_id=1848491179]
+script = ExtResource("3_esa38")
+metadata/_custom_type_script = "uid://c35h0tv5yn4vg"
+
+[node name="Interaction" type="Node" parent="Area2D" unique_id=2105884687]
+script = ExtResource("3_dn7e6")
+metadata/_custom_type_script = "uid://c35h0tv5yn4vg"
+
 [node name="RestorePartyInteraction" type="Node" parent="Area2D" unique_id=1134784180]
 script = ExtResource("3_qy8r6")
 metadata/_custom_type_script = "uid://djbchq2ja34nc"
 
 [node name="DialogueInteraction" type="Node" parent="Area2D" unique_id=1123779489]
 script = ExtResource("4_esa38")
-dialogues = Array[String](["> You were fully restored."])
+dialogues = Array[String](["> You were fully restored.
+> Your game was saved."])
 metadata/_custom_type_script = "uid://ctm3u313cygc4"

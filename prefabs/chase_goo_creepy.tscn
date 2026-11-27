@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://up4v2crgv0aj"]
+
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="1_ee1es"]
+[ext_resource type="SpriteFrames" uid="uid://ce50yffbgu8ye" path="res://spriteframes/goo.tres" id="2_tgeoq"]
+[ext_resource type="Texture2D" uid="uid://d16cgke4qqn6b" path="res://sprites/alert.png" id="3_1bsha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7we83"]
+size = Vector2(30.6, 18.7)
+
+[node name="Goo" type="Area2D" unique_id=1578334052]
+script = ExtResource("1_ee1es")
+label = "Encounter"
+require_input = false
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1727597053]
+light_mask = 2
+y_sort_enabled = true
+position = Vector2(0, -5)
+scale = Vector2(1.7, 1.7)
+sprite_frames = ExtResource("2_tgeoq")
+autoplay = "default"
+frame_progress = 0.8187233
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=595247415]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7we83")
+
+[node name="Alert" type="Sprite2D" parent="." unique_id=385259226]
+visible = false
+position = Vector2(0, -17)
+texture = ExtResource("3_1bsha")

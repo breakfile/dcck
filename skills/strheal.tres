@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="HealSkill" format=3 uid="uid://s01x15dko13k"]
+
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="1_0len1"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="2_oe61a"]
+
+[resource]
+script = ExtResource("2_oe61a")
+heal_amount = 25
+name = "Nourish"
+desc = "Recover many-ish HP"
+one_line_desc = "Recover some HP"
+cost = 15
+effect = ExtResource("1_0len1")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"

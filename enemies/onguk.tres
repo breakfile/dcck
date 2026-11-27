@@ -1,0 +1,18 @@
+[gd_resource type="Resource" format=3 uid="uid://crkrsw7xbv3cw"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_8mofp"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_sx3v1"]
+[ext_resource type="Script" uid="uid://bkfhnctx7gkyb" path="res://scripts/enemy/onguk.gd" id="3_sx3v1"]
+[ext_resource type="Texture2D" uid="uid://dbxmel65j3svk" path="res://sprites/onguk.png" id="4_kxrj7"]
+[ext_resource type="Resource" uid="uid://g8bl1qew7rv6" path="res://items/warm_cerebrum.tres" id="5_sx3v1"]
+
+[resource]
+script = ExtResource("3_sx3v1")
+name = "Onguk"
+level = 15
+exp_drop = 0
+description = "..."
+texture = ExtResource("4_kxrj7")
+max_hp = 5000
+weapon = ExtResource("5_sx3v1")
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

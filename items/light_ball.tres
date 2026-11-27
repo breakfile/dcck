@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SelfAilmentItem" format=3 uid="uid://b5chj8lv6ucao"]
+
+[ext_resource type="Script" uid="uid://ctrr301b3nf1m" path="res://self_ailment_item.gd" id="1_jnwip"]
+
+[resource]
+script = ExtResource("1_jnwip")
+ailment = 4
+name = "Lumin. Ball"
+aura_name = "Luminescence Ball"
+desc = "[center]CONSUMABLE[/center]
+Make one party member begin glowing until the next room. [color=yellow]Can light up seemingly dark and impossible areas...[/color]"
+metadata/_custom_type_script = "uid://ctrr301b3nf1m"

@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="10_fgcgh"]
 [ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="11_2fiq2"]
 [ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="12_2rhn3"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="13_cbjku"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="13_cbjku"]
 [ext_resource type="Texture2D" uid="uid://cbcbisareyha5" path="res://sprites/ctrl1.png" id="15_hb10q"]
 [ext_resource type="Texture2D" uid="uid://1h58o0ej26x3" path="res://sprites/ctrl2.png" id="16_2kkcd"]
 
@@ -83,7 +83,7 @@ shape = SubResource("RectangleShape2D_2er2o")
 [node name="DialogueInteraction" type="Node" parent="YSort/Sign/InteractionRoot/InteractionLauncher" unique_id=877618399]
 script = ExtResource("6_d8rhi")
 dialogues = Array[String](["> Sometimes, you will get an item.", "> Items can be used on certain party members for effects like healing,", "or can be equipped to provide additional protection.", "> You will recieve a healing item. 
-> [color=yellow]Feed it to the party member named \"KAGU\"[/color] to recieve a key.", "> You can access your items in the [color=yellow]
+> [color=yellow]Feed it to the fourth party member[/color] to recieve a key.", "> You can access your items in the [color=yellow]
 Command menu, accessible with [Ctrl][/color]"])
 metadata/_custom_type_script = "uid://ctm3u313cygc4"
 
@@ -121,7 +121,7 @@ shape = ExtResource("12_2rhn3")
 
 [node name="DialogueInteraction" type="Node" parent="InteractionLauncher" unique_id=607760870]
 script = ExtResource("6_d8rhi")
-dialogues = Array[String](["> The oak sign started talking to you!!!", "\"By the by, there are many other types of items. For example,", "there are Equipment items split between PROTECTORS and WEAPONS that can provide additional stats and skills,", "as well as many more. An item can always be used or equipped in the ITEM menu.", "P.S. You can unequip an equipped item in the PERSON menu, as well as view information on it.\"", "[center]Signed, Sign[/center]"])
+dialogues = Array[String](["> The oak sign started talking to you!!!", "\"By the by, there are many other types of items. For example,", "there are Equipment items split between PROTECTORS and WEAPONS that can provide additional stats and skills,", "as well as many more. An item can always be used or equipped in the ITEM menu.", "P.S. You can unequip an equipped item in the STRIP menu.", "[center]Signed, Sign[/center]"])
 metadata/_custom_type_script = "uid://ctm3u313cygc4"
 
 [node name="ChangeLevelInteraction" type="Node" parent="InteractionLauncher" unique_id=392447490]

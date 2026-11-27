@@ -5,17 +5,25 @@ var bm: BattleSystem
 var is_animating = false
 @export var number := 0
 
+@onready var j = preload("res://sprites/nocharacter.png")
+
 func _process(_x):
 	if Global.party.size() >= number+1:
 		chara = Global.party[number]
 		chara.sprite = self
-		bm = chara.bs
+		bm = Global.bs
 	else:
 		chara = null
 	
 	var rtl = get_parent().get_node("PanelContainer2/RichTextLabel") as RichTextLabel
 	
 	if chara:
+		if Global.party.find(chara) != 0:
+			if chara.texture:
+				texture = chara.texture
+			else:
+				texture = j
+		
 		$Name.text = chara.character_name
 		$Hp.max_value = chara.max_hp
 		$Hp.value = chara.hp
@@ -49,6 +57,14 @@ func _process(_x):
 					$HPslash.text = "CONFUSED"
 					chara.sprite.self_modulate = Color.ORANGE
 					$HPslash.modulate = Color.ORANGE
+				Character.Ailments.GLOWING:
+					$HPslash.text = "GLOWING"
+					chara.sprite.self_modulate = Color(0, 0.5, 1)
+					$HPslash.modulate = Color(0, 0.5, 1)
+				Character.Ailments.FLOATING:
+					$HPslash.text = "FLOATING"
+					chara.sprite.self_modulate = Color(1, 0, 1)
+					$HPslash.modulate = Color(1, 0, 1)
 				
 			if rtl.get_total_character_count() > 0:
 				visible = false

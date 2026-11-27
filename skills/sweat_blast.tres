@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DamageSkill" format=3 uid="uid://dy5hkltopixt2"]
+
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="1_4145q"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="2_wa8wb"]
+
+[resource]
+script = ExtResource("2_wa8wb")
+attack_type = 1
+name = "Sweat Blast"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"

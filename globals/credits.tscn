@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://de3r7rp85yp14"]
+
+[ext_resource type="Script" uid="uid://l8dx8qij83pg" path="res://scripts/credits.gd" id="1_m8gr2"]
+[ext_resource type="FontFile" uid="uid://cwxqh7phoweak" path="res://fonts/unifont.otf" id="2_bte7y"]
+
+[node name="Node2D" type="Node2D" unique_id=1913868674]
+script = ExtResource("1_m8gr2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=436240611]
+offset_top = 300.0
+offset_right = 400.0
+offset_bottom = 1068.0
+theme_override_fonts/normal_font = ExtResource("2_bte7y")
+bbcode_enabled = true
+text = "DECLAN CAVANAGH IN THE CATHEDRAL OF KILMISTER
+by Harry Collins
+
+-- CAST --
+
+[img]sprites/evilfly.png[/img] Evil Fly
+
+[img]sprites/buster_battle.png[/img][img]sprites/busted_battle.png[/img][img]sprites/buster_gold_battle.png[/img][img]sprites/last_buster_battle.png[/img] The Busters
+
+[img]sprites/guardian.png[/img][img]sprites/mercutio.png[/img][img]sprites/juliet.png[/img][img]sprites/romeo.png[/img] Shakespeare Boyz
+
+[img]sprites/obod.png[/img] Orange Bug of Death
+
+[img]sprites/declan_evil1.png[/img] Declan
+
+[img]sprites/callum_standstill.png[/img] Callum
+
+[img]sprites/cohen.png[/img] Cohen (King K.)
+
+[img]sprites/onguk.png[/img] [color=red][shake]Onguk[/shake][/color]
+
+
+
+-- CREDITS --
+Harry C. - Developer
+Callum K. - Playtester
+James M. - Playtester
+Mr. Crane - Teacher
+Declan C. - Likeness
+Callum K. - Likeness
+Cohen K. - Likeness
+James M. - Likeness
+Mr. Crane - Likeness
+
+Thank you!"
+fit_content = true
+horizontal_alignment = 1

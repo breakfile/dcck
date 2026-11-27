@@ -7,7 +7,7 @@
 script = ExtResource("1_0rx7s")
 multiplier = 1.5
 attack_type = 1
-name = "Freezer"
+name = "Ice II"
 desc = "Ice
 Attack * 1.5"
 one_line_desc = "Atk x 1.5"

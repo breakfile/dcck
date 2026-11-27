@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://baxitskqxnlx5"]
+
+[ext_resource type="PackedScene" uid="uid://db3hgtg1xy4f" path="res://prefabs/tree.tscn" id="1_iro2i"]
+[ext_resource type="Texture2D" uid="uid://ymnkjjbpidl0" path="res://sprites/tree_snow.png" id="2_rnfy0"]
+[ext_resource type="Resource" uid="uid://cnawgrg813x0t" path="res://items/snow_apple.tres" id="3_w0qsf"]
+
+[node name="Tree" unique_id=680460377 instance=ExtResource("1_iro2i")]
+
+[node name="Tree" parent="." index="0" unique_id=1246933129]
+texture = ExtResource("2_rnfy0")
+
+[node name="ItemInteraction" parent="InteractionRoot/InteractionLauncher" parent_id_path=PackedInt32Array(414635083) index="1" unique_id=489870694]
+item = ExtResource("3_w0qsf")

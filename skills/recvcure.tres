@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CureSkill" format=3 uid="uid://d4hryhxhg8wxl"]
+
+[ext_resource type="PackedScene" uid="uid://bnnn5ex2kprp6" path="res://fx/dispoison.tscn" id="1_4rtxs"]
+[ext_resource type="Script" uid="uid://dr88ojcff10fx" path="res://scripts/cure.gd" id="2_4rtxs"]
+
+[resource]
+script = ExtResource("2_4rtxs")
+name = "Divine Cure"
+desc = "Cure an ailment that isn't KO."
+cost = 10
+effect = ExtResource("1_4rtxs")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://d1tef7eifc0ow"

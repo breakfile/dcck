@@ -46,6 +46,7 @@ enabled=PackedStringArray("res://addons/crt/plugin.cfg")
 [global_group]
 
 Player=""
+Ladder=""
 
 [importer_defaults]
 

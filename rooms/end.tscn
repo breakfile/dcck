@@ -1,0 +1,148 @@
+[gd_scene format=4 uid="uid://ckutrfgty0i2o"]
+
+[ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_5cm4p"]
+[ext_resource type="AudioStream" uid="uid://dkcjc5njrgp2" path="res://music/my_own/ambient_onguk.ogg" id="2_02n8e"]
+[ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="3_cnhfb"]
+[ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="3_d3v54"]
+[ext_resource type="Texture2D" uid="uid://dbxmel65j3svk" path="res://sprites/onguk.png" id="5_vqwoa"]
+[ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="7_g4q5q"]
+[ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="8_yv0bf"]
+[ext_resource type="Script" uid="uid://dccnmfh6yby00" path="res://scripts/tween_camera_interaction.gd" id="9_elpsm"]
+[ext_resource type="Texture2D" uid="uid://ucs4vmdm55cp" path="res://sprites/radial_lighting.png" id="9_yv0bf"]
+[ext_resource type="Script" uid="uid://dnyju85d604l5" path="res://scripts/start_battle_interaction.gd" id="10_elpsm"]
+[ext_resource type="Texture2D" uid="uid://3rghymtlfqt3" path="res://sprites/ongukbg.png" id="11_ay1g6"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="11_ujj4r"]
+[ext_resource type="Resource" uid="uid://crkrsw7xbv3cw" path="res://enemies/onguk.tres" id="12_ujj4r"]
+[ext_resource type="AudioStream" uid="uid://ms61ilw3rh7a" path="res://music/my_own/onguk.ogg" id="13_1k4yq"]
+[ext_resource type="Script" uid="uid://63054aqh7xvs" path="res://scripts/set_property_interaction.gd" id="15_ebbu0"]
+[ext_resource type="Script" uid="uid://sxsgfmsyc76c" path="res://scripts/stop_global_song_interaction.gd" id="15_pu5im"]
+[ext_resource type="Script" uid="uid://cyb4m2646an71" path="res://scripts/set_sprite_animation_interaction.gd" id="16_1k4yq"]
+[ext_resource type="Script" uid="uid://22ysojfimc1s" path="res://scripts/wait_for_timer_interaction.gd" id="17_7dje8"]
+[ext_resource type="Script" uid="uid://ormn6pkwn5wr" path="res://scripts/linear_tween_interaction.gd" id="19_24v12"]
+[ext_resource type="Script" uid="uid://3r1b4flix44k" path="res://scripts/thatwasfun.gd" id="20_dawky"]
+[ext_resource type="Script" uid="uid://1a27o1aqirnh" path="res://scripts/roll_credits.gd" id="21_3bx4y"]
+[ext_resource type="Script" uid="uid://dj2omdb5gtjt5" path="res://scripts/set_global_song.gd" id="21_ymyeu"]
+[ext_resource type="AudioStream" uid="uid://uctfmjid2rhb" path="res://music/declan_cathedral.ogg" id="22_gvo8u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elpsm"]
+size = Vector2(484, 20)
+
+[node name="End" type="Node2D" unique_id=720961555]
+script = ExtResource("1_5cm4p")
+title = "End"
+music = ExtResource("2_02n8e")
+can_open_menu = false
+metadata/_custom_type_script = "uid://hmtd3314pckt"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=992816592]
+tile_map_data = PackedByteArray("AADz/wgAAAABAAEAAAD0/wgAAAABAAEAAAD1/wgAAAABAAEAAAD2/wgAAAABAAEAAAD3/wgAAAABAAEAAAD4/wgAAAABAAEAAAD5/wgAAAABAAEAAAD6/wgAAAABAAEAAAD7/wgAAAABAAEAAAD8/wgAAAABAAEAAAD9/wgAAAABAAEAAAD+/wgAAAABAAEAAAD//wgAAAABAAEAAAAAAAgAAAABAAEAAAABAAgAAAABAAEAAAACAAgAAAABAAEAAAADAAgAAAABAAEAAAAEAAgAAAABAAEAAAAFAAgAAAABAAEAAAAGAAgAAAABAAEAAAAHAAgAAAABAAEAAAAIAAgAAAABAAEAAAAJAAgAAAABAAEAAAAKAAgAAAABAAEAAAALAAgAAAABAAEAAAAMAAgAAAABAAEAAADy/wcAAAABAAEAAADy/wYAAAABAAEAAADy/wUAAAABAAEAAADy/wQAAAABAAEAAADy/wMAAAABAAEAAADy/wIAAAABAAEAAADy/wEAAAABAAEAAADy/wAAAAABAAEAAADy////AAABAAEAAADy//7/AAABAAEAAADy//3/AAABAAEAAADy//z/AAABAAEAAADy//v/AAABAAEAAADy//r/AAABAAEAAADy//n/AAABAAEAAADy//j/AAABAAEAAADy//f/AAABAAEAAADy//b/AAABAAEAAADy//X/AAABAAEAAADy//T/AAABAAEAAADy//P/AAABAAEAAADy//L/AAABAAEAAADy//H/AAABAAEAAADy//D/AAABAAEAAADy/+//AAABAAEAAADy/+7/AAABAAEAAADy/+3/AAABAAEAAADy/+z/AAABAAEAAADy/+v/AAABAAEAAADy/+r/AAABAAEAAADy/+n/AAABAAEAAADy/+j/AAABAAEAAADy/+f/AAABAAEAAADy/+b/AAABAAEAAADy/+X/AAABAAEAAADy/+T/AAABAAEAAADy/+P/AAABAAEAAADy/+L/AAABAAEAAADy/+H/AAABAAEAAADy/+D/AAABAAEAAADy/9//AAABAAEAAADy/97/AAABAAEAAADy/93/AAABAAEAAADy/9z/AAABAAEAAADy/9v/AAABAAEAAADy/9r/AAABAAEAAADy/9n/AAABAAEAAADy/9j/AAABAAEAAADy/9f/AAABAAEAAADy/9b/AAABAAEAAADy/9X/AAABAAEAAADy/9T/AAABAAEAAADy/9P/AAABAAEAAADy/9L/AAABAAEAAADy/9H/AAABAAEAAADy/9D/AAABAAEAAADy/8//AAABAAEAAADy/87/AAABAAEAAADz/87/AAABAAEAAAD0/87/AAABAAEAAAD1/87/AAABAAEAAAD2/87/AAABAAEAAAD3/87/AAABAAEAAAD4/87/AAABAAEAAAD5/87/AAABAAEAAAD6/87/AAABAAEAAAD7/87/AAABAAEAAAD8/87/AAABAAEAAAD9/87/AAABAAEAAAD+/87/AAABAAEAAAD//87/AAABAAEAAAAAAM7/AAABAAEAAAABAM7/AAABAAEAAAACAM7/AAABAAEAAAADAM7/AAABAAEAAAAEAM7/AAABAAEAAAAFAM7/AAABAAEAAAAGAM7/AAABAAEAAAAHAM7/AAABAAEAAAAIAM7/AAABAAEAAAAJAM7/AAABAAEAAAAKAM7/AAABAAEAAAALAM7/AAABAAEAAAANAAcAAAABAAEAAAANAAYAAAABAAEAAAANAAUAAAABAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAEAAAANAAEAAAABAAEAAAANAAAAAAABAAEAAAANAP//AAABAAEAAAANAP7/AAABAAEAAAANAP3/AAABAAEAAAANAPz/AAABAAEAAAANAPv/AAABAAEAAAANAPr/AAABAAEAAAANAPn/AAABAAEAAAANAPj/AAABAAEAAAANAPf/AAABAAEAAAANAPb/AAABAAEAAAANAPX/AAABAAEAAAANAPT/AAABAAEAAAANAPP/AAABAAEAAAANAPL/AAABAAEAAAANAPH/AAABAAEAAAANAPD/AAABAAEAAAANAO//AAABAAEAAAANAO7/AAABAAEAAAANAO3/AAABAAEAAAANAOz/AAABAAEAAAANAOv/AAABAAEAAAANAOr/AAABAAEAAAANAOn/AAABAAEAAAANAOj/AAABAAEAAAANAOf/AAABAAEAAAANAOb/AAABAAEAAAANAOX/AAABAAEAAAANAOT/AAABAAEAAAANAOP/AAABAAEAAAANAOL/AAABAAEAAAANAOH/AAABAAEAAAANAOD/AAABAAEAAAANAN//AAABAAEAAAANAN7/AAABAAEAAAANAN3/AAABAAEAAAANANz/AAABAAEAAAANANv/AAABAAEAAAANANr/AAABAAEAAAANANn/AAABAAEAAAANANj/AAABAAEAAAANANf/AAABAAEAAAANANb/AAABAAEAAAANANX/AAABAAEAAAANANT/AAABAAEAAAANANP/AAABAAEAAAANANL/AAABAAEAAAANANH/AAABAAEAAAANAND/AAABAAEAAAANAM//AAABAAEAAAANAM7/AAABAAEAAAAMAM7/AAABAAEAAADy/wgAAAABAAEAAAANAAgAAAABAAEAAAA=")
+tile_set = ExtResource("3_cnhfb")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1798787541]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(512, 512)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=320427221]
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("9_yv0bf")
+
+[node name="Player" parent="." unique_id=1244825177 instance=ExtResource("3_d3v54")]
+
+[node name="Onguk" type="Sprite2D" parent="." unique_id=486283877]
+position = Vector2(-1, -742)
+texture = ExtResource("5_vqwoa")
+
+[node name="InteractionLauncher" type="Area2D" parent="." unique_id=480321777]
+position = Vector2(0, -668)
+script = ExtResource("7_g4q5q")
+require_input = false
+metadata/_custom_type_script = "uid://dqefeqi2a08ol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLauncher" unique_id=195653788]
+position = Vector2(14, 0)
+shape = SubResource("RectangleShape2D_elpsm")
+
+[node name="TweenCameraInteraction" type="Node" parent="InteractionLauncher" unique_id=1861793670]
+script = ExtResource("9_elpsm")
+property = "global_position"
+new_value = Vector2(-4, -758)
+time = 1.0
+metadata/_custom_type_script = "uid://dccnmfh6yby00"
+
+[node name="DialogueInteraction" type="Node" parent="InteractionLauncher" unique_id=563557382]
+script = ExtResource("8_yv0bf")
+dialogues = Array[String](["[color=red][shake]So, Cohen's status as the owner of the world has faded...", "[color=red][shake]You have changed what it means to be the ruler...", "[color=aqua][wave]TIME, AND THE WORLD AS YOU KNOW IT... HAS FALLEN.", "[color=red][shake]And now, a universe realized from your own thoughts, ambitions and hope... will be created.", "[color=aqua][wave]BUT, ALAS... WE ARE AFRAID WE WILL HAVE TO SEIZE THIS OPPORTUNITY FROM YOU.", "[color=red][shake]This world is ours... as it always has been.", "[color=red][shake]You and I made a pact that you will grant ownership of the world to me...", "[color=red][shake]Yet you have broken it.", "[color=aqua][wave]DARKNESS IS THE ONLY FREQUENCY YOUR HEART MANIFESTS ITSELF ONTO...", "[color=aqua][wave]MUCH LIKE TIME... YOU TOO HAVE FALLEN.", "[color=red][shake]You serve no purpose to us any longer..."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="StartBattleInteraction" type="Node" parent="InteractionLauncher" unique_id=1055223087]
+script = ExtResource("10_elpsm")
+enemy_list = Array[ExtResource("11_ujj4r")]([ExtResource("12_ujj4r")])
+song = ExtResource("13_1k4yq")
+can_escape = false
+background = ExtResource("11_ay1g6")
+metadata/_custom_type_script = "uid://dnyju85d604l5"
+
+[node name="StopGlobalSongInteraction" type="Node" parent="InteractionLauncher" unique_id=1734568428]
+script = ExtResource("15_pu5im")
+metadata/_custom_type_script = "uid://sxsgfmsyc76c"
+
+[node name="SetPropertyInteraction" type="Node" parent="InteractionLauncher" unique_id=910636256 node_paths=PackedStringArray("node")]
+script = ExtResource("15_ebbu0")
+node = NodePath("../../Onguk")
+property = "visible"
+result = false
+metadata/_custom_type_script = "uid://63054aqh7xvs"
+
+[node name="TweenCameraInteraction2" type="Node" parent="InteractionLauncher" unique_id=997576693]
+script = ExtResource("9_elpsm")
+property = "position"
+new_value = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dccnmfh6yby00"
+
+[node name="PlayPlayerSpriteAnimationInteraction" type="Node" parent="InteractionLauncher" unique_id=1828109010]
+script = ExtResource("16_1k4yq")
+animation = "b_idle"
+metadata/_custom_type_script = "uid://cyb4m2646an71"
+
+[node name="WaitForTimerInteraction" type="Node" parent="InteractionLauncher" unique_id=1942524656]
+script = ExtResource("17_7dje8")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://22ysojfimc1s"
+
+[node name="DialogueInteraction2" type="Node" parent="InteractionLauncher" unique_id=1047642588]
+script = ExtResource("8_yv0bf")
+dialogues = Array[String](["> You obtained THE CEREBRUM OF SOVERIGNTY.", "> It looked like a worm made of metal."])
+metadata/_custom_type_script = "uid://ctm3u313cygc4"
+
+[node name="WaitForTimerInteraction2" type="Node" parent="InteractionLauncher" unique_id=723223398]
+script = ExtResource("17_7dje8")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://22ysojfimc1s"
+
+[node name="PlayPlayerSpriteAnimationInteraction2" type="Node" parent="InteractionLauncher" unique_id=729463107]
+script = ExtResource("16_1k4yq")
+animation = "EVIL"
+wait = false
+metadata/_custom_type_script = "uid://cyb4m2646an71"
+
+[node name="LinearTweenInteraction" type="Node" parent="InteractionLauncher" unique_id=1669940393 node_paths=PackedStringArray("node")]
+script = ExtResource("19_24v12")
+node = NodePath("../../Player")
+property = "position"
+new_value = Vector2(0, 480)
+time = 45.0
+wait = false
+metadata/_custom_type_script = "uid://ormn6pkwn5wr"
+
+[node name="Interaction" type="Node" parent="InteractionLauncher" unique_id=973311779]
+script = ExtResource("20_dawky")
+metadata/_custom_type_script = "uid://c35h0tv5yn4vg"
+
+[node name="SetGlobalSongInteraction" type="Node" parent="InteractionLauncher" unique_id=1870419295]
+script = ExtResource("21_ymyeu")
+stream = ExtResource("22_gvo8u")
+metadata/_custom_type_script = "uid://dj2omdb5gtjt5"
+
+[node name="Interaction2" type="Node" parent="InteractionLauncher" unique_id=2034784071]
+script = ExtResource("21_3bx4y")
+metadata/_custom_type_script = "uid://c35h0tv5yn4vg"

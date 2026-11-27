@@ -4,6 +4,8 @@ var current = ""
 var editing = 1
 var is_editing_true = false
 
+var default_button: Button
+
 const BUTTONS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy␣"
 
 func _ready():
@@ -29,6 +31,7 @@ func _ready():
 	def.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	def.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 	$VBoxContainer.add_child(def)
+	default_button = def
 	def.pressed.connect(func():
 		if !is_editing_true:
 			current = Global.party[editing].character_name
@@ -65,7 +68,7 @@ func _ready():
 				$PanelContainer.visible = false
 				$Editing.visible = false
 				$Current.visible = false
-				await DialogueBox.type("> HARD MODE ACTIVE")
+				await DialogueBox.type("> EXTREME MODE ACTIVE")
 				Global.party.clear()
 				Global.party.append(
 					Character.enemy_factory(get_tree(), load("res://enemies/declan.tres"))
@@ -92,4 +95,5 @@ func _process(delta: float) -> void:
 		$Editing.text = "Party member %d name" % [editing]
 	else:
 		$Editing.text = "YOUR own name"
+		default_button.text = "EXTREME MODE"
 	$Current.text = '"' + current + '"'

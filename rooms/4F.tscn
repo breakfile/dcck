@@ -17,11 +17,11 @@
 [ext_resource type="Script" uid="uid://ctm3u313cygc4" path="res://scripts/dialogue_interactions.gd" id="15_t6y6m"]
 [ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="15_xlnqo"]
 [ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="16_cg4xm"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="17_0rrrb"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="17_0rrrb"]
 [ext_resource type="Script" uid="uid://3lwhx4wjmdxe" path="res://scripts/free_early_interaction.gd" id="18_hc5wi"]
 [ext_resource type="Script" uid="uid://22ysojfimc1s" path="res://scripts/wait_for_timer_interaction.gd" id="19_bcx3u"]
-[ext_resource type="Script" uid="uid://cr1gqmly84bkn" path="res://rooms/linear_tween_interaction_that_stops_when_global_is_inactive.gd" id="20_1126m"]
-[ext_resource type="AudioStream" uid="uid://co5udjl5ufxtr" path="res://music/smt1_cathedral.ogg" id="20_kbwn1"]
+[ext_resource type="Script" uid="uid://cr1gqmly84bkn" path="res://scripts/linear_tween_interaction_that_stops_when_global_is_inactive.gd" id="20_1126m"]
+[ext_resource type="AudioStream" uid="uid://cllkkrt72y068" path="res://music/my_own/run.ogg" id="20_kbwn1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apirv"]
 size = Vector2(256, 65)
@@ -37,7 +37,8 @@ size = Vector2(96, 49)
 
 [node name="4F" type="Node2D" unique_id=1276948625]
 script = ExtResource("1_p44mg")
-title = "4F"
+title = "Cathedral 4F"
+can_open_menu = false
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1377258113]

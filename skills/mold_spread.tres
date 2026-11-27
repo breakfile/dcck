@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AilmentSkill" format=3 uid="uid://wenuf1ovxuet"]
+
+[ext_resource type="PackedScene" uid="uid://1w3m08oqn4uq" path="res://fx/poison.tscn" id="1_y2d4j"]
+[ext_resource type="Script" uid="uid://d3j5ggxjsvima" path="res://scripts/ailment_skill.gd" id="2_nyjb5"]
+
+[resource]
+script = ExtResource("2_nyjb5")
+ailment = 3
+one_in_x_chance = 5
+name = "Mold Spread"
+effect = ExtResource("1_y2d4j")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://d3j5ggxjsvima"

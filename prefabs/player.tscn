@@ -1,75 +1,19 @@
 [gd_scene format=3 uid="uid://i3p5gx3feuwx"]
 
 [ext_resource type="Script" uid="uid://co61pegg5sjvt" path="res://scripts/player.gd" id="1_1txc5"]
-[ext_resource type="Texture2D" uid="uid://dcq2infll7mg4" path="res://sprites/declan_f_standstill.png" id="2_1txc5"]
-[ext_resource type="Texture2D" uid="uid://cln4q6oqb4mip" path="res://sprites/declan_b_standstill.png" id="2_u51tk"]
+[ext_resource type="SpriteFrames" uid="uid://d38xiv4pjojmt" path="res://animated_sprites/declan_spriteframes.tres" id="2_1txc5"]
 [ext_resource type="Script" uid="uid://dxktdwseumha7" path="res://scripts/name_checker.gd" id="3_g2jcq"]
-[ext_resource type="Texture2D" uid="uid://dbbggt2m5qvg5" path="res://sprites/declan_b_walk1.png" id="3_kbsxf"]
-[ext_resource type="Texture2D" uid="uid://dcwup8mkeh7lt" path="res://sprites/declan_f_walk1.png" id="3_u51tk"]
-[ext_resource type="Texture2D" uid="uid://bdnm3qokwtrcv" path="res://sprites/declan_f_walk2.png" id="4_kbsxf"]
-[ext_resource type="Texture2D" uid="uid://dvgdw8u15m88g" path="res://sprites/declan_b_walk2.png" id="4_rgeog"]
 [ext_resource type="Texture2D" uid="uid://d16cgke4qqn6b" path="res://sprites/alert.png" id="4_u51tk"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rgeog"]
 polygon = PackedVector2Array(-5, -2, 7, -2, 7, 1, -5, 1)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rgeog"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_u51tk")
-}],
-"loop": true,
-"name": &"b_idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_kbsxf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_u51tk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_rgeog")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_u51tk")
-}],
-"loop": true,
-"name": &"b_walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_1txc5")
-}],
-"loop": true,
-"name": &"f_idle",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_u51tk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_1txc5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_kbsxf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_1txc5")
-}],
-"loop": true,
-"name": &"f_walk",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_retvw"]
 size = Vector2(16, 6)
 
 [node name="Player" type="CharacterBody2D" unique_id=1244825177 groups=["Player"]]
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_1txc5")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=2031991981]
@@ -78,8 +22,8 @@ occluder = SubResource("OccluderPolygon2D_rgeog")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2068903521]
 light_mask = 2
 position = Vector2(0, -16)
-sprite_frames = SubResource("SpriteFrames_rgeog")
-animation = &"b_walk"
+sprite_frames = ExtResource("2_1txc5")
+animation = &"EVIL"
 
 [node name="Camera2D" type="Camera2D" parent="Sprite" unique_id=1148712733]
 

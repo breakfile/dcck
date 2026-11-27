@@ -3,7 +3,7 @@ class_name StartBattleInteraction extends Interaction
 @export var enemy_list: Array[EnemyData]
 @export var song: AudioStream = preload("res://music/my_own/harry_sockcutter.ogg")
 @export var can_escape := true
-@export var background := preload("res://sprites/paper_bg.png")
+@export var background: Texture2D = preload("res://sprites/paper_bg.png")
 @export var autoscroll := Vector2(10, 10)
 
 func play_sfx(stream: AudioStream):
@@ -15,6 +15,9 @@ func play_sfx(stream: AudioStream):
 	return
 
 func on_interaction():
+	if Global.chase_sequence:
+		song = null
+	
 	if song: GlobalAudioStream.stream_paused = true
 	await play_sfx(load("res://sfx/battle_bell.wav"))
 	await Fader.fade_in()

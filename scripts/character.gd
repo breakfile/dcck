@@ -17,6 +17,8 @@ func hurt(base_damage: float, atk_type: AttackType = AttackType.PHYS):
 		_hurt_anim(dmg)
 		await DialogueBox.type("> %s took %d damage!" % [character_name, dmg])
 		if hp < 1:
+			if Global.bs and self in Global.bs.enemies:
+				await death.call(self)
 			await bs.handle_death(self)
 
 func _hurt_anim(damage: int):
@@ -55,7 +57,9 @@ enum Ailments {
 	NORMAL,
 	KO,
 	POISON,
-	CONFUSION
+	CONFUSION,
+	GLOWING,
+	FLOATING
 }
 
 var character_name: String
@@ -78,18 +82,24 @@ var at_w := 0
 var df_w := 0
 
 func weigh_attack(weight):
-	at_w += weight
-	if weight < 0:
-		await DialogueBox.type("> %s's attack decreased by %d!" % [character_name, abs(weight)])
+	if (weight < 0 and at_w >= 0) or (weight > 0 and at_w <= 0):
+		at_w += weight
+		if weight < 0:
+			await DialogueBox.type("> %s's attack decreased by %d!" % [character_name, abs(weight)])
+		else:
+			await DialogueBox.type("> %s's attack increased by %d!" % [character_name, weight])
 	else:
-		await DialogueBox.type("> %s's attack increased by %d!" % [character_name, weight])
+		await DialogueBox.type("> But %s's attack was already weighed!" % [character_name])
 
 func weigh_defense(weight):
-	df_w += weight
-	if weight < 0:
-		await DialogueBox.type("> %s's defense decreased by %d!" % [character_name, abs(weight)])
+	if (weight < 0 and df_w >= 0) or (weight > 0 and df_w <= 0):
+		df_w += weight
+		if weight < 0:
+			await DialogueBox.type("> %s's defense decreased by %d!" % [character_name, abs(weight)])
+		else:
+			await DialogueBox.type("> %s's defense increased by %d!" % [character_name, weight])
 	else:
-		await DialogueBox.type("> %s's defense increased by %d!" % [character_name, weight])
+		await DialogueBox.type("> But %s's defense was already weighed!" % [character_name])
 
 var weapon: Equipment
 var protection: Equipment
@@ -120,10 +130,8 @@ var ai_skills: Array[Skill]
 
 func _init(tree: SceneTree, new_name: String, new_desc: String, new_lv: int, fire_m: float = 1, freeze_m: float = 1, phys_m: float = 1, new_max_hp: int = -1, new_max_mp: int = -1, new_at: int = -1, new_df: int = -1):
 	self.tree = tree
-	weapon = Equipment.new()
-	weapon.name = "---"
-	protection = Equipment.new()
-	protection.name = "---"
+	weapon = load("res://items/fist.tres")
+	protection = load("res://items/resiliance.tres")
 	
 	character_name = new_name
 	
@@ -147,7 +155,41 @@ func _init(tree: SceneTree, new_name: String, new_desc: String, new_lv: int, fir
 var texture: Texture2D
 var sprite: Sprite2D
 
+func get_save_dict():
+	var save_dict = {}
+	save_dict["max_hp"] = max_hp
+	save_dict["max_mp"] = max_mp
+	save_dict["name"] = character_name
+	save_dict["weapon"] = weapon.resource_path
+	save_dict["protection"] = protection.resource_path
+	save_dict["atk"] = at
+	save_dict["def"] = df
+	save_dict["lvl"] = lv
+	save_dict["desc"] = desc
+	return save_dict
 
+static func load_file_dict(new_tree: SceneTree, save_dict: Dictionary, thing := Global.party):
+	var c = Character.new(
+		new_tree,
+		save_dict["name"],
+		save_dict["desc"],
+		save_dict["lvl"],
+		1,
+		1,
+		1,
+		save_dict["max_hp"],
+		save_dict["max_mp"],
+		save_dict["atk"],
+		save_dict["def"]
+	)
+	c.target = c
+	DialogueBox.verbose = false
+	if save_dict["weapon"] != null:
+		load(save_dict["weapon"]).on_use(c)
+	if save_dict["protection"] != null:
+		load(save_dict["protection"]).on_use(c)
+	DialogueBox.verbose = true
+	thing.append(c)
 
 func heal(heal_amount: int, heal_ko: bool = false):
 	if ailment == Ailments.KO:
@@ -210,6 +252,7 @@ func level_up_verbose(new_lv: int):
 	level_up(new_lv)
 
 var on_talk: Callable
+var death: Callable
 var ai: Callable
 
 static func enemy_factory(new_tree: SceneTree, data: EnemyData):
@@ -238,6 +281,7 @@ static func enemy_factory(new_tree: SceneTree, data: EnemyData):
 	c.ai_skills = data.additional_skills
 	c.on_talk = data.talk.bind()
 	c.ai = data.ai.bind()
+	c.death = data.death.bind()
 	
 	if data.texture:
 		c.texture = data.texture

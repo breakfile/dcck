@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AilmentSkill" format=3 uid="uid://b63kvsfpop6c1"]
 
 [ext_resource type="PackedScene" uid="uid://1w3m08oqn4uq" path="res://fx/poison.tscn" id="1_1jjrv"]
-[ext_resource type="Script" uid="uid://d3j5ggxjsvima" path="res://ailment_skill.gd" id="1_qbt4e"]
+[ext_resource type="Script" uid="uid://d3j5ggxjsvima" path="res://scripts/ailment_skill.gd" id="1_qbt4e"]
 
 [resource]
 script = ExtResource("1_qbt4e")

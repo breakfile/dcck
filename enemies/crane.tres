@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bj5gi5y54vsfv"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_waj80"]
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="2_ewrod"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="3_ewrod"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="3_wlda7"]
+[ext_resource type="PackedScene" uid="uid://1w3m08oqn4uq" path="res://fx/poison.tscn" id="4_geygx"]
+[ext_resource type="Texture2D" uid="uid://xlyhr4opegw2" path="res://sprites/cranebattle.png" id="4_pjbot"]
+[ext_resource type="Script" uid="uid://d3j5ggxjsvima" path="res://scripts/ailment_skill.gd" id="4_wlda7"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="6_a03p7"]
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="6_xaufa"]
+
+[sub_resource type="Resource" id="Resource_geygx"]
+script = ExtResource("3_wlda7")
+multiplier = 3.0
+name = "Shiggles"
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"
+
+[sub_resource type="Resource" id="Resource_a03p7"]
+script = ExtResource("4_wlda7")
+ailment = 3
+name = "LanSchool"
+effect = ExtResource("4_geygx")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://d3j5ggxjsvima"
+
+[sub_resource type="Resource" id="Resource_xaufa"]
+script = ExtResource("6_a03p7")
+name = "Scooter Power"
+effect = ExtResource("6_xaufa")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"
+
+[resource]
+script = ExtResource("3_ewrod")
+name = "Mr. Crane"
+level = 14
+exp_drop = 0
+texture = ExtResource("4_pjbot")
+max_hp = 8000
+additional_skills = Array[ExtResource("1_waj80")]([SubResource("Resource_geygx"), SubResource("Resource_a03p7"), SubResource("Resource_xaufa")])
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

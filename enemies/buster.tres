@@ -1,7 +1,7 @@
 [gd_resource type="Resource" format=3 uid="uid://dr62q4jqv52wq"]
 
 [ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_gji2p"]
-[ext_resource type="Resource" uid="uid://btq3k2bipr8ki" path="res://skills/recharge.tres" id="2_4amif"]
+[ext_resource type="Resource" uid="uid://dvo71temillmx" path="res://skills/fullrecharge.tres" id="2_4amif"]
 [ext_resource type="Script" uid="uid://cffpfxqj7bhj8" path="res://scripts/enemy/buster.gd" id="3_4amif"]
 [ext_resource type="Texture2D" uid="uid://dbpjljyga6fw8" path="res://sprites/buster_battle.png" id="5_7nmcv"]
 

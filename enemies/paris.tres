@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bhq1ymvosh8p0"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_445x7"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_78pam"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="3_a2vnh"]
+[ext_resource type="Texture2D" uid="uid://xjkn57efn7lq" path="res://sprites/romeo.png" id="4_w7v7d"]
+[ext_resource type="Resource" uid="uid://0hjydh5ewj8c" path="res://items/str_cerebrum.tres" id="5_78pam"]
+
+[resource]
+script = ExtResource("3_a2vnh")
+name = "Count Paris"
+level = 11
+exp_drop = 7
+description = "If thou be merciful..."
+texture = ExtResource("4_w7v7d")
+weapon = ExtResource("5_78pam")
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

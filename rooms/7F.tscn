@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://m4s7pfp3dsis"]
 
 [ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_o5ymh"]
-[ext_resource type="AudioStream" uid="uid://co5udjl5ufxtr" path="res://music/smt1_cathedral.ogg" id="2_a8pnb"]
+[ext_resource type="AudioStream" uid="uid://cllkkrt72y068" path="res://music/my_own/run.ogg" id="2_dkv3u"]
 [ext_resource type="Texture2D" uid="uid://oxowswh5iluf" path="res://sprites/city.jpg" id="3_dkv3u"]
 [ext_resource type="TileSet" uid="uid://dupbi1vueq1nn" path="res://tileset/maze.tres" id="3_yt162"]
 [ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="4_sm5da"]
@@ -14,12 +14,12 @@
 [ext_resource type="Script" uid="uid://ct202mhbmuidd" path="res://scripts/delete_root_interaction.gd" id="17_0p12y"]
 [ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="19_18r3n"]
 [ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="20_lo74o"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="21_qubbg"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="21_qubbg"]
 
 [node name="7F" type="Node2D" unique_id=1276948625]
 script = ExtResource("1_o5ymh")
-title = "7F"
-music = ExtResource("2_a8pnb")
+title = "Cathedral 7F"
+music = ExtResource("2_dkv3u")
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=692991919]

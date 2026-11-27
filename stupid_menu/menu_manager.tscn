@@ -5,14 +5,17 @@
 [ext_resource type="AudioStream" uid="uid://cidb6glnbopd3" path="res://sfx/strip.wav" id="2_e6c8u"]
 [ext_resource type="Theme" uid="uid://cmdo1umvcy7mn" path="res://themes/theme.tres" id="2_i3mql"]
 [ext_resource type="Script" uid="uid://v0xlscrgelww" path="res://stupid_menu/stack_menu.gd" id="3_owqol"]
-[ext_resource type="Texture2D" uid="uid://dcq2infll7mg4" path="res://sprites/declan_f_standstill.png" id="4_erogk"]
 [ext_resource type="FontFile" uid="uid://gcly6m1bwe8u" path="res://fonts/Px437_Portfolio_6x8.ttf" id="5_0fmto"]
 [ext_resource type="Script" uid="uid://bp22xolobujt4" path="res://scripts/playerinfo.gd" id="5_focfr"]
 [ext_resource type="FontFile" uid="uid://bu7iginv0v6p5" path="res://fonts/Mystery Font.ttf" id="6_404xq"]
+[ext_resource type="Texture2D" uid="uid://dcq2infll7mg4" path="res://sprites/declan_f_standstill.png" id="6_e3t6e"]
 [ext_resource type="FontFile" uid="uid://cgxxiuox52fnq" path="res://fonts/Rude.ttf" id="7_e6c8u"]
 [ext_resource type="Texture2D" uid="uid://dw6jpaeilosi8" path="res://sprites/nocharacter.png" id="8_0fmto"]
 [ext_resource type="Script" uid="uid://b5r4wfran0ss8" path="res://stupid_menu/snail_metre.gd" id="11_vm8m2"]
 [ext_resource type="Script" uid="uid://qablsqhbc5bm" path="res://stupid_menu/battle_connector.gd" id="12_0fmto"]
+[ext_resource type="Script" uid="uid://dyhxq5n4rhyb3" path="res://stupid_menu/hover.gd" id="12_f0ejx"]
+[ext_resource type="FontFile" uid="uid://cwxqh7phoweak" path="res://fonts/unifont.otf" id="14_f0ejx"]
+[ext_resource type="FontFile" uid="uid://c64waftn7qwje" path="res://fonts/BradleyHand.ttf" id="15_e3t6e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm8m2"]
 bg_color = Color(0.3137255, 0, 0, 1)
@@ -27,6 +30,10 @@ bg_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm8m2"]
 
+[sub_resource type="FontVariation" id="FontVariation_etffa"]
+base_font = ExtResource("7_e6c8u")
+spacing_top = -5
+
 [node name="MenuManager" type="CanvasLayer" unique_id=1438281783]
 layer = 2
 script = ExtResource("1_fmkm1")
@@ -38,6 +45,7 @@ stream = ExtResource("2_e6c8u")
 stream = ExtResource("2_404xq")
 
 [node name="PlayerStats" type="Control" parent="." unique_id=1229778003]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -62,7 +70,7 @@ bbcode_enabled = true
 [node name="Player0" type="Sprite2D" parent="PlayerStats" unique_id=1543065541]
 visible = false
 position = Vector2(214, 228)
-texture = ExtResource("4_erogk")
+texture = ExtResource("6_e3t6e")
 script = ExtResource("5_focfr")
 
 [node name="Name" type="Label" parent="PlayerStats/Player0" unique_id=1936337856]
@@ -307,7 +315,7 @@ layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="Command/VBoxContainer" unique_id=1733223471]
 layout_mode = 2
-theme_override_constants/h_separation = 12
+theme_override_constants/h_separation = 8
 columns = 2
 
 [node name="ITEM" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=630352256]
@@ -315,30 +323,35 @@ layout_mode = 2
 action_mode = 0
 text = "Items"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="SKILL" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=733409235]
 layout_mode = 2
 action_mode = 0
 text = "Skill"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="STATS" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=2030703917]
 layout_mode = 2
 action_mode = 0
 text = "Stats"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="EQUIP" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=1318985237]
 layout_mode = 2
 action_mode = 0
 text = "Strip"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="TITLE" type="Button" parent="Command/VBoxContainer/GridContainer" unique_id=47606889]
 layout_mode = 2
 action_mode = 0
 text = "Title"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="QuitConfirm" type="PanelContainer" parent="." unique_id=1916979436 node_paths=PackedStringArray("default_control")]
 visible = false
@@ -365,6 +378,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="QuitConfirm/HBoxContainer" unique_id=1098863251]
 layout_mode = 2
 text = "YEP!"
+script = ExtResource("12_f0ejx")
 
 [node name="Items" type="PanelContainer" parent="." unique_id=798391107]
 visible = false
@@ -383,7 +397,7 @@ follow_focus = true
 [node name="GridContainer" type="GridContainer" parent="Items/ScrollContainer" unique_id=328831393]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 16
+theme_override_constants/h_separation = 0
 columns = 2
 
 [node name="Label" type="Label" parent="Items" unique_id=705684099]
@@ -415,12 +429,14 @@ layout_mode = 2
 action_mode = 0
 text = "Use"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="Button2" type="Button" parent="ItemSettings/VBoxContainer" unique_id=278149933]
 layout_mode = 2
 action_mode = 0
 text = "Toss"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="WarnItemUse" type="PanelContainer" parent="." unique_id=810572633]
 visible = false
@@ -501,11 +517,13 @@ text = "Strip what?"
 layout_mode = 2
 action_mode = 0
 text = "wep"
+script = ExtResource("12_f0ejx")
 
 [node name="RPro" type="Button" parent="StripWhat/VBoxContainer" unique_id=1300120826]
 layout_mode = 2
 action_mode = 0
 text = "pro"
+script = ExtResource("12_f0ejx")
 
 [node name="BattleCommand" type="PanelContainer" parent="." unique_id=1307977138 node_paths=PackedStringArray("default_control")]
 visible = false
@@ -521,7 +539,7 @@ metadata/_custom_type_script = "uid://v0xlscrgelww"
 
 [node name="GridContainer" type="GridContainer" parent="BattleCommand" unique_id=455580336]
 layout_mode = 2
-theme_override_constants/h_separation = 16
+theme_override_constants/h_separation = 12
 columns = 3
 script = ExtResource("12_0fmto")
 
@@ -530,36 +548,42 @@ layout_mode = 2
 action_mode = 0
 text = "Fight"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="Skill" type="Button" parent="BattleCommand/GridContainer" unique_id=293130780]
 layout_mode = 2
 action_mode = 0
 text = "Skill"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="Item" type="Button" parent="BattleCommand/GridContainer" unique_id=1653685893]
 layout_mode = 2
 action_mode = 0
 text = "Items"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="Check" type="Button" parent="BattleCommand/GridContainer" unique_id=1417356973]
 layout_mode = 2
 action_mode = 0
 text = "Check"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="Talk" type="Button" parent="BattleCommand/GridContainer" unique_id=1735792299]
 layout_mode = 2
 action_mode = 0
 text = "Talk"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="Run" type="Button" parent="BattleCommand/GridContainer" unique_id=2069502929]
 layout_mode = 2
 action_mode = 0
 text = "Run"
 alignment = 0
+script = ExtResource("12_f0ejx")
 
 [node name="Say" type="PanelContainer" parent="." unique_id=1416449370]
 visible = false
@@ -680,21 +704,156 @@ layout_mode = 2
 text = "100%"
 horizontal_alignment = 2
 
-[node name="Skills" type="PanelContainer" parent="." unique_id=523191771]
+[node name="Skills" type="PanelContainer" parent="." unique_id=523191771 node_paths=PackedStringArray("default_control")]
 visible = false
+custom_minimum_size = Vector2(166, 0)
 offset_left = 17.0
 offset_top = 16.0
 offset_right = 33.0
 offset_bottom = 32.0
 theme = ExtResource("2_i3mql")
 script = ExtResource("3_owqol")
+default_control = NodePath("VBoxContainer2/Last")
 metadata/_custom_type_script = "uid://v0xlscrgelww"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Skills" unique_id=452482288]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Skills" unique_id=691027348]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Skills/VBoxContainer2" unique_id=1712843981]
+modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_0fmto")
+theme_override_font_sizes/font_size = 8
+text = "Viewing xxxxxxxx's skills"
+
+[node name="Last" type="Button" parent="Skills/VBoxContainer2" unique_id=341742526]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_0fmto")
+theme_override_font_sizes/font_size = 8
+action_mode = 0
+text = "Last Char."
+alignment = 0
+script = ExtResource("12_f0ejx")
+
+[node name="Next" type="Button" parent="Skills/VBoxContainer2" unique_id=1498294815]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_0fmto")
+theme_override_font_sizes/font_size = 8
+action_mode = 0
+text = "Next Char."
+alignment = 0
+script = ExtResource("12_f0ejx")
+
+[node name="HSeparator" type="HSeparator" parent="Skills/VBoxContainer2" unique_id=1566550846]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Skills/VBoxContainer2" unique_id=1835836257]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_0fmto")
+theme_override_font_sizes/font_size = 8
+text = " COST  TYPE  NAME"
+
+[node name="NoSkills" type="Label" parent="Skills/VBoxContainer2" unique_id=2129502651]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_0fmto")
+theme_override_font_sizes/font_size = 8
+text = " ---   ---   ---"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Skills/VBoxContainer2" unique_id=452482288]
 layout_mode = 2
 theme_override_constants/separation = 2
 
+[node name="ChaseSequenceTimer" type="PanelContainer" parent="." unique_id=286486863]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -123.0
+offset_right = 193.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme = ExtResource("2_i3mql")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChaseSequenceTimer" unique_id=1944723480]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ChaseSequenceTimer/VBoxContainer" unique_id=1049696919]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_0fmto")
+theme_override_font_sizes/font_size = 8
+text = "- Declan Myles Cavanagh -"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChaseSequenceTimer/VBoxContainer" unique_id=2080698260]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ChaseSequenceTimer/VBoxContainer/HBoxContainer" unique_id=1168125801]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("14_f0ejx")
+text = "will"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="ChaseSequenceTimer/VBoxContainer/HBoxContainer" unique_id=1547452628]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_e3t6e")
+text = "PASS AWAY"
+
+[node name="Label2" type="Label" parent="ChaseSequenceTimer/VBoxContainer" unique_id=852824191]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_etffa")
+text = "IN, I WANT TO SAY ABOUT"
+
+[node name="Num" type="Label" parent="ChaseSequenceTimer/VBoxContainer" unique_id=1334582279]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("15_e3t6e")
+theme_override_font_sizes/font_size = 32
+text = "180"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ChaseSequenceTimer/VBoxContainer" unique_id=1454450307]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_etffa")
+text = "SECONDS, DUE TO EXPLOSIVES."
+horizontal_alignment = 2
+
+[node name="Label5" type="Label" parent="ChaseSequenceTimer/VBoxContainer" unique_id=657028012]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.5411765, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_0fmto")
+theme_override_font_sizes/font_size = 8
+text = "IT WILL LIKELY HURT A LOT!"
+horizontal_alignment = 1
+
+[node name="StatChanges" type="PanelContainer" parent="." unique_id=958058330]
+z_index = 20
+offset_left = 230.0
+offset_top = 15.0
+offset_right = 385.0
+offset_bottom = 98.0
+theme = ExtResource("2_i3mql")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StatChanges" unique_id=1933271914]
+layout_mode = 2
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Command/VBoxContainer/GridContainer/ITEM" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="Command/VBoxContainer/GridContainer/SKILL" to="." method="_on_skill_pressed_outbattle"]
 [connection signal="pressed" from="Command/VBoxContainer/GridContainer/STATS" to="." method="_on_stats_pressed"]
 [connection signal="pressed" from="Command/VBoxContainer/GridContainer/EQUIP" to="." method="_on_equip_pressed"]
 [connection signal="pressed" from="Command/VBoxContainer/GridContainer/TITLE" to="." method="_on_title_pressed"]
@@ -716,3 +875,5 @@ theme_override_constants/separation = 2
 [connection signal="push" from="Say" to="." method="_on_say_push"]
 [connection signal="push" from="Stats" to="." method="_on_stats_push"]
 [connection signal="push" from="Skills" to="." method="_on_skills_push"]
+[connection signal="pressed" from="Skills/VBoxContainer2/Last" to="." method="_on_last_pressed"]
+[connection signal="pressed" from="Skills/VBoxContainer2/Next" to="." method="_on_next_pressed"]

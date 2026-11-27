@@ -1,0 +1,115 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d38xiv4pjojmt"]
+
+[ext_resource type="Texture2D" uid="uid://prvrsurkc4o7" path="res://sprites/declan_evil3.png" id="1_5i14m"]
+[ext_resource type="Texture2D" uid="uid://cln4q6oqb4mip" path="res://sprites/declan_b_standstill.png" id="1_pcw6e"]
+[ext_resource type="Texture2D" uid="uid://cmpvb6ecji3a2" path="res://sprites/declan_evil1.png" id="2_t86vb"]
+[ext_resource type="Texture2D" uid="uid://dbbggt2m5qvg5" path="res://sprites/declan_b_walk1.png" id="2_v7w1c"]
+[ext_resource type="Texture2D" uid="uid://dvgdw8u15m88g" path="res://sprites/declan_b_walk2.png" id="3_77cj6"]
+[ext_resource type="Texture2D" uid="uid://xsdvhhq1vexb" path="res://sprites/declan_evil2.png" id="3_rittm"]
+[ext_resource type="Texture2D" uid="uid://dcq2infll7mg4" path="res://sprites/declan_f_standstill.png" id="4_kd31h"]
+[ext_resource type="Texture2D" uid="uid://dcwup8mkeh7lt" path="res://sprites/declan_f_walk1.png" id="5_jtsjd"]
+[ext_resource type="Texture2D" uid="uid://bdnm3qokwtrcv" path="res://sprites/declan_f_walk2.png" id="6_5i14m"]
+[ext_resource type="Texture2D" uid="uid://q56ynxesqblo" path="res://sprites/declan_falling1.png" id="7_t86vb"]
+[ext_resource type="Texture2D" uid="uid://b403nxf2n640e" path="res://sprites/declan_falling2.png" id="8_rittm"]
+[ext_resource type="Texture2D" uid="uid://dfv76adrmsrpj" path="res://sprites/declan_ladder1.png" id="9_77cj6"]
+[ext_resource type="Texture2D" uid="uid://cwsdxty27onf4" path="res://sprites/declan_ladder2.png" id="10_kd31h"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5i14m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t86vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rittm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t86vb")
+}],
+"loop": true,
+"name": &"EVIL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pcw6e")
+}],
+"loop": true,
+"name": &"b_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v7w1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pcw6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_77cj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pcw6e")
+}],
+"loop": true,
+"name": &"b_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kd31h")
+}],
+"loop": true,
+"name": &"f_idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jtsjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kd31h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5i14m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kd31h")
+}],
+"loop": true,
+"name": &"f_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_t86vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rittm")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_77cj6")
+}],
+"loop": true,
+"name": &"ladder_still",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kd31h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_77cj6")
+}],
+"loop": true,
+"name": &"ladder_ud",
+"speed": 5.0
+}]

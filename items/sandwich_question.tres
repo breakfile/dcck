@@ -7,9 +7,7 @@ script = ExtResource("1_ycp4e")
 chewed_form_path = "uid://c5hkns6p5x1o3"
 heal_amount = 0
 name = "Sandwich???"
-desc = "[color=yellow]GIVE IT TO KAGU[/color]
-[color=yellow]GIVE IT TO KAGU[/color]
-[color=yellow]GIVE IT TO KAGU[/color]"
+desc = "[color=yellow]FEED ME TO FOURTH PARTY MEMBER[/color]"
 one_line_desc = "How are you seeing this"
 cannot_toss = true
 metadata/_custom_type_script = "uid://dioyt2flxjrxj"

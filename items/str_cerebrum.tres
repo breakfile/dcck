@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://0hjydh5ewj8c"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_u3jeb"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_e346h"]
+[ext_resource type="Resource" uid="uid://rdc3nn76clrn" path="res://skills/str1.tres" id="3_v8bbd"]
+[ext_resource type="Resource" uid="uid://dduqtqkxvycd" path="res://skills/str2.tres" id="4_3m4ke"]
+[ext_resource type="Resource" uid="uid://s01x15dko13k" path="res://skills/strheal.tres" id="5_7n10f"]
+
+[resource]
+script = ExtResource("1_u3jeb")
+slot = 1
+attack_increase = 10
+skills = Array[ExtResource("2_e346h")]([ExtResource("3_v8bbd"), ExtResource("4_3m4ke"), ExtResource("5_7n10f")])
+change_phys_mult = true
+phys_mult = 0.0
+name = "Str. Cerebrum"
+aura_name = "THE CEREBRUM OF STRENGTH"
+desc = "[center]PROTECTOR[/center]
+A brain part with knowledge of Physical skills."
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

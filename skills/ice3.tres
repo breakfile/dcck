@@ -7,7 +7,7 @@
 script = ExtResource("1_gxnli")
 multiplier = 3.0
 attack_type = 1
-name = "Ice Age"
+name = "Ice III"
 desc = "Ice
 Attack * 3"
 one_line_desc = "Atk x 3"

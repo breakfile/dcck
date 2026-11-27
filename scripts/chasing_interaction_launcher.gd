@@ -13,6 +13,7 @@ var chasing := false
 var chase_timer := 0.0
 
 func _physics_process(delta):
+	
 	if !Global.active:
 		return
 

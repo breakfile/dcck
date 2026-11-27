@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodItem" format=3 uid="uid://cnawgrg813x0t"]
+
+[ext_resource type="Script" uid="uid://dvhtw83ppiufu" path="res://scripts/food_item.gd" id="1_28hdk"]
+
+[resource]
+script = ExtResource("1_28hdk")
+heal_amount = 42
+name = "Snow Apple"
+desc = "[center]CONSUMABLE[/center]
+The one that's of my eye
+- Recover many HP"
+one_line_desc = "Recover some HP"
+metadata/_custom_type_script = "uid://dvhtw83ppiufu"

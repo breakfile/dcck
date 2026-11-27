@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dyx30ucvekps1"]
+
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="1_c4lnh"]
+[ext_resource type="Resource" uid="uid://b3rttf6ypxk4n" path="res://skills/attack.tres" id="2_u8wk8"]
+[ext_resource type="Script" uid="uid://dmumirl5j1gqx" path="res://scripts/enemy_resource.gd" id="3_q6m4y"]
+[ext_resource type="Texture2D" uid="uid://cwi3ooetid11g" path="res://sprites/juliet.png" id="4_g2wlj"]
+
+[resource]
+script = ExtResource("3_q6m4y")
+name = "Juliet"
+level = 9
+exp_drop = 5
+description = "This is thy sheath; there rust, and let me die."
+texture = ExtResource("4_g2wlj")
+attack = 1
+metadata/_custom_type_script = "uid://dmumirl5j1gqx"

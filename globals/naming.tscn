@@ -60,4 +60,5 @@ offset_bottom = 136.0
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1519379782]
 layout_mode = 2
+theme_override_constants/h_separation = -1
 columns = 13

@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://b2jqy6qtbrwa8"]
+
+[ext_resource type="Script" uid="uid://c1f0wn67agteb" path="res://scripts/equipment.gd" id="1_1nlbn"]
+[ext_resource type="Script" uid="uid://d1tef7eifc0ow" path="res://scripts/skill.gd" id="2_iv0lc"]
+[ext_resource type="PackedScene" uid="uid://birj72o4ase2d" path="res://fx/slash.tscn" id="3_bpige"]
+[ext_resource type="Script" uid="uid://bu0rppnxrmq7f" path="res://scripts/damage_skill.gd" id="4_w7kkk"]
+[ext_resource type="PackedScene" uid="uid://1w3m08oqn4uq" path="res://fx/poison.tscn" id="5_63tqn"]
+[ext_resource type="Script" uid="uid://d3j5ggxjsvima" path="res://scripts/ailment_skill.gd" id="6_22al3"]
+[ext_resource type="PackedScene" uid="uid://bfr4wl8y1lw8e" path="res://fx/heal.tscn" id="7_wd83v"]
+[ext_resource type="Script" uid="uid://c0vrsvjq67v2o" path="res://scripts/heal_skill.gd" id="8_cs8vu"]
+[ext_resource type="Script" uid="uid://dgpttxclkf1i" path="res://scripts/check_skill.gd" id="9_1ab5i"]
+
+[sub_resource type="Resource" id="Resource_qsb4t"]
+script = ExtResource("4_w7kkk")
+multiplier = 100.0
+attack_type = 0
+name = "Christmas Lights"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"
+
+[sub_resource type="Resource" id="Resource_xmtws"]
+script = ExtResource("4_w7kkk")
+multiplier = 100.0
+name = "Knives in your Skin"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"
+
+[sub_resource type="Resource" id="Resource_20ka0"]
+script = ExtResource("4_w7kkk")
+multiplier = 100.0
+attack_type = 1
+name = "Sweat Blast"
+metadata/_custom_type_script = "uid://bu0rppnxrmq7f"
+
+[sub_resource type="Resource" id="Resource_07gmp"]
+script = ExtResource("6_22al3")
+ailment = 3
+one_in_x_chance = 1
+name = "Mold Spread"
+effect = ExtResource("5_63tqn")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://d3j5ggxjsvima"
+
+[sub_resource type="Resource" id="Resource_d0j5t"]
+script = ExtResource("6_22al3")
+ailment = 2
+one_in_x_chance = 1
+name = "Mold Enforce"
+effect = ExtResource("5_63tqn")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://d3j5ggxjsvima"
+
+[sub_resource type="Resource" id="Resource_x8ao7"]
+script = ExtResource("8_cs8vu")
+heal_amount = 1000
+name = "Yellow Doritos"
+effect = ExtResource("7_wd83v")
+wait_for_animation_to_finish = true
+metadata/_custom_type_script = "uid://c0vrsvjq67v2o"
+
+[sub_resource type="Resource" id="Resource_ju8q7"]
+script = ExtResource("9_1ab5i")
+name = "Rust Book"
+metadata/_custom_type_script = "uid://dgpttxclkf1i"
+
+[sub_resource type="Resource" id="Resource_6bba8"]
+script = ExtResource("2_iv0lc")
+name = "Button that does Nothing"
+metadata/_custom_type_script = "uid://d1tef7eifc0ow"
+
+[sub_resource type="Resource" id="Resource_avpl8"]
+script = ExtResource("2_iv0lc")
+name = "Watch Lorax 50 times"
+metadata/_custom_type_script = "uid://d1tef7eifc0ow"
+
+[sub_resource type="Resource" id="Resource_vla7f"]
+script = ExtResource("2_iv0lc")
+name = "Watch Cloudy with a chance of meatballs 50 times"
+metadata/_custom_type_script = "uid://d1tef7eifc0ow"
+
+[sub_resource type="Resource" id="Resource_g8dhi"]
+script = ExtResource("2_iv0lc")
+name = "Visit Britian"
+metadata/_custom_type_script = "uid://d1tef7eifc0ow"
+
+[resource]
+script = ExtResource("1_1nlbn")
+slot = 1
+skills = Array[ExtResource("2_iv0lc")]([SubResource("Resource_qsb4t"), SubResource("Resource_xmtws"), SubResource("Resource_20ka0"), SubResource("Resource_07gmp"), SubResource("Resource_d0j5t"), SubResource("Resource_x8ao7"), SubResource("Resource_ju8q7"), SubResource("Resource_6bba8"), SubResource("Resource_avpl8"), SubResource("Resource_vla7f"), SubResource("Resource_g8dhi")])
+metadata/_custom_type_script = "uid://c1f0wn67agteb"

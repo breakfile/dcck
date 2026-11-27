@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://6dn5lssfeclv"]
 
 [ext_resource type="Script" uid="uid://hmtd3314pckt" path="res://scripts/level.gd" id="1_twvwa"]
-[ext_resource type="AudioStream" uid="uid://co5udjl5ufxtr" path="res://music/smt1_cathedral.ogg" id="2_y5ge7"]
+[ext_resource type="AudioStream" uid="uid://cllkkrt72y068" path="res://music/my_own/run.ogg" id="2_me46v"]
 [ext_resource type="TileSet" uid="uid://casg5xjkhdlkq" path="res://tileset/cathedral.tres" id="3_me46v"]
 [ext_resource type="PackedScene" uid="uid://i3p5gx3feuwx" path="res://prefabs/player.tscn" id="4_n7grw"]
 [ext_resource type="PackedScene" uid="uid://bycsqp7ecto7r" path="res://prefabs/lock.tscn" id="5_4a45f"]
@@ -17,13 +17,13 @@
 [ext_resource type="Script" uid="uid://b5b7vxf81u73l" path="res://scripts/spawn_marker.gd" id="14_m4s54"]
 [ext_resource type="Script" uid="uid://dqefeqi2a08ol" path="res://scripts/interaction_launcher.gd" id="15_85ew8"]
 [ext_resource type="Shape2D" uid="uid://dl78ymct7vxhw" path="res://shapes/two_tile_exit.tres" id="16_xclmi"]
-[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://changelevel_interaction.gd" id="17_xqhrg"]
+[ext_resource type="Script" uid="uid://cj1n0dwjh7bbh" path="res://scripts/changelevel_interaction.gd" id="17_xqhrg"]
 [ext_resource type="PackedScene" uid="uid://d1iw53mdnx61m" path="res://prefabs/lettuce_sandwich.tscn" id="18_0gepq"]
 
 [node name="5F" type="Node2D" unique_id=1276948625]
 script = ExtResource("1_twvwa")
-title = "5F"
-music = ExtResource("2_y5ge7")
+title = "Cathedral 5F"
+music = ExtResource("2_me46v")
 metadata/_custom_type_script = "uid://hmtd3314pckt"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1377258113]
